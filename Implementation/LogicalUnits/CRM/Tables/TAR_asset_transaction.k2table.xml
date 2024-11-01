@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableObject xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Name>TAR_asset_transaction</Name>
+  <ID>tbl_TAR_asset_transaction</ID>
+  <Columns>
+    <Column name="subscriber_id" id="subscriber_id" index="0" datatype="TEXT" />
+  </Columns>
+  <IndexesList>
+  </IndexesList>
+  <EnrichmentList>
+  </EnrichmentList>
+  <LazyDataUpdate syncMethod="Inherited" performEvery="1.00:00:00">
+    <DecisionFunction></DecisionFunction>
+  </LazyDataUpdate>
+  <TriggersList>
+  </TriggersList>
+</TableObject>

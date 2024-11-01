@@ -1,0 +1,26 @@
+lu_name,column_name,sql
+CRM,first_name,"Select first_name
+ From customer"
+CRM,last_name,"Select last_name
+ From customer"
+CRM,line_number,Select contract.associated_line as line_number From contract
+CRM,num_of_open_cases,"Select count(*) As num_of_open_cases
+From cases
+Where Upper(cases.status) != 'CLOSED'"
+CRM,open_case_date,"Select case_date As open_case_date
+From cases
+Where Upper(cases.status) != 'CLOSED'"
+CRM,num_of_subscribers,Select count(*) as num_of_subscribers From contract
+CRM,state,Select state from address
+Billing,total_balance_amount,"Select Sum(ifNull(Billing.balance.available_amount, 0)) As total_balance_amount
+From Billing.balance"
+Billing,num_of_open_invoices,"Select count(*) As num_of_open_invoices
+From Billing.invoice
+Where Upper(Billing.invoice.status) = 'OPEN'"
+Billing,total_payment_amount,"Select Sum(ifNull(Billing.payment.amount, 0)) As total_payment_amount
+From Billing.payment"
+Billing,vip_status,"Select distinct vip_status 
+From Billing.subscriber"
+Billing,subscriber_type,Select distinct subscriber_type From Billing.subscriber
+Asset,transaction_duartion,Select distinct duration from Asset.asset_transaction
+Asset,transaction_city,Select distinct transactioncity from Asset.asset_transaction

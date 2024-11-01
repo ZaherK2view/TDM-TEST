@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableObject xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Name>subscriber</Name>
+  <ID>tbl_subscriber</ID>
+  <EntityId>subscriber_id</EntityId>
+  <ColumnsCollation>BINARY</ColumnsCollation>
+  <FullTextSearch>false</FullTextSearch>
+  <Columns>
+    <Column name="subscriber_id" id="subscriber_id" index="0" datatype="TEXT" />
+    <Column name="subscriber_type" id="subscriber_type" index="1" datatype="TEXT" />
+    <Column name="vip_status" id="vip_status" index="2" datatype="TEXT" />
+    <Column name="first_name" id="first_name" index="3" datatype="Text" />
+    <Column name="last_name" id="last_name" index="4" datatype="Text" />
+  </Columns>
+  <IndexesList>
+  </IndexesList>
+  <EnrichmentList>
+  </EnrichmentList>
+  <LazyDataUpdate syncMethod="Inherited" performEvery="1.00:00:00" deleteMode="">
+    <DecisionFunction></DecisionFunction>
+  </LazyDataUpdate>
+  <TriggersList>
+  </TriggersList>
+</TableObject>

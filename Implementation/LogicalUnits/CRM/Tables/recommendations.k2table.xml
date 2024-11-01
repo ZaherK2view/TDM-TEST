@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableObject xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Name>recommendations</Name>
+  <ID>tbl_recommendations</ID>
+  <Columns>
+    <Column name="station_name" id="station_name" index="0" datatype="TEXT" />
+    <Column name="station_city" id="station_city" index="1" datatype="TEXT" />
+    <Column name="station_geopos" id="station_geopos" index="2" datatype="TEXT" />
+    <Column name="station_availability" id="station_availability" index="3" datatype="TEXT" />
+    <Column name="station_capacity" id="station_capacity" index="4" datatype="TEXT" />
+    <Column name="event_type" id="event_type" index="5" datatype="TEXT" />
+    <Column name="customer_id" id="customer_id" index="6" datatype="TEXT" />
+    <Column name="station_id" id="station_id" index="7" datatype="TEXT" />
+  </Columns>
+  <IndexesList>
+  </IndexesList>
+  <EnrichmentList>
+  </EnrichmentList>
+  <LazyDataUpdate syncMethod="Inherited" performEvery="1.00:00:00">
+    <DecisionFunction></DecisionFunction>
+  </LazyDataUpdate>
+  <TriggersList>
+  </TriggersList>
+</TableObject>

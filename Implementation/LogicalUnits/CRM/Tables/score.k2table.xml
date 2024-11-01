@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableObject xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Name>score</Name>
+  <ID>tbl_score</ID>
+  <Columns>
+    <Column name="customer_id" id="customer_id" index="0" datatype="TEXT" />
+    <Column name="score_date" id="score_date" index="1" datatype="TEXT" />
+    <Column name="score_type" id="score_type" index="2" datatype="TEXT" />
+    <Column name="score_value" id="score_value" index="3" datatype="TEXT" />
+  </Columns>
+  <IndexesList>
+  </IndexesList>
+  <EnrichmentList>
+  </EnrichmentList>
+  <LazyDataUpdate syncMethod="Inherited" performEvery="1.00:00:00">
+    <DecisionFunction></DecisionFunction>
+  </LazyDataUpdate>
+  <TriggersList>
+  </TriggersList>
+</TableObject>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableObject xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Name>address</Name>
+  <ID>tbl_address</ID>
+  <Columns>
+    <Column name="customer_id" id="customer_id" index="0" datatype="TEXT" />
+    <Column name="address_id" id="address_id" index="1" datatype="TEXT" />
+    <Column name="street_address_1" id="street_address_1" index="2" datatype="TEXT" />
+    <Column name="street_address_2" id="street_address_2" index="3" datatype="TEXT" />
+    <Column name="city" id="city" index="4" datatype="TEXT" />
+    <Column name="zip" id="zip" index="5" datatype="TEXT" />
+    <Column name="state" id="state" index="6" datatype="TEXT" />
+    <Column name="country" id="country" index="7" datatype="TEXT" />
+  </Columns>
+  <IndexesList>
+  </IndexesList>
+  <EnrichmentList>
+  </EnrichmentList>
+  <LazyDataUpdate syncMethod="Inherited" performEvery="1.00:00:00">
+    <DecisionFunction></DecisionFunction>
+  </LazyDataUpdate>
+  <TriggersList>
+  </TriggersList>
+</TableObject>

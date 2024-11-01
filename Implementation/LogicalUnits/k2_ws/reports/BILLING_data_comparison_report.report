@@ -1,0 +1,891 @@
+{
+    "Name": "Report",
+    "Width": "10.7292in",
+    "ReportParameters": [
+        {
+            "DataType": "String",
+            "Name": "TaskExecID",
+            "Prompt": "Task Execution ID"
+        },
+        {
+            "DataType": "String",
+            "Name": "SourceID",
+            "Prompt": "Customer ID in SOURCE"
+        }
+    ],
+    "Layers": [
+        {
+            "Name": "default"
+        }
+    ],
+    "CustomProperties": [
+        {
+            "Name": "DisplayType",
+            "Value": "Page"
+        },
+        {
+            "Name": "SizeType",
+            "Value": "Default"
+        },
+        {
+            "Name": "PaperOrientation",
+            "Value": "Landscape"
+        }
+    ],
+    "Page": {
+        "PageWidth": "11in",
+        "PageHeight": "8.5in",
+        "RightMargin": "0in",
+        "LeftMargin": "0in",
+        "TopMargin": "0in",
+        "BottomMargin": "0in",
+        "Columns": 1,
+        "ColumnSpacing": "0.5in"
+    },
+    "DataSources": [
+        {
+            "Name": "fabricApi",
+            "ConnectionProperties": {
+                "DataProvider": "JSON",
+                "ConnectString": "endpoint=/api/"
+            }
+        }
+    ],
+    "Body": {
+        "Height": "3.7744in",
+        "ReportItems": [
+            {
+                "Type": "textbox",
+                "Name": "MainTitle",
+                "CanGrow": true,
+                "KeepTogether": true,
+                "Value": "Billing Data Comparison Report",
+                "Style": {
+                    "FontSize": "20pt",
+                    "FontWeight": "Bold",
+                    "PaddingLeft": "2pt",
+                    "PaddingRight": "2pt",
+                    "PaddingTop": "2pt",
+                    "PaddingBottom": "2pt",
+                    "Color": "#114b7a",
+                    "VerticalAlign": "Middle"
+                },
+                "Left": "0.3209in",
+                "Top": "0.2625in",
+                "Width": "5.7291in",
+                "Height": "0.4062in"
+            },
+            {
+                "Type": "line",
+                "Name": "Line4",
+                "ZIndex": 1,
+                "StartPoint": {
+                    "X": "0.3in",
+                    "Y": "0.7744in"
+                },
+                "EndPoint": {
+                    "X": "10.7292in",
+                    "Y": "0.7536in"
+                },
+                "LineWidth": "2pt",
+                "LineStyle": "Dashed",
+                "LineColor": "#114b7a"
+            },
+            {
+                "Type": "textbox",
+                "Name": "TextBox33",
+                "ZIndex": 3,
+                "CanGrow": true,
+                "KeepTogether": true,
+                "Value": "=\"Subscribers Data in: \" & Fields.Item(\"SRCInfo.SourceEnvName\").Value & \" (Source)\"",
+                "Style": {
+                    "FontSize": "14pt",
+                    "FontWeight": "SemiBold",
+                    "PaddingLeft": "2pt",
+                    "PaddingRight": "2pt",
+                    "PaddingTop": "2pt",
+                    "PaddingBottom": "2pt",
+                    "Color": "#1971b6"
+                },
+                "Left": "0.5in",
+                "Top": "1in",
+                "Width": "5.4896in",
+                "Height": "0.3333in"
+            },
+            {
+                "Type": "table",
+                "Name": "Table1",
+                "ZIndex": 6,
+                "DataSetName": "SRCInfo.SourceData",
+                "Style": {
+                    "Border": {
+                        "Color": "#1971b6",
+                        "Style": "Solid",
+                        "Width": "0.5pt"
+                    }
+                },
+                "TableColumns": [
+                    {
+                        "Width": "1.6632in"
+                    },
+                    {
+                        "Width": "1.6632in"
+                    },
+                    {
+                        "Width": "1.6632in"
+                    },
+                    {
+                        "Width": "1.6632in"
+                    },
+                    {
+                        "Width": "1.6632in"
+                    },
+                    {
+                        "Width": "1.6632in"
+                    }
+                ],
+                "Header": {
+                    "TableRows": [
+                        {
+                            "Height": "0.25in",
+                            "TableCells": [
+                                {
+                                    "Item": {
+                                        "Type": "textbox",
+                                        "Name": "TextBox3",
+                                        "CanGrow": true,
+                                        "KeepTogether": true,
+                                        "Value": "Subscriber ID",
+                                        "Style": {
+                                            "FontSize": "9pt",
+                                            "FontWeight": "SemiBold",
+                                            "PaddingLeft": "2pt",
+                                            "PaddingRight": "2pt",
+                                            "PaddingTop": "2pt",
+                                            "PaddingBottom": "2pt",
+                                            "Color": "#114b7a",
+                                            "TextAlign": "Left",
+                                            "VerticalAlign": "Middle",
+                                            "BackgroundColor": "#90cbf9"
+                                        },
+                                        "Width": "1.6632in",
+                                        "Height": "0.25in"
+                                    }
+                                },
+                                {
+                                    "Item": {
+                                        "Type": "textbox",
+                                        "Name": "TextBox4",
+                                        "CanGrow": true,
+                                        "KeepTogether": true,
+                                        "Value": "Subscriber Type",
+                                        "Style": {
+                                            "FontSize": "9pt",
+                                            "FontWeight": "SemiBold",
+                                            "PaddingLeft": "2pt",
+                                            "PaddingRight": "2pt",
+                                            "PaddingTop": "2pt",
+                                            "PaddingBottom": "2pt",
+                                            "Color": "#114b7a",
+                                            "TextAlign": "Left",
+                                            "VerticalAlign": "Middle",
+                                            "BackgroundColor": "#90cbf9"
+                                        },
+                                        "Width": "1.6632in",
+                                        "Height": "0.25in"
+                                    }
+                                },
+                                {
+                                    "Item": {
+                                        "Type": "textbox",
+                                        "Name": "TextBox5",
+                                        "CanGrow": true,
+                                        "KeepTogether": true,
+                                        "Value": "VIP Status",
+                                        "Style": {
+                                            "FontSize": "9pt",
+                                            "FontWeight": "SemiBold",
+                                            "PaddingLeft": "2pt",
+                                            "PaddingRight": "2pt",
+                                            "PaddingTop": "2pt",
+                                            "PaddingBottom": "2pt",
+                                            "Color": "#114b7a",
+                                            "TextAlign": "Left",
+                                            "VerticalAlign": "Middle",
+                                            "BackgroundColor": "#90cbf9"
+                                        },
+                                        "Width": "1.6632in",
+                                        "Height": "0.25in"
+                                    }
+                                },
+                                {
+                                    "Item": {
+                                        "Type": "textbox",
+                                        "Name": "TextBox6",
+                                        "CanGrow": true,
+                                        "KeepTogether": true,
+                                        "Value": "Open Balance Amount",
+                                        "Style": {
+                                            "FontSize": "9pt",
+                                            "FontWeight": "SemiBold",
+                                            "PaddingLeft": "2pt",
+                                            "PaddingRight": "2pt",
+                                            "PaddingTop": "2pt",
+                                            "PaddingBottom": "2pt",
+                                            "Color": "#114b7a",
+                                            "TextAlign": "Left",
+                                            "VerticalAlign": "Middle",
+                                            "BackgroundColor": "#90cbf9"
+                                        },
+                                        "Width": "1.6632in",
+                                        "Height": "0.25in"
+                                    }
+                                },
+                                {
+                                    "Item": {
+                                        "Type": "textbox",
+                                        "Name": "TextBox7",
+                                        "CanGrow": true,
+                                        "KeepTogether": true,
+                                        "Value": "Total Invoice Amount",
+                                        "Style": {
+                                            "FontSize": "9pt",
+                                            "FontWeight": "SemiBold",
+                                            "PaddingLeft": "2pt",
+                                            "PaddingRight": "2pt",
+                                            "PaddingTop": "2pt",
+                                            "PaddingBottom": "2pt",
+                                            "Color": "#114b7a",
+                                            "TextAlign": "Left",
+                                            "VerticalAlign": "Middle",
+                                            "BackgroundColor": "#90cbf9"
+                                        },
+                                        "Width": "1.6632in",
+                                        "Height": "0.25in"
+                                    }
+                                },
+                                {
+                                    "Item": {
+                                        "Type": "textbox",
+                                        "Name": "TextBox8",
+                                        "CanGrow": true,
+                                        "KeepTogether": true,
+                                        "Value": "Total Payment Amount",
+                                        "Style": {
+                                            "FontSize": "9pt",
+                                            "FontWeight": "SemiBold",
+                                            "PaddingLeft": "2pt",
+                                            "PaddingRight": "2pt",
+                                            "PaddingTop": "2pt",
+                                            "PaddingBottom": "2pt",
+                                            "Color": "#114b7a",
+                                            "TextAlign": "Left",
+                                            "VerticalAlign": "Middle",
+                                            "BackgroundColor": "#90cbf9"
+                                        },
+                                        "Width": "1.6632in",
+                                        "Height": "0.25in"
+                                    }
+                                }
+                            ]
+                        }
+                    ],
+                    "RepeatOnNewPage": true
+                },
+                "Details": {
+                    "TableRows": [
+                        {
+                            "Height": "0.25in",
+                            "TableCells": [
+                                {
+                                    "Item": {
+                                        "Type": "textbox",
+                                        "Name": "TextBox9",
+                                        "DataElementName": "SubscriberData.subscriber ID",
+                                        "CanGrow": true,
+                                        "KeepTogether": true,
+                                        "Value": "=Fields.Item(\"SubscriberData.subscriber ID\").Value",
+                                        "Style": {
+                                            "PaddingLeft": "2pt",
+                                            "PaddingRight": "2pt",
+                                            "PaddingTop": "2pt",
+                                            "PaddingBottom": "2pt",
+                                            "TextAlign": "Left",
+                                            "VerticalAlign": "Middle"
+                                        },
+                                        "Width": "1.6632in",
+                                        "Height": "0.25in"
+                                    }
+                                },
+                                {
+                                    "Item": {
+                                        "Type": "textbox",
+                                        "Name": "TextBox10",
+                                        "DataElementName": "SubscriberData.Subscriber Type",
+                                        "CanGrow": true,
+                                        "KeepTogether": true,
+                                        "Value": "=Fields.Item(\"SubscriberData.Subscriber Type\").Value",
+                                        "Style": {
+                                            "PaddingLeft": "2pt",
+                                            "PaddingRight": "2pt",
+                                            "PaddingTop": "2pt",
+                                            "PaddingBottom": "2pt",
+                                            "TextAlign": "Left",
+                                            "VerticalAlign": "Middle"
+                                        },
+                                        "Width": "1.6632in",
+                                        "Height": "0.25in"
+                                    }
+                                },
+                                {
+                                    "Item": {
+                                        "Type": "textbox",
+                                        "Name": "TextBox11",
+                                        "DataElementName": "SubscriberData.VIP Status",
+                                        "CanGrow": true,
+                                        "KeepTogether": true,
+                                        "Value": "=Fields.Item(\"SubscriberData.VIP Status\").Value",
+                                        "Style": {
+                                            "PaddingLeft": "2pt",
+                                            "PaddingRight": "2pt",
+                                            "PaddingTop": "2pt",
+                                            "PaddingBottom": "2pt",
+                                            "TextAlign": "Left",
+                                            "VerticalAlign": "Middle"
+                                        },
+                                        "Width": "1.6632in",
+                                        "Height": "0.25in"
+                                    }
+                                },
+                                {
+                                    "Item": {
+                                        "Type": "textbox",
+                                        "Name": "TextBox12",
+                                        "DataElementName": "SubscriberData.Open Balance Amount",
+                                        "CanGrow": true,
+                                        "KeepTogether": true,
+                                        "Value": "=Fields.Item(\"SubscriberData.Open Balance Amount\").Value",
+                                        "Style": {
+                                            "PaddingLeft": "2pt",
+                                            "PaddingRight": "2pt",
+                                            "PaddingTop": "2pt",
+                                            "PaddingBottom": "2pt",
+                                            "Format": "c2",
+                                            "TextAlign": "Left",
+                                            "VerticalAlign": "Middle"
+                                        },
+                                        "Width": "1.6632in",
+                                        "Height": "0.25in"
+                                    }
+                                },
+                                {
+                                    "Item": {
+                                        "Type": "textbox",
+                                        "Name": "TextBox13",
+                                        "DataElementName": "SubscriberData.Total Invoice Amount",
+                                        "CanGrow": true,
+                                        "KeepTogether": true,
+                                        "Value": "=Fields.Item(\"SubscriberData.Total Invoice Amount\").Value",
+                                        "Style": {
+                                            "PaddingLeft": "2pt",
+                                            "PaddingRight": "2pt",
+                                            "PaddingTop": "2pt",
+                                            "PaddingBottom": "2pt",
+                                            "Format": "c2",
+                                            "TextAlign": "Left",
+                                            "VerticalAlign": "Middle"
+                                        },
+                                        "Width": "1.6632in",
+                                        "Height": "0.25in"
+                                    }
+                                },
+                                {
+                                    "Item": {
+                                        "Type": "textbox",
+                                        "Name": "TextBox14",
+                                        "DataElementName": "SubscriberData.Total Payment Amount",
+                                        "CanGrow": true,
+                                        "KeepTogether": true,
+                                        "Value": "=Fields.Item(\"SubscriberData.Total Payment Amount\").Value",
+                                        "Style": {
+                                            "PaddingLeft": "2pt",
+                                            "PaddingRight": "2pt",
+                                            "PaddingTop": "2pt",
+                                            "PaddingBottom": "2pt",
+                                            "Format": "c2",
+                                            "TextAlign": "Left",
+                                            "VerticalAlign": "Middle"
+                                        },
+                                        "Width": "1.6632in",
+                                        "Height": "0.25in"
+                                    }
+                                }
+                            ]
+                        }
+                    ]
+                },
+                "Left": "0.5313in",
+                "Top": "1.5104in",
+                "Width": "9.9792in",
+                "Height": "0.5in"
+            },
+            {
+                "Type": "table",
+                "Name": "Table2",
+                "ZIndex": 7,
+                "DataSetName": "SRCInfo.TARInfo",
+                "Style": {
+                    "Border": {
+                        "Color": "#1971b6",
+                        "Style": "Solid",
+                        "Width": "0.5pt"
+                    }
+                },
+                "TableColumns": [
+                    {
+                        "Width": "1.6649in"
+                    },
+                    {
+                        "Width": "1.6649in"
+                    },
+                    {
+                        "Width": "1.6649in"
+                    },
+                    {
+                        "Width": "1.6649in"
+                    },
+                    {
+                        "Width": "1.6649in"
+                    },
+                    {
+                        "Width": "1.6651in"
+                    }
+                ],
+                "Header": {
+                    "TableRows": [
+                        {
+                            "Height": "0.25in",
+                            "TableCells": [
+                                {
+                                    "Item": {
+                                        "Type": "textbox",
+                                        "Name": "TextBox15",
+                                        "CanGrow": true,
+                                        "KeepTogether": true,
+                                        "Value": "Subscriber ID",
+                                        "Style": {
+                                            "FontSize": "9pt",
+                                            "FontWeight": "SemiBold",
+                                            "PaddingLeft": "2pt",
+                                            "PaddingRight": "2pt",
+                                            "PaddingTop": "2pt",
+                                            "PaddingBottom": "2pt",
+                                            "Color": "#114b7a",
+                                            "TextAlign": "Left",
+                                            "VerticalAlign": "Middle",
+                                            "BackgroundColor": "#90cbf9"
+                                        },
+                                        "Width": "1.6649in",
+                                        "Height": "0.25in"
+                                    }
+                                },
+                                {
+                                    "Item": {
+                                        "Type": "textbox",
+                                        "Name": "TextBox16",
+                                        "CanGrow": true,
+                                        "KeepTogether": true,
+                                        "Value": "Subscriber Type",
+                                        "Style": {
+                                            "FontSize": "9pt",
+                                            "FontWeight": "SemiBold",
+                                            "PaddingLeft": "2pt",
+                                            "PaddingRight": "2pt",
+                                            "PaddingTop": "2pt",
+                                            "PaddingBottom": "2pt",
+                                            "Color": "#114b7a",
+                                            "TextAlign": "Left",
+                                            "VerticalAlign": "Middle",
+                                            "BackgroundColor": "#90cbf9"
+                                        },
+                                        "Width": "1.6649in",
+                                        "Height": "0.25in"
+                                    }
+                                },
+                                {
+                                    "Item": {
+                                        "Type": "textbox",
+                                        "Name": "TextBox17",
+                                        "CanGrow": true,
+                                        "KeepTogether": true,
+                                        "Value": "VIP Status",
+                                        "Style": {
+                                            "FontSize": "9pt",
+                                            "FontWeight": "SemiBold",
+                                            "PaddingLeft": "2pt",
+                                            "PaddingRight": "2pt",
+                                            "PaddingTop": "2pt",
+                                            "PaddingBottom": "2pt",
+                                            "Color": "#114b7a",
+                                            "TextAlign": "Left",
+                                            "VerticalAlign": "Middle",
+                                            "BackgroundColor": "#90cbf9"
+                                        },
+                                        "Width": "1.6649in",
+                                        "Height": "0.25in"
+                                    }
+                                },
+                                {
+                                    "Item": {
+                                        "Type": "textbox",
+                                        "Name": "TextBox18",
+                                        "CanGrow": true,
+                                        "KeepTogether": true,
+                                        "Value": "Open Balance Amount",
+                                        "Style": {
+                                            "FontSize": "9pt",
+                                            "FontWeight": "SemiBold",
+                                            "PaddingLeft": "2pt",
+                                            "PaddingRight": "2pt",
+                                            "PaddingTop": "2pt",
+                                            "PaddingBottom": "2pt",
+                                            "Color": "#114b7a",
+                                            "TextAlign": "Left",
+                                            "VerticalAlign": "Middle",
+                                            "BackgroundColor": "#90cbf9"
+                                        },
+                                        "Width": "1.6649in",
+                                        "Height": "0.25in"
+                                    }
+                                },
+                                {
+                                    "Item": {
+                                        "Type": "textbox",
+                                        "Name": "TextBox19",
+                                        "CanGrow": true,
+                                        "KeepTogether": true,
+                                        "Value": "Total Invoice Amount",
+                                        "Style": {
+                                            "FontSize": "9pt",
+                                            "FontWeight": "SemiBold",
+                                            "PaddingLeft": "2pt",
+                                            "PaddingRight": "2pt",
+                                            "PaddingTop": "2pt",
+                                            "PaddingBottom": "2pt",
+                                            "Color": "#114b7a",
+                                            "TextAlign": "Left",
+                                            "VerticalAlign": "Middle",
+                                            "BackgroundColor": "#90cbf9"
+                                        },
+                                        "Width": "1.6649in",
+                                        "Height": "0.25in"
+                                    }
+                                },
+                                {
+                                    "Item": {
+                                        "Type": "textbox",
+                                        "Name": "TextBox20",
+                                        "CanGrow": true,
+                                        "KeepTogether": true,
+                                        "Value": "Total Payment Amount",
+                                        "Style": {
+                                            "FontSize": "9pt",
+                                            "FontWeight": "SemiBold",
+                                            "PaddingLeft": "2pt",
+                                            "PaddingRight": "2pt",
+                                            "PaddingTop": "2pt",
+                                            "PaddingBottom": "2pt",
+                                            "Color": "#114b7a",
+                                            "TextAlign": "Left",
+                                            "VerticalAlign": "Middle",
+                                            "BackgroundColor": "#90cbf9"
+                                        },
+                                        "Width": "1.6651in",
+                                        "Height": "0.25in"
+                                    }
+                                }
+                            ]
+                        }
+                    ],
+                    "RepeatOnNewPage": true
+                },
+                "Details": {
+                    "TableRows": [
+                        {
+                            "Height": "0.25in",
+                            "TableCells": [
+                                {
+                                    "Item": {
+                                        "Type": "textbox",
+                                        "Name": "TextBox21",
+                                        "DataElementName": "TargetData.TargetSubscriberData.subscriber ID",
+                                        "CanGrow": true,
+                                        "KeepTogether": true,
+                                        "Value": "=Fields.Item(\"TargetData.TargetSubscriberData.subscriber ID\").Value",
+                                        "Style": {
+                                            "PaddingLeft": "2pt",
+                                            "PaddingRight": "2pt",
+                                            "PaddingTop": "2pt",
+                                            "PaddingBottom": "2pt",
+                                            "TextAlign": "Left",
+                                            "VerticalAlign": "Middle"
+                                        },
+                                        "Width": "1.6649in",
+                                        "Height": "0.25in"
+                                    }
+                                },
+                                {
+                                    "Item": {
+                                        "Type": "textbox",
+                                        "Name": "TextBox22",
+                                        "DataElementName": "TargetData.TargetSubscriberData.Subscriber Type",
+                                        "CanGrow": true,
+                                        "KeepTogether": true,
+                                        "Value": "=Fields.Item(\"TargetData.TargetSubscriberData.Subscriber Type\").Value",
+                                        "Style": {
+                                            "PaddingLeft": "2pt",
+                                            "PaddingRight": "2pt",
+                                            "PaddingTop": "2pt",
+                                            "PaddingBottom": "2pt",
+                                            "TextAlign": "Left",
+                                            "VerticalAlign": "Middle"
+                                        },
+                                        "Width": "1.6649in",
+                                        "Height": "0.25in"
+                                    }
+                                },
+                                {
+                                    "Item": {
+                                        "Type": "textbox",
+                                        "Name": "TextBox23",
+                                        "DataElementName": "TargetData.TargetSubscriberData.VIP Status",
+                                        "CanGrow": true,
+                                        "KeepTogether": true,
+                                        "Value": "=Fields.Item(\"TargetData.TargetSubscriberData.VIP Status\").Value",
+                                        "Style": {
+                                            "PaddingLeft": "2pt",
+                                            "PaddingRight": "2pt",
+                                            "PaddingTop": "2pt",
+                                            "PaddingBottom": "2pt",
+                                            "TextAlign": "Left",
+                                            "VerticalAlign": "Middle"
+                                        },
+                                        "Width": "1.6649in",
+                                        "Height": "0.25in"
+                                    }
+                                },
+                                {
+                                    "Item": {
+                                        "Type": "textbox",
+                                        "Name": "TextBox24",
+                                        "DataElementName": "TargetData.TargetSubscriberData.Open Balance Amount",
+                                        "CanGrow": true,
+                                        "KeepTogether": true,
+                                        "Value": "=Fields.Item(\"TargetData.TargetSubscriberData.Open Balance Amount\").Value",
+                                        "Style": {
+                                            "PaddingLeft": "2pt",
+                                            "PaddingRight": "2pt",
+                                            "PaddingTop": "2pt",
+                                            "PaddingBottom": "2pt",
+                                            "Format": "c2",
+                                            "TextAlign": "Left",
+                                            "VerticalAlign": "Middle"
+                                        },
+                                        "Width": "1.6649in",
+                                        "Height": "0.25in"
+                                    }
+                                },
+                                {
+                                    "Item": {
+                                        "Type": "textbox",
+                                        "Name": "TextBox25",
+                                        "DataElementName": "TargetData.TargetSubscriberData.Total Invoice Amount",
+                                        "CanGrow": true,
+                                        "KeepTogether": true,
+                                        "Value": "=Fields.Item(\"TargetData.TargetSubscriberData.Total Invoice Amount\").Value",
+                                        "Style": {
+                                            "PaddingLeft": "2pt",
+                                            "PaddingRight": "2pt",
+                                            "PaddingTop": "2pt",
+                                            "PaddingBottom": "2pt",
+                                            "Format": "c2",
+                                            "TextAlign": "Left",
+                                            "VerticalAlign": "Middle"
+                                        },
+                                        "Width": "1.6649in",
+                                        "Height": "0.25in"
+                                    }
+                                },
+                                {
+                                    "Item": {
+                                        "Type": "textbox",
+                                        "Name": "TextBox26",
+                                        "DataElementName": "TargetData.TargetSubscriberData.Total Payment Amount",
+                                        "CanGrow": true,
+                                        "KeepTogether": true,
+                                        "Value": "=Fields.Item(\"TargetData.TargetSubscriberData.Total Payment Amount\").Value",
+                                        "Style": {
+                                            "PaddingLeft": "2pt",
+                                            "PaddingRight": "2pt",
+                                            "PaddingTop": "2pt",
+                                            "PaddingBottom": "2pt",
+                                            "Format": "c2",
+                                            "TextAlign": "Left",
+                                            "VerticalAlign": "Middle"
+                                        },
+                                        "Width": "1.6651in",
+                                        "Height": "0.25in"
+                                    }
+                                }
+                            ]
+                        }
+                    ]
+                },
+                "Left": "0.5in",
+                "Top": "2.7604in",
+                "Width": "9.9896in",
+                "Height": "0.5in"
+            },
+            {
+                "Type": "textbox",
+                "Name": "TextBox27",
+                "ZIndex": 8,
+                "CanGrow": true,
+                "KeepTogether": true,
+                "Value": "=\"Subscribers Data in: \" & Fields.Item(\"SRCInfo.TargetEnvName\").Value & \" (Target)\"",
+                "Style": {
+                    "FontSize": "14pt",
+                    "FontWeight": "SemiBold",
+                    "PaddingLeft": "2pt",
+                    "PaddingRight": "2pt",
+                    "PaddingTop": "2pt",
+                    "PaddingBottom": "2pt",
+                    "Color": "#1971b6"
+                },
+                "Left": "0.5in",
+                "Top": "2.3in",
+                "Width": "5.4896in",
+                "Height": "0.3333in"
+            },
+            {
+                "Type": "line",
+                "Name": "Line1",
+                "ZIndex": 9,
+                "StartPoint": {
+                    "X": "0.3in",
+                    "Y": "3.7744in"
+                },
+                "EndPoint": {
+                    "X": "10.7292in",
+                    "Y": "3.7536in"
+                },
+                "LineWidth": "2pt",
+                "LineStyle": "Dashed",
+                "LineColor": "#114b7a"
+            }
+        ]
+    },
+    "DataSets": [
+        {
+            "Name": "DataSet",
+            "Fields": [
+                {
+                    "Name": "SRCInfo.SourceEnvName",
+                    "DataField": "SRCInfo.SourceEnvName"
+                },
+                {
+                    "Name": "SRCInfo.SourceData",
+                    "DataField": "SRCInfo.SourceData"
+                },
+                {
+                    "Name": "SRCInfo.TargetEnvName",
+                    "DataField": "SRCInfo.TargetEnvName"
+                },
+                {
+                    "Name": "SRCInfo.TARInfo",
+                    "DataField": "SRCInfo.TARInfo"
+                }
+            ],
+            "Query": {
+                "DataSourceName": "fabricApi",
+                "CommandText": "=\"uri=BILLINGReport?SourceID=\" & Parameters!SourceID.Value & \"&TaskExecID=\" & Parameters!TaskExecID.Value & \";jpath=$\""
+            },
+            "CaseSensitivity": "Auto",
+            "KanatypeSensitivity": "Auto",
+            "AccentSensitivity": "Auto",
+            "WidthSensitivity": "Auto"
+        },
+        {
+            "Name": "SRCInfo.SourceData",
+            "Fields": [
+                {
+                    "Name": "SubscriberData.subscriber ID",
+                    "DataField": "SubscriberData.subscriber ID"
+                },
+                {
+                    "Name": "SubscriberData.Subscriber Type",
+                    "DataField": "SubscriberData.Subscriber Type"
+                },
+                {
+                    "Name": "SubscriberData.VIP Status",
+                    "DataField": "SubscriberData.VIP Status"
+                },
+                {
+                    "Name": "SubscriberData.Open Balance Amount",
+                    "DataField": "SubscriberData.Open Balance Amount"
+                },
+                {
+                    "Name": "SubscriberData.Total Invoice Amount",
+                    "DataField": "SubscriberData.Total Invoice Amount"
+                },
+                {
+                    "Name": "SubscriberData.Total Payment Amount",
+                    "DataField": "SubscriberData.Total Payment Amount"
+                }
+            ],
+            "Query": {
+                "DataSourceName": "$dataset:DataSet/SRCInfo.SourceData"
+            },
+            "CaseSensitivity": "Auto",
+            "KanatypeSensitivity": "Auto",
+            "AccentSensitivity": "Auto",
+            "WidthSensitivity": "Auto"
+        },
+        {
+            "Name": "SRCInfo.TARInfo",
+            "Fields": [
+                {
+                    "Name": "TargetData.TargetSubscriberData.subscriber ID",
+                    "DataField": "TargetData.TargetSubscriberData.subscriber ID"
+                },
+                {
+                    "Name": "TargetData.TargetSubscriberData.Subscriber Type",
+                    "DataField": "TargetData.TargetSubscriberData.Subscriber Type"
+                },
+                {
+                    "Name": "TargetData.TargetSubscriberData.VIP Status",
+                    "DataField": "TargetData.TargetSubscriberData.VIP Status"
+                },
+                {
+                    "Name": "TargetData.TargetSubscriberData.Open Balance Amount",
+                    "DataField": "TargetData.TargetSubscriberData.Open Balance Amount"
+                },
+                {
+                    "Name": "TargetData.TargetSubscriberData.Total Invoice Amount",
+                    "DataField": "TargetData.TargetSubscriberData.Total Invoice Amount"
+                },
+                {
+                    "Name": "TargetData.TargetSubscriberData.Total Payment Amount",
+                    "DataField": "TargetData.TargetSubscriberData.Total Payment Amount"
+                }
+            ],
+            "Query": {
+                "DataSourceName": "$dataset:DataSet/SRCInfo.TARInfo"
+            },
+            "CaseSensitivity": "Auto",
+            "KanatypeSensitivity": "Auto",
+            "AccentSensitivity": "Auto",
+            "WidthSensitivity": "Auto"
+        }
+    ]
+}

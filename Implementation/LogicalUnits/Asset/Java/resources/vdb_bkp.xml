@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<VirtualDB xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" version="">
+  <Name>vdb</Name>
+  <RootView>asset_transaction</RootView>
+  <CacheLocationType>Default</CacheLocationType>
+  <LuLazyDataUpdate syncMethod="None" performEvery="1.00:00:00" syncTimeout="0">
+  	<DecisionFunction></DecisionFunction>
+  </LuLazyDataUpdate>
+  <EventsList>
+  </EventsList>
+  <IidFinderProp>
+    <NumberOfPartitions>100</NumberOfPartitions>
+    <NumberOfJobs>50</NumberOfJobs>
+  </IidFinderProp>
+  <Tables>
+	 <Table>asset_transaction</Table>
+	 <Table>asset_sampling</Table>
+  </Tables>
+  <TablesProperties>
+	 <TableProperties name="asset_transaction">
+      <Populations>
+        <Population name="population.flow" order="1" disabled="false" populationType="FLOW" />
+      </Populations>
+    </TableProperties>
+	 <TableProperties name="asset_sampling">
+      <Populations>
+        <Population name="population.flow" order="3" disabled="false" populationType="FLOW" />
+      </Populations>
+    </TableProperties>
+  </TablesProperties>
+  <EnrichmentsOrderList>
+  </EnrichmentsOrderList>
+  <ReferencesList>
+  </ReferencesList>
+  <Relations />
+  <DatabaseRelations>
+	  <Relation>
+        <From tableType="TableObject" table="asset_transaction" column="transaction_id" columnId="transaction_id" />
+        <To tableType="TableObject" table="asset_sampling" populationObjectName="population.flow" column="transaction_id" columnId="transaction_id" />
+      </Relation>
+  </DatabaseRelations>
+  <DiagramGraph>
+    <Graph name="vdb.k2vdb.xml">
+      <Node name="asset_transaction" pos="119 131" viewType="Table" />
+      <Node name="asset_sampling" pos="505 81" viewType="Table" />
+    </Graph>
+  </DiagramGraph>
+</VirtualDB>

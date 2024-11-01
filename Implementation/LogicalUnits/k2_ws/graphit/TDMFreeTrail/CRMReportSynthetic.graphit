@@ -1,0 +1,501 @@
+{
+  "name": "CRMInfo",
+  "type": "function",
+  "code": "var target_env=null;\nvar target_id=null;\nvar source_env=null;\nvar target_entity_id=null;\nvar task=null;\nvar syn = 'Synthetic';",
+  "serializerSettings": [
+    {
+      "set": "nice",
+      "value": "true"
+    }
+  ],
+  "children": [
+    {
+      "name": "SourceInfo",
+      "type": "sql",
+      "code": "select environment_id as target_environment_id,source_env_name from public.task_execution_list where task_execution_id=${TaskExecID} limit 1",
+      "sessionProvider": "TDM",
+      "one": true,
+      "children": [
+        {
+          "type": "function",
+          "code": "target_id=target_environment_id;"
+        },
+        {
+          "name": "SourceEnvInfo",
+          "type": "function",
+          "code": "source_env=source_env_name;"
+        },
+        {
+          "name": "Condition",
+          "type": "condition",
+          "code": "source_env == syn ",
+          "children": [
+            {
+              "name": "TRUE",
+              "children": [
+                {
+                  "type": "sql",
+                  "code": "set environemnt ${source_env_name}",
+                  "sessionProvider": "fabric"
+                },
+                {
+                  "type": "sql",
+                  "code": "select * from public.customer where customer_id=${SourceID};",
+                  "sessionProvider": "CRM_DB",
+                  "children": [
+                    {
+                      "name": "Customer ID",
+                      "type": "variable",
+                      "code": "customer_id"
+                    },
+                    {
+                      "name": "SSN",
+                      "type": "variable",
+                      "code": "id_number"
+                    },
+                    {
+                      "name": "First Name",
+                      "type": "variable",
+                      "code": "first_name"
+                    },
+                    {
+                      "name": "Last Name",
+                      "type": "variable",
+                      "code": "last_name"
+                    },
+                    {
+                      "name": "Email",
+                      "type": "variable",
+                      "code": "email"
+                    },
+                    {
+                      "name": "Birthday",
+                      "type": "variable",
+                      "code": "birthday"
+                    },
+                    {
+                      "name": "Latest Score Type",
+                      "type": "sql",
+                      "code": "select distinct s.score_type\n    from score s, \n    (select customer_id, max(score_date) score_date from score group by customer_id) max_Score \n    where s.customer_id = ${SourceID} and s.customer_id = max_score.customer_id \n    and s.score_date = max_score.score_date;",
+                      "sessionProvider": "CRM_DB",
+                      "one": true
+                    },
+                    {
+                      "name": "Latest Score Value",
+                      "type": "sql",
+                      "code": "select distinct s.score_value \n    from score s, \n    (select customer_id, max(score_date) score_date from score group by customer_id) max_Score \n    where s.customer_id = ${SourceID} and s.customer_id = max_score.customer_id \n    and s.score_date = max_score.score_date;",
+                      "sessionProvider": "CRM_DB",
+                      "one": true
+                    },
+                    {
+                      "name": "List of open cases",
+                      "type": "sql",
+                      "code": "select count(ca.*)  \nfrom activity act, cases ca \nwhere act.customer_id = ${SourceID} \nand act.activity_id = ca.activity_id \nand ca.status <> 'Closed' ;",
+                      "sessionProvider": "CRM_DB",
+                      "one": true
+                    },
+                    {
+                      "name": "City",
+                      "type": "sql",
+                      "code": "select city from address where customer_id= ${SourceID} ;",
+                      "sessionProvider": "CRM_DB",
+                      "one": true
+                    }
+                  ]
+                },
+                {
+                  "type": "sql",
+                  "code": "select * from public.contract where customer_id=${SourceID};",
+                  "sessionProvider": "CRM_DB",
+                  "collapsed": true,
+                  "children": [
+                    {
+                      "name": "Contract ID",
+                      "type": "variable",
+                      "code": "contract_id"
+                    },
+                    {
+                      "name": "Contract Description",
+                      "type": "variable",
+                      "code": "contract_description"
+                    },
+                    {
+                      "name": "From Date",
+                      "type": "variable",
+                      "code": "from_date"
+                    },
+                    {
+                      "name": "To Date",
+                      "type": "variable",
+                      "code": "to_date"
+                    }
+                  ]
+                },
+                {
+                  "name": "TargetInfo",
+                  "type": "sql",
+                  "code": "select environment_name as target_env_name from public.environments where environments.environment_id=${target_id} ",
+                  "sessionProvider": "TDM",
+                  "one": true,
+                  "collapsed": true,
+                  "children": [
+                    {
+                      "type": "function",
+                      "code": "target_env=target_env_name;"
+                    },
+                    {
+                      "type": "sql",
+                      "code": "set environemnt ${target_env_name}",
+                      "sessionProvider": "fabric"
+                    },
+                    {
+                      "type": "sql",
+                      "code": "select distinct target_entity_id as TargetID from public.task_exe_stats_detailed where task_execution_id=${TaskExecID} and lu_name='CRM' and entity_id=${SourceID} limit 30",
+                      "children": [
+                        {
+                          "name": "target_id",
+                          "type": "function",
+                          "code": "target_entity_id = TargetID"
+                        }
+                      ]
+                    },
+                    {
+                      "name": "CustomerData",
+                      "type": "sql",
+                      "code": "select * from public.customer Where customer_id=${target_entity_id};",
+                      "sessionProvider": "TAR_CRM_DB",
+                      "children": [
+                        {
+                          "name": "Customer ID",
+                          "type": "variable",
+                          "code": "customer_id"
+                        },
+                        {
+                          "name": "SSN",
+                          "type": "variable",
+                          "code": "id_number"
+                        },
+                        {
+                          "name": "First Name",
+                          "type": "variable",
+                          "code": "first_name"
+                        },
+                        {
+                          "name": "Last Name",
+                          "type": "variable",
+                          "code": "last_name"
+                        },
+                        {
+                          "name": "Email",
+                          "type": "variable",
+                          "code": "email"
+                        },
+                        {
+                          "name": "Latest Score Type",
+                          "type": "sql",
+                          "code": "select distinct s.score_type\n    from score s,\n    (select customer_id, max(score_date) score_date from score group by customer_id) max_Score \n    where s.customer_id = ${target_entity_id} and s.customer_id = max_score.customer_id \n    and s.score_date = max_score.score_date;",
+                          "sessionProvider": "TAR_CRM_DB",
+                          "one": true
+                        },
+                        {
+                          "name": "Latest Score Value",
+                          "type": "sql",
+                          "code": "select distinct s.score_value \n    from score s, \n    (select customer_id, max(score_date) score_date from score group by customer_id) max_Score \n    where s.customer_id = ${target_entity_id} and s.customer_id = max_score.customer_id \n    and s.score_date = max_score.score_date;",
+                          "sessionProvider": "TAR_CRM_DB",
+                          "one": true
+                        },
+                        {
+                          "name": "List of open cases",
+                          "type": "sql",
+                          "code": "select count(ca.*)  \nfrom activity act, cases ca \nwhere act.customer_id = ${target_entity_id} \nand act.activity_id = ca.activity_id \nand ca.status <> 'Closed' ;",
+                          "sessionProvider": "TAR_CRM_DB",
+                          "one": true
+                        },
+                        {
+                          "name": "City",
+                          "type": "sql",
+                          "code": "select city from address where customer_id= ${target_entity_id};",
+                          "one": true,
+                          "sessionProvider": "TAR_CRM_DB"
+                        }
+                      ]
+                    },
+                    {
+                      "name": "ContractsData",
+                      "type": "sql",
+                      "code": "select * from public.contract where customer_id=${target_entity_id} ;",
+                      "sessionProvider": "TAR_CRM_DB",
+                      "collapsed": true,
+                      "children": [
+                        {
+                          "name": "Contract ID",
+                          "type": "variable",
+                          "code": "contract_id"
+                        },
+                        {
+                          "name": "Contract Description",
+                          "type": "variable",
+                          "code": "contract_description"
+                        },
+                        {
+                          "name": "From Date",
+                          "type": "variable",
+                          "code": "from_date"
+                        },
+                        {
+                          "name": "To Date",
+                          "type": "variable",
+                          "code": "to_date"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "FALSE",
+              "collapsed": true,
+              "children": [
+                {
+                  "type": "sql",
+                  "code": "set environemnt ${source_env_name}",
+                  "sessionProvider": "fabric"
+                },
+                {
+                  "name": "CustomerData",
+                  "type": "sql",
+                  "code": "select * from public.customer where customer_id=${SourceID};",
+                  "sessionProvider": "CRM_DB",
+                  "collapsed": true,
+                  "children": [
+                    {
+                      "name": "Customer ID",
+                      "type": "variable",
+                      "code": "customer_id"
+                    },
+                    {
+                      "name": "SSN",
+                      "type": "variable",
+                      "code": "id_number"
+                    },
+                    {
+                      "name": "First Name",
+                      "type": "variable",
+                      "code": "first_name"
+                    },
+                    {
+                      "name": "Last Name",
+                      "type": "variable",
+                      "code": "last_name"
+                    },
+                    {
+                      "name": "Email",
+                      "type": "variable",
+                      "code": "email"
+                    },
+                    {
+                      "name": "Latest Score Type",
+                      "type": "sql",
+                      "code": "select distinct s.score_type\n    from score s, \n    (select customer_id, max(score_date) score_date from score group by customer_id) max_Score \n    where s.customer_id = ${SourceID} and s.customer_id = max_score.customer_id \n    and s.score_date = max_score.score_date;",
+                      "sessionProvider": "CRM_DB",
+                      "one": true
+                    },
+                    {
+                      "name": "Latest Score Value",
+                      "type": "sql",
+                      "code": "select distinct s.score_value \n    from score s, \n    (select customer_id, max(score_date) score_date from score group by customer_id) max_Score \n    where s.customer_id = ${SourceID} and s.customer_id = max_score.customer_id \n    and s.score_date = max_score.score_date;",
+                      "sessionProvider": "CRM_DB",
+                      "one": true
+                    },
+                    {
+                      "name": "List of open cases",
+                      "type": "sql",
+                      "code": "select count(ca.*)  \nfrom activity act, cases ca \nwhere act.customer_id = ${SourceID} \nand act.activity_id = ca.activity_id \nand ca.status <> 'Closed' ;",
+                      "sessionProvider": "CRM_DB",
+                      "one": true
+                    },
+                    {
+                      "name": "City",
+                      "type": "sql",
+                      "code": "select city from address where customer_id= ${SourceID} ;",
+                      "sessionProvider": "CRM_DB",
+                      "one": true
+                    }
+                  ]
+                },
+                {
+                  "name": "ContractsData",
+                  "type": "sql",
+                  "code": "select * from public.contract where customer_id=${SourceID};",
+                  "sessionProvider": "CRM_DB",
+                  "collapsed": true,
+                  "children": [
+                    {
+                      "name": "Contract ID",
+                      "type": "variable",
+                      "code": "contract_id"
+                    },
+                    {
+                      "name": "Contract Description",
+                      "type": "variable",
+                      "code": "contract_description"
+                    },
+                    {
+                      "name": "From Date",
+                      "type": "variable",
+                      "code": "from_date"
+                    },
+                    {
+                      "name": "To Date",
+                      "type": "variable",
+                      "code": "to_date"
+                    }
+                  ]
+                },
+                {
+                  "name": "TargetInfo",
+                  "type": "sql",
+                  "code": "select environment_name as target_env_name from public.environments where environments.environment_id=${target_id} ",
+                  "sessionProvider": "TDM",
+                  "one": true,
+                  "collapsed": true,
+                  "children": [
+                    {
+                      "name": "TargetEnvInfo",
+                      "type": "function",
+                      "code": "target_env=target_env_name;"
+                    },
+                    {
+                      "type": "sql",
+                      "code": "set environemnt ${target_env_name}",
+                      "sessionProvider": "fabric"
+                    },
+                    {
+                      "type": "sql",
+                      "code": "select distinct target_entity_id as TargetID from public.task_exe_stats_detailed where task_execution_id=${TaskExecID} and lu_name='CRM' and entity_id=${SourceID} limit 30",
+                      "children": [
+                        {
+                          "name": "target_id",
+                          "type": "function",
+                          "code": "target_entity_id = TargetID"
+                        }
+                      ]
+                    },
+                    {
+                      "name": "CustomerData",
+                      "type": "sql",
+                      "code": "select * from public.customer Where customer_id=${target_entity_id};",
+                      "sessionProvider": "TAR_CRM_DB",
+                      "children": [
+                        {
+                          "name": "Customer ID",
+                          "type": "variable",
+                          "code": "customer_id"
+                        },
+                        {
+                          "name": "SSN",
+                          "type": "variable",
+                          "code": "id_number"
+                        },
+                        {
+                          "name": "First Name",
+                          "type": "variable",
+                          "code": "first_name"
+                        },
+                        {
+                          "name": "Last Name",
+                          "type": "variable",
+                          "code": "last_name"
+                        },
+                        {
+                          "name": "Email",
+                          "type": "variable",
+                          "code": "email"
+                        },
+                        {
+                          "name": "Latest Score Type",
+                          "type": "sql",
+                          "code": "select distinct s.score_type\n    from score s,\n    (select customer_id, max(score_date) score_date from score group by customer_id) max_Score \n    where s.customer_id = ${target_entity_id} and s.customer_id = max_score.customer_id \n    and s.score_date = max_score.score_date;",
+                          "sessionProvider": "TAR_CRM_DB",
+                          "one": true
+                        },
+                        {
+                          "name": "Latest Score Value",
+                          "type": "sql",
+                          "code": "select distinct s.score_value \n    from score s, \n    (select customer_id, max(score_date) score_date from score group by customer_id) max_Score \n    where s.customer_id = ${target_entity_id} and s.customer_id = max_score.customer_id \n    and s.score_date = max_score.score_date;",
+                          "sessionProvider": "TAR_CRM_DB",
+                          "one": true
+                        },
+                        {
+                          "name": "List of open cases",
+                          "type": "sql",
+                          "code": "select count(ca.*)  \nfrom activity act, cases ca \nwhere act.customer_id = ${target_entity_id} \nand act.activity_id = ca.activity_id \nand ca.status <> 'Closed' ;",
+                          "sessionProvider": "TAR_CRM_DB",
+                          "one": true
+                        },
+                        {
+                          "name": "City",
+                          "type": "sql",
+                          "code": "select city from address where customer_id= ${target_entity_id};",
+                          "one": true,
+                          "sessionProvider": "TAR_CRM_DB"
+                        }
+                      ]
+                    },
+                    {
+                      "name": "ContractsData",
+                      "type": "sql",
+                      "code": "select * from public.contract where customer_id=${target_entity_id} ;",
+                      "sessionProvider": "TAR_CRM_DB",
+                      "children": [
+                        {
+                          "name": "Contract ID",
+                          "type": "variable",
+                          "code": "contract_id"
+                        },
+                        {
+                          "name": "Contract Description",
+                          "type": "variable",
+                          "code": "contract_description"
+                        },
+                        {
+                          "name": "From Date",
+                          "type": "variable",
+                          "code": "from_date"
+                        },
+                        {
+                          "name": "To Date",
+                          "type": "variable",
+                          "code": "to_date"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "params": [
+    {
+      "name": "SourceID",
+      "dataType": "String",
+      "description": "",
+      "mandatory": true
+    },
+    {
+      "name": "TaskExecID",
+      "dataType": "String",
+      "description": "",
+      "mandatory": true
+    }
+  ],
+  "exposeAsEndpoint": true,
+  "path": "",
+  "requireAuth": true,
+  "additionalPermissions": []
+}

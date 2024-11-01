@@ -1,0 +1,393 @@
+{
+	"levels": [
+		{
+			"stages": [
+				{
+					"name": "Input",
+					"dependsOnList": [],
+					"isLast": 0,
+					"actors": [
+						{
+							"name": "PopulationArgs",
+							"actorType": {
+								"parentType": "PopulationArgs",
+								"readOnly": true,
+								"inputs": [
+									{
+										"name": "asset_location_id",
+										"schema": {}
+									},
+									{
+										"name": "transaction_id",
+										"schema": {}
+									},
+									{
+										"name": "asset_id",
+										"schema": {}
+									},
+									{
+										"name": "asset_location_geocoded",
+										"schema": {}
+									},
+									{
+										"name": "asset_telemetry",
+										"schema": {}
+									},
+									{
+										"name": "asset_location_timestamp",
+										"schema": {}
+									}
+								],
+								"outputs": []
+							}
+						},
+						{
+							"name": "SyncDeleteMode",
+							"actorType": {
+								"parentType": "SyncDeleteMode",
+								"inputs": [
+									{
+										"name": "table",
+										"const": null
+									}
+								],
+								"outputs": []
+							}
+						}
+					]
+				}
+			]
+		},
+		{
+			"stages": [
+				{
+					"name": "Source",
+					"dependsOnList": [],
+					"isLast": 0,
+					"actors": [
+						{
+							"name": "Query",
+							"actorType": {
+								"parentType": "SourceDbQuery",
+								"inputs": [
+									{
+										"name": "interface",
+										"const": "ASSET_DB"
+									},
+									{
+										"name": "sql",
+										"const": "select * from public.asset_sampling"
+									}
+								],
+								"outputs": [
+									{
+										"name": "result",
+										"schema": {
+											"type": "object",
+											"properties": {
+												"asset_location_id": {
+													"type": {}
+												},
+"transaction_id": {
+													"type": {}
+												},
+"asset_id": {
+													"type": {}
+												},
+"asset_location_geocoded": {
+													"type": {}
+												},
+"asset_telemetry": {
+													"type": {}
+												},
+"asset_location_timestamp": {
+													"type": {}
+												}
+											}
+										}
+									}
+								]
+							}
+                       },
+                        {
+                            "name": "Get SEQ_CACHE_INTERFACE",
+                            "actorType": {
+                                "parentType": "FabricSetRead",
+                                "inputs": [
+                                    {
+                                        "name": "key",
+                                        "const": "SEQ_CACHE_INTERFACE",
+                                        "isDefault": false
+                                    }
+                                ],
+                                "outputs": []
+                            }
+                        }						  
+					]
+				}
+			]
+		},
+		{
+			"stages": [
+				{
+					"name": "Mask Data Based On Catalog",
+					"dependsOnList": [],
+					"isLast": 0,
+					"actors": [
+                        {
+                            "name": "Catalog Masking Mapper",
+                            "actorType": {
+                                "parentType": "CatalogMaskingMapper",
+                                "inputs": [
+                                    {
+                                        "name": "dataPlatform",
+                                        "const": "ASSET_DB"
+                                    },
+                                    {
+                                        "name": "interface",
+                                        "const": null
+                                    },
+                                    {
+                                        "name": "dataset",
+                                        "const": "asset_sampling"
+                                    },
+                                    {
+                                        "name": "schema",
+                                        "const": "public"
+                                    }
+                                ],
+                                "outputs": []
+                            }
+                        }
+                    ]
+                }
+            ]
+		},
+		{
+			"stages": [
+				{
+					"name": "LU Table",
+					"dependsOnList": [],
+					"isLast": 1,
+					"actors": [
+						{
+							"name": "asset_sampling",
+							"actorType": {
+								"parentType": "DbLoad",
+								"inputs": [
+									{
+										"name": "interface",
+										"const": "fabric"
+									},
+									{
+										"name": "schema",
+										"const": null
+									},
+									{
+										"name": "table",
+										"const": null
+									},
+									{
+										"name": "fields",
+										"const": [
+											"asset_location_id",
+											"transaction_id",
+											"asset_id",
+											"asset_location_geocoded",
+											"asset_telemetry",
+											"asset_location_timestamp"
+										]
+									},
+									{
+										"name": "keys",
+										"const": [
+										]
+									},
+									{
+										"name": "dialect",
+										"const": "sqlite"
+									},
+									{
+										"name": "asset_location_id",
+										"schema": {}
+									},
+									{
+										"name": "transaction_id",
+										"schema": {}
+									},
+									{
+										"name": "asset_id",
+										"schema": {}
+									},
+									{
+										"name": "asset_location_geocoded",
+										"schema": {}
+									},
+									{
+										"name": "asset_telemetry",
+										"schema": {}
+									},
+									{
+										"name": "asset_location_timestamp",
+										"schema": {}
+									}
+								],
+								"outputs": []
+							}
+						}
+					]
+				}
+			]
+		},
+		{
+			"stages": [
+				{
+					"name": "Post Load",
+					"dependsOnList": [],
+					"isLast": 0,
+					"actors": []
+				}
+			]
+		}
+	],
+	"connections": [
+		{
+			"leftPort": {
+				"actor": "PopulationArgs",
+				"name": "parent_rows"
+			},
+			"rightPort": {
+				"actor": "Query",
+				"name": "parent_rows"
+			}
+		},
+		{
+			"leftPort": {
+				"actor": "Catalog Masking Mapper",
+				"name": "values"
+			},
+			"rightPort": {
+				"actor": "asset_sampling",
+				"name": "params"
+			},
+			"iterate": "Iterate"
+		},
+		{
+			"leftPort": {
+				"actor": "Query",
+				"name": "result"
+			},
+			"rightPort": {
+				"actor": "Catalog Masking Mapper",
+				"name": "values"
+			 
+			}
+		},
+		{
+			"leftPort": {
+              "actor": "Get SEQ_CACHE_INTERFACE",
+                "name": "result"
+            },
+            "rightPort": {
+                "actor": "Catalog Masking Mapper",
+                "name": "interface"
+            }
+        },
+        {
+            "leftPort": {											   
+				"actor": "flowArgs",
+				"name": "schema"
+			},
+			"rightPort": {
+				"actor": "asset_sampling",
+				"name": "schema"
+			}
+		},
+		{
+			"leftPort": {
+				"actor": "flowArgs",
+				"name": "table"
+			},
+			"rightPort": {
+				"actor": "asset_sampling",
+				"name": "table"
+			}
+		},
+		{
+			"leftPort": {
+				"actor": "flowArgs",
+				"name": "table"
+			},
+			"rightPort": {
+				"actor": "SyncDeleteMode",
+				"name": "table"
+			}
+		},
+		{
+			"leftPort": {
+				"actor": "flowArgs",
+				"name": "asset_location_id"
+			},
+			"rightPort": {
+				"actor": "PopulationArgs",
+				"name": "asset_location_id"
+			 
+			}
+		},
+		{
+			"leftPort": {
+				"actor": "flowArgs",
+				"name": "transaction_id"
+			},
+			"rightPort": {
+				"actor": "PopulationArgs",
+				"name": "transaction_id"
+			 
+			}
+		},
+		{
+			"leftPort": {
+				"actor": "flowArgs",
+				"name": "asset_id"
+			},
+			"rightPort": {
+				"actor": "PopulationArgs",
+				"name": "asset_id"
+			 
+			}
+		},
+		{
+			"leftPort": {
+				"actor": "flowArgs",
+				"name": "asset_location_geocoded"
+			},
+			"rightPort": {
+				"actor": "PopulationArgs",
+				"name": "asset_location_geocoded"
+			 
+			}
+		},
+		{
+			"leftPort": {
+				"actor": "flowArgs",
+				"name": "asset_telemetry"
+			},
+			"rightPort": {
+				"actor": "PopulationArgs",
+				"name": "asset_telemetry"
+			 
+			}
+		},
+		{
+			"leftPort": {
+				"actor": "flowArgs",
+				"name": "asset_location_timestamp"
+			},
+			"rightPort": {
+				"actor": "PopulationArgs",
+				"name": "asset_location_timestamp"
+			 
+			}
+		}
+	]
+}

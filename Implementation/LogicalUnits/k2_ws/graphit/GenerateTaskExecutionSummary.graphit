@@ -1,0 +1,71 @@
+{
+  "name": "TaskExecSummary",
+  "type": "string",
+  "nodeId": "ef15992f-f2f9-47f4-bbd7-09c3eb405366",
+  "code": "",
+  "serializerSettings": [
+    {
+      "set": "nice",
+      "value": "true"
+    }
+  ],
+  "children": [
+    {
+      "name": "GetInfo",
+      "type": "sql",
+      "nodeId": "6e215fa9-d1c3-4a33-b33c-d2928f9fe778",
+      "code": "select environment_id as target_environment_id,source_env_name from public.task_execution_list where task_execution_id=${TaskExecID} limit 1",
+      "sessionProvider": "TDM",
+      "children": [
+        {
+          "name": "source_env_name",
+          "type": "variable",
+          "nodeId": "726f420d-ac10-437b-9368-021a26cfa8e8",
+          "code": "source_env_name",
+          "one": true
+        },
+        {
+          "name": "target_env_name",
+          "type": "sql",
+          "nodeId": "ceff2db3-5f1c-40f8-abb8-e9a4f0ef304c",
+          "code": "select environment_name as target_env_name from public.environments where environments.environment_id=${target_environment_id} ",
+          "one": true,
+          "sessionProvider": "TDM"
+        }
+      ]
+    },
+    {
+      "name": "entityList",
+      "type": "sql",
+      "nodeId": "7d3a02cd-f9d2-4611-ae70-62cb93b3f5b0",
+      "code": "select distinct target_entity_id as target_entity_id, entity_id as source_entity_id from public.task_exe_stats_detailed where task_execution_id=${TaskExecID} and lu_name='CRM'",
+      "sessionProvider": "TDM",
+      "children": [
+        {
+          "name": "source_entity_id",
+          "type": "variable",
+          "nodeId": "b4472764-6be7-4da3-bd79-73927312f571",
+          "code": "source_entity_id"
+        },
+        {
+          "name": "target_entity_id",
+          "type": "variable",
+          "nodeId": "e1ac1c0e-ce5a-4bd7-9d27-a3a266eff5e3",
+          "code": "target_entity_id"
+        }
+      ]
+    }
+  ],
+  "params": [
+    {
+      "name": "TaskExecID",
+      "dataType": "String",
+      "description": "",
+      "mandatory": true
+    }
+  ],
+  "exposeAsEndpoint": true,
+  "path": "",
+  "requireAuth": true,
+  "additionalPermissions": []
+}

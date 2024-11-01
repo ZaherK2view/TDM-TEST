@@ -1,0 +1,347 @@
+{
+	"levels": [
+		{
+			"stages": [
+				{
+					"name": "Input",
+					"dependsOnList": [],
+					"isLast": 0,
+					"actors": [
+						{
+							"name": "PopulationArgs",
+							"actorType": {
+								"parentType": "PopulationArgs",
+								"readOnly": true,
+								"inputs": [
+									{
+										"name": "customer_id",
+										"schema": {}
+									},
+									{
+										"name": "score_date",
+										"schema": {}
+									},
+									{
+										"name": "score_type",
+										"schema": {}
+									},
+									{
+										"name": "score_value",
+										"schema": {}
+									}
+								],
+								"outputs": []
+							}
+						},
+						{
+							"name": "SyncDeleteMode",
+							"actorType": {
+								"parentType": "SyncDeleteMode",
+								"inputs": [
+									{
+										"name": "table",
+										"const": null
+									}
+								],
+								"outputs": []
+							}
+						}
+					]
+				}
+			]
+		},
+		{
+			"stages": [
+				{
+					"name": "Source",
+					"dependsOnList": [],
+					"isLast": 0,
+					"actors": [
+						{
+							"name": "Query",
+							"actorType": {
+								"parentType": "SourceDbQuery",
+								"inputs": [
+									{
+										"name": "interface",
+										"const": "CRM_DB"
+									},
+									{
+										"name": "sql",
+										"const": "select * from public.score"
+									}
+								],
+								"outputs": [
+									{
+										"name": "result",
+										"schema": {
+											"type": "object",
+											"properties": {
+												"customer_id": {
+													"type": {}
+												},
+"score_date": {
+													"type": {}
+												},
+"score_type": {
+													"type": {}
+												},
+"score_value": {
+													"type": {}
+												}
+											}
+										}
+									}
+								]
+							}
+                       },
+                        {
+                            "name": "Get SEQ_CACHE_INTERFACE",
+                            "actorType": {
+                                "parentType": "FabricSetRead",
+                                "inputs": [
+                                    {
+                                        "name": "key",
+                                        "const": "SEQ_CACHE_INTERFACE",
+                                        "isDefault": false
+                                    }
+                                ],
+                                "outputs": []
+                            }
+                        }						  
+					]
+				}
+			]
+		},
+		{
+			"stages": [
+				{
+					"name": "Mask Data Based On Catalog",
+					"dependsOnList": [],
+					"isLast": 0,
+					"actors": [
+                        {
+                            "name": "Catalog Masking Mapper",
+                            "actorType": {
+                                "parentType": "CatalogMaskingMapper",
+                                "inputs": [
+                                    {
+                                        "name": "dataPlatform",
+                                        "const": "CRM_DB"
+                                    },
+                                    {
+                                        "name": "interface",
+                                        "const": null
+                                    },
+                                    {
+                                        "name": "dataset",
+                                        "const": "score"
+                                    },
+                                    {
+                                        "name": "schema",
+                                        "const": "public"
+                                    }
+                                ],
+                                "outputs": []
+                            }
+                        }
+                    ]
+                }
+            ]
+		},
+		{
+			"stages": [
+				{
+					"name": "LU Table",
+					"dependsOnList": [],
+					"isLast": 1,
+					"actors": [
+						{
+							"name": "score",
+							"actorType": {
+								"parentType": "DbLoad",
+								"inputs": [
+									{
+										"name": "interface",
+										"const": "fabric"
+									},
+									{
+										"name": "schema",
+										"const": null
+									},
+									{
+										"name": "table",
+										"const": null
+									},
+									{
+										"name": "fields",
+										"const": [
+											"customer_id",
+											"score_date",
+											"score_type",
+											"score_value"
+										]
+									},
+									{
+										"name": "keys",
+										"const": [
+										]
+									},
+									{
+										"name": "dialect",
+										"const": "sqlite"
+									},
+									{
+										"name": "customer_id",
+										"schema": {}
+									},
+									{
+										"name": "score_date",
+										"schema": {}
+									},
+									{
+										"name": "score_type",
+										"schema": {}
+									},
+									{
+										"name": "score_value",
+										"schema": {}
+									}
+								],
+								"outputs": []
+							}
+						}
+					]
+				}
+			]
+		},
+		{
+			"stages": [
+				{
+					"name": "Post Load",
+					"dependsOnList": [],
+					"isLast": 0,
+					"actors": []
+				}
+			]
+		}
+	],
+	"connections": [
+		{
+			"leftPort": {
+				"actor": "PopulationArgs",
+				"name": "parent_rows"
+			},
+			"rightPort": {
+				"actor": "Query",
+				"name": "parent_rows"
+			}
+		},
+		{
+			"leftPort": {
+				"actor": "Catalog Masking Mapper",
+				"name": "values"
+			},
+			"rightPort": {
+				"actor": "score",
+				"name": "params"
+			},
+			"iterate": "Iterate"
+		},
+		{
+			"leftPort": {
+				"actor": "Query",
+				"name": "result"
+			},
+			"rightPort": {
+				"actor": "Catalog Masking Mapper",
+				"name": "values"
+			 
+			}
+		},
+		{
+			"leftPort": {
+              "actor": "Get SEQ_CACHE_INTERFACE",
+                "name": "result"
+            },
+            "rightPort": {
+                "actor": "Catalog Masking Mapper",
+                "name": "interface"
+            }
+        },
+        {
+            "leftPort": {											   
+				"actor": "flowArgs",
+				"name": "schema"
+			},
+			"rightPort": {
+				"actor": "score",
+				"name": "schema"
+			}
+		},
+		{
+			"leftPort": {
+				"actor": "flowArgs",
+				"name": "table"
+			},
+			"rightPort": {
+				"actor": "score",
+				"name": "table"
+			}
+		},
+		{
+			"leftPort": {
+				"actor": "flowArgs",
+				"name": "table"
+			},
+			"rightPort": {
+				"actor": "SyncDeleteMode",
+				"name": "table"
+			}
+		},
+		{
+			"leftPort": {
+				"actor": "flowArgs",
+				"name": "customer_id"
+			},
+			"rightPort": {
+				"actor": "PopulationArgs",
+				"name": "customer_id"
+			 
+			}
+		},
+		{
+			"leftPort": {
+				"actor": "flowArgs",
+				"name": "score_date"
+			},
+			"rightPort": {
+				"actor": "PopulationArgs",
+				"name": "score_date"
+			 
+			}
+		},
+		{
+			"leftPort": {
+				"actor": "flowArgs",
+				"name": "score_type"
+			},
+			"rightPort": {
+				"actor": "PopulationArgs",
+				"name": "score_type"
+			 
+			}
+		},
+		{
+			"leftPort": {
+				"actor": "flowArgs",
+				"name": "score_value"
+			},
+			"rightPort": {
+				"actor": "PopulationArgs",
+				"name": "score_value"
+			 
+			}
+		}
+	]
+}

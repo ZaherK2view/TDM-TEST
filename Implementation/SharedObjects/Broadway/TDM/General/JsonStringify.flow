@@ -1,0 +1,49 @@
+{
+    "tags": [
+        "TDM",
+        "TDMGeneral"
+    ],
+    "levels": [
+        {
+            "stages": [
+                {
+                    "name": "Stage 1",
+                    "dependsOnList": [],
+                    "isLast": 0,
+                    "actors": [
+                        {
+                            "name": "JsonStringify1",
+                            "actorType": {
+                                "parentType": "JsonStringify",
+                                "inputs": [],
+                                "outputs": []
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "connections": [
+        {
+            "leftPort": {
+                "actor": "flowArgs",
+                "name": "object"
+            },
+            "rightPort": {
+                "actor": "JsonStringify1",
+                "name": "object"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "JsonStringify1",
+                "name": "string"
+            },
+            "rightPort": {
+                "actor": "flowArgs",
+                "name": "string"
+            }
+        }
+    ]
+}

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableObject xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Name>asset</Name>
+  <ID>tbl_asset</ID>
+  <Columns>
+    <Column name="asset_id" id="asset_id" index="0" datatype="TEXT" />
+    <Column name="asset_type" id="asset_type" index="1" datatype="TEXT" />
+    <Column name="asset_imei" id="asset_imei" index="2" datatype="TEXT" />
+    <Column name="asset_description" id="asset_description" index="3" datatype="TEXT" />
+    <Column name="asset_status" id="asset_status" index="4" datatype="TEXT" />
+    <Column name="asset_registration" id="asset_registration" index="5" datatype="TEXT" />
+  </Columns>
+  <IndexesList>
+  </IndexesList>
+  <EnrichmentList>
+  </EnrichmentList>
+  <LazyDataUpdate syncMethod="Inherited" performEvery="1.00:00:00">
+    <DecisionFunction></DecisionFunction>
+  </LazyDataUpdate>
+  <TriggersList>
+  </TriggersList>
+</TableObject>

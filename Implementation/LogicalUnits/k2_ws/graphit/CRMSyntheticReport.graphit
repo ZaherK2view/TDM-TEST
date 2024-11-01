@@ -1,0 +1,398 @@
+{
+  "name": "CRMInfo",
+  "type": "function",
+  "code": "var target_env=null;\nvar target_id=null;\nvar source_env=null;\nvar target_entity_id=null;",
+  "serializerSettings": [
+    {
+      "set": "nice",
+      "value": "true"
+    }
+  ],
+  "children": [
+    {
+      "type": "sql",
+      "code": "select environment_id as target_environment_id,source_env_name from public.task_execution_list where task_execution_id=${TaskExecID} limit 1",
+      "sessionProvider": "TDM",
+      "one": true,
+      "collapsed": true,
+      "children": [
+        {
+          "type": "function",
+          "code": "target_id=target_environment_id;"
+        },
+        {
+          "name": "SourceEnvInfo",
+          "type": "function",
+          "code": "source_env=source_env_name;"
+        },
+        {
+          "type": "sql",
+          "code": "set environemnt ${source_env_name}",
+          "sessionProvider": "fabric"
+        }
+      ]
+    },
+    {
+      "name": "TargetInfo",
+      "type": "sql",
+      "code": "select environment_name as target_env_name from public.environments where environments.environment_id=${target_id} ",
+      "sessionProvider": "TDM",
+      "one": true,
+      "children": [
+        {
+          "name": "TargetEnvInfo",
+          "type": "function",
+          "code": "target_env=target_env_name;"
+        },
+        {
+          "type": "sql",
+          "code": "set environemnt ${target_env_name}",
+          "sessionProvider": "fabric"
+        },
+        {
+          "name": "Customer Data",
+          "type": "sql",
+          "code": "select * from public.customer Where customer_id=${EntityID};",
+          "sessionProvider": "TAR_CRM_DB",
+          "children": [
+            {
+              "name": "Customer ID",
+              "type": "variable",
+              "code": "customer_id"
+            },
+            {
+              "name": "ID Number",
+              "type": "variable",
+              "code": "id_number"
+            },
+            {
+              "name": "First Name",
+              "type": "variable",
+              "code": "first_name"
+            },
+            {
+              "name": "Last Name",
+              "type": "variable",
+              "code": "last_name"
+            },
+            {
+              "name": "Email",
+              "type": "variable",
+              "code": "email"
+            },
+            {
+              "name": "Primary Phone",
+              "type": "variable",
+              "code": "primary_phone"
+            },
+            {
+              "name": "Additional Phone",
+              "type": "variable",
+              "code": "additional_phone"
+            },
+            {
+              "name": "Social Network FaceBook",
+              "type": "variable",
+              "code": "social_net_fb"
+            },
+            {
+              "name": "Social Network Twitter",
+              "type": "variable",
+              "code": "social_net_tw"
+            },
+            {
+              "name": "Social Network LinkedIn",
+              "type": "variable",
+              "code": "social_net_lnk"
+            },
+            {
+              "name": "Occupation",
+              "type": "variable",
+              "code": "occupation"
+            },
+            {
+              "name": "Birth Date",
+              "type": "variable",
+              "code": "birthday"
+            }
+          ]
+        },
+        {
+          "name": "Contracts Data",
+          "type": "sql",
+          "code": "select * from public.contract where customer_id=${EntityID} ;",
+          "sessionProvider": "TAR_CRM_DB",
+          "collapsed": true,
+          "children": [
+            {
+              "name": "Contract ID",
+              "type": "variable",
+              "code": "contract_id"
+            },
+            {
+              "name": "Contract Description",
+              "type": "variable",
+              "code": "contract_description"
+            },
+            {
+              "name": "From Date",
+              "type": "variable",
+              "code": "from_date"
+            },
+            {
+              "name": "To Date",
+              "type": "variable",
+              "code": "to_date"
+            }
+          ]
+        },
+        {
+          "name": "Address Data",
+          "type": "sql",
+          "code": "select * from public.address where customer_id=${EntityID} ;",
+          "sessionProvider": "TAR_CRM_DB",
+          "collapsed": true,
+          "children": [
+            {
+              "name": "Address ID",
+              "type": "variable",
+              "code": "address_id"
+            },
+            {
+              "name": "Street Address 1",
+              "type": "variable",
+              "code": "street_address_1"
+            },
+            {
+              "name": "Street Address 2",
+              "type": "variable",
+              "code": "street_address_2"
+            },
+            {
+              "name": "City",
+              "type": "variable",
+              "code": "city"
+            },
+            {
+              "name": "Zip",
+              "type": "variable",
+              "code": "zip"
+            },
+            {
+              "name": "State",
+              "type": "variable",
+              "code": "state"
+            },
+            {
+              "name": "Country",
+              "type": "variable",
+              "code": "country"
+            }
+          ]
+        },
+        {
+          "name": "Activity Data",
+          "type": "sql",
+          "code": "select * from public.activity where customer_id=${EntityID} ;",
+          "sessionProvider": "TAR_CRM_DB",
+          "collapsed": true,
+          "children": [
+            {
+              "name": "Activity ID",
+              "type": "variable",
+              "code": "activity_id"
+            },
+            {
+              "name": "Activity Date",
+              "type": "variable",
+              "code": "activity_date"
+            },
+            {
+              "name": "Activity Note",
+              "type": "variable",
+              "code": "activity_note"
+            }
+          ]
+        },
+        {
+          "name": "Cases Data",
+          "type": "sql",
+          "code": "select *\n from public.cases where activity_id in (select activity_id from public.activity where customer_id=${EntityID});",
+          "sessionProvider": "TAR_CRM_DB",
+          "collapsed": true,
+          "children": [
+            {
+              "name": "Activity ID",
+              "type": "variable",
+              "code": "activity_id"
+            },
+            {
+              "name": "Case ID",
+              "type": "variable",
+              "code": "case_id"
+            },
+            {
+              "name": "Case Date",
+              "type": "variable",
+              "code": "case_date"
+            },
+            {
+              "name": "Case Type",
+              "type": "variable",
+              "code": "case_type"
+            },
+            {
+              "name": "Status",
+              "type": "variable",
+              "code": "status"
+            }
+          ]
+        },
+        {
+          "name": "Case Note Data",
+          "type": "sql",
+          "code": "select *\nfrom public.case_note where case_id in (select case_id from public.cases where activity_id in (select activity_id from public.activity where customer_id=${EntityID}));\n",
+          "sessionProvider": "TAR_CRM_DB",
+          "collapsed": true,
+          "children": [
+            {
+              "name": "Case ID",
+              "type": "variable",
+              "code": "case_id"
+            },
+            {
+              "name": "Note ID",
+              "type": "variable",
+              "code": "note_id"
+            },
+            {
+              "name": "Note Date",
+              "type": "variable",
+              "code": "note_date"
+            },
+            {
+              "name": "Note Text",
+              "type": "variable",
+              "code": "note_text"
+            }
+          ]
+        },
+        {
+          "name": "Payment Methods Data",
+          "type": "sql",
+          "code": "select * from public.payment_methods where customer_id=${EntityID}",
+          "sessionProvider": "TAR_CRM_DB",
+          "collapsed": true,
+          "children": [
+            {
+              "name": "Credit Card Number",
+              "type": "variable",
+              "code": "credit_card_number"
+            },
+            {
+              "name": "CC Company",
+              "type": "variable",
+              "code": "cc_company"
+            },
+            {
+              "name": "Account Number",
+              "type": "variable",
+              "code": "account_number"
+            },
+            {
+              "name": "Paypal ID",
+              "type": "variable",
+              "code": "paypal_id"
+            }
+          ]
+        },
+        {
+          "name": "Recommendations Data",
+          "type": "sql",
+          "code": "select * from public.recommendations where customer_id=${EntityID}",
+          "sessionProvider": "TAR_CRM_DB",
+          "collapsed": true,
+          "children": [
+            {
+              "name": "Station Name",
+              "type": "variable",
+              "code": "station_name"
+            },
+            {
+              "name": "Station City",
+              "type": "variable",
+              "code": "station_city"
+            },
+            {
+              "name": "Station Geopos",
+              "type": "variable",
+              "code": "station_geopos"
+            },
+            {
+              "name": "Station Availability",
+              "type": "variable",
+              "code": "station_availability"
+            },
+            {
+              "name": "Station Capacity",
+              "type": "variable",
+              "code": "station_capacity"
+            },
+            {
+              "name": "Event Type",
+              "type": "variable",
+              "code": "event_type"
+            },
+            {
+              "name": "Station ID",
+              "type": "variable",
+              "code": "station_id"
+            }
+          ]
+        },
+        {
+          "name": "Score Data",
+          "type": "sql",
+          "code": "select * from public.score where customer_id=${EntityID};",
+          "sessionProvider": "TAR_CRM_DB",
+          "collapsed": true,
+          "children": [
+            {
+              "name": "Score Date",
+              "type": "variable",
+              "code": "score_date"
+            },
+            {
+              "name": "Score Type",
+              "type": "variable",
+              "code": "score_type"
+            },
+            {
+              "name": "Score Value",
+              "type": "variable",
+              "code": "score_value"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "params": [
+    {
+      "name": "EntityID",
+      "dataType": "String",
+      "description": "",
+      "mandatory": true
+    },
+    {
+      "name": "TaskExecID",
+      "dataType": "String",
+      "description": "",
+      "mandatory": true
+    }
+  ],
+  "exposeAsEndpoint": true,
+  "path": "",
+  "requireAuth": true,
+  "additionalPermissions": []
+}

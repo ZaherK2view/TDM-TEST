@@ -1,0 +1,156 @@
+{
+    "tags": [
+        "TDM",
+        "TDMCustomLogic"
+    ],
+    "levels": [
+        {
+            "stages": [
+                {
+                    "name": "Get Entities",
+                    "dependsOnList": [],
+                    "isLast": 0,
+                    "actors": [
+                        {
+                            "name": "Get the entity list",
+                            "actorType": {
+                                "parentType": "DbCommand",
+                                "inputs": [
+                                    {
+                                        "name": "interface",
+                                        "const": "CRM_DB"
+                                    },
+                                    {
+                                        "name": "sql",
+                                        "const": "Select Distinct public.address.customer_id::text As SOURCE_IID\r\nFrom public.address\r\nLimit 100"
+                                    }
+                                ],
+                                "outputs": [
+                                    {
+                                        "name": "result",
+                                        "schema": {
+                                            "type": "array",
+                                            "items": {
+                                                "type": "object",
+                                                "properties": {
+                                                    "source_iid": {
+                                                        "type": "string"
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "stages": [
+                {
+                    "name": "Filter Reserved",
+                    "dependsOnList": [],
+                    "isLast": 0,
+                    "actors": [
+                        {
+                            "name": "Filter Reserved Entities",
+                            "actorType": {
+                                "parentType": "Filter",
+                                "inputs": [
+                                    {
+                                        "name": "flowName",
+                                        "const": "CheckIfReserved"
+                                    }
+                                ],
+                                "outputs": [
+                                    {
+                                        "name": "values",
+                                        "schema": {
+                                            "type": "array",
+                                            "items": {
+                                                "type": "object",
+                                                "properties": {
+                                                    "source_iid": {
+                                                        "type": "integer"
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "stages": [
+                {
+                    "name": "Create TDM EID",
+                    "dependsOnList": [],
+                    "isLast": 0,
+                    "actors": [
+                        {
+                            "name": "Format IID",
+                            "actorType": {
+                                "parentType": "Mapper",
+                                "inputs": [
+                                    {
+                                        "name": "flowName",
+                                        "const": "buildTDMEidForCustomLogic"
+                                    }
+                                ],
+                                "outputs": [
+                                    {
+                                        "name": "values",
+                                        "schema": {
+                                            "type": "array",
+                                            "items": {
+                                                "type": "string"
+                                            }
+                                        }
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "connections": [
+        {
+            "leftPort": {
+                "actor": "Get the entity list",
+                "name": "result"
+            },
+            "rightPort": {
+                "actor": "Filter Reserved Entities",
+                "name": "values"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "Filter Reserved Entities",
+                "name": "values"
+            },
+            "rightPort": {
+                "actor": "Format IID",
+                "name": "values"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "Format IID",
+                "name": "values"
+            },
+            "rightPort": {
+                "actor": "flowArgs",
+                "name": "result"
+            }
+        }
+    ]
+}

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableObject xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Name>cases</Name>
+  <ID>tbl_cases</ID>
+  <Columns>
+    <Column name="activity_id" id="activity_id" index="0" datatype="TEXT" />
+    <Column name="case_id" id="case_id" index="1" datatype="TEXT" />
+    <Column name="case_date" id="case_date" index="2" datatype="TEXT" />
+    <Column name="case_type" id="case_type" index="3" datatype="TEXT" />
+    <Column name="status" id="status" index="4" datatype="TEXT" />
+  </Columns>
+  <IndexesList>
+  </IndexesList>
+  <EnrichmentList>
+  </EnrichmentList>
+  <LazyDataUpdate syncMethod="Inherited" performEvery="1.00:00:00">
+    <DecisionFunction></DecisionFunction>
+  </LazyDataUpdate>
+  <TriggersList>
+  </TriggersList>
+</TableObject>

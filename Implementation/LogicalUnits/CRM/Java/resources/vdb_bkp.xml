@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<VirtualDB xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" version="">
+  <Name>vdb</Name>
+  <RootView>customer</RootView>
+  <CacheLocationType>Default</CacheLocationType>
+  <LuLazyDataUpdate syncMethod="None" performEvery="1.00:00:00" syncTimeout="0">
+  	<DecisionFunction></DecisionFunction>
+  </LuLazyDataUpdate>
+  <EventsList>
+  </EventsList>
+  <IidFinderProp>
+    <NumberOfPartitions>100</NumberOfPartitions>
+    <NumberOfJobs>50</NumberOfJobs>
+  </IidFinderProp>
+  <Tables>
+	 <Table>customer</Table>
+	 <Table>address</Table>
+	 <Table>payment_methods</Table>
+	 <Table>activity</Table>
+	 <Table>cases</Table>
+	 <Table>case_note</Table>
+	 <Table>contract</Table>
+	 <Table>recommendations</Table>
+	 <Table>score</Table>
+  </Tables>
+  <TablesProperties>
+	 <TableProperties name="customer">
+      <Populations>
+        <Population name="population.flow" order="1" disabled="false" populationType="FLOW" />
+      </Populations>
+    </TableProperties>
+	 <TableProperties name="address">
+      <Populations>
+        <Population name="population.flow" order="2" disabled="false" populationType="FLOW" />
+      </Populations>
+    </TableProperties>
+	 <TableProperties name="payment_methods">
+      <Populations>
+        <Population name="population.flow" order="2" disabled="false" populationType="FLOW" />
+      </Populations>
+    </TableProperties>
+	 <TableProperties name="activity">
+      <Populations>
+        <Population name="population.flow" order="2" disabled="false" populationType="FLOW" />
+      </Populations>
+    </TableProperties>
+	 <TableProperties name="cases">
+      <Populations>
+        <Population name="population.flow" order="3" disabled="false" populationType="FLOW" />
+      </Populations>
+    </TableProperties>
+	 <TableProperties name="case_note">
+      <Populations>
+        <Population name="population.flow" order="4" disabled="false" populationType="FLOW" />
+      </Populations>
+    </TableProperties>
+	 <TableProperties name="contract">
+      <Populations>
+        <Population name="population.flow" order="2" disabled="false" populationType="FLOW" />
+      </Populations>
+    </TableProperties>
+	 <TableProperties name="recommendations">
+      <Populations>
+        <Population name="population.flow" order="2" disabled="false" populationType="FLOW" />
+      </Populations>
+    </TableProperties>
+	 <TableProperties name="score">
+      <Populations>
+        <Population name="population.flow" order="2" disabled="false" populationType="FLOW" />
+      </Populations>
+    </TableProperties>
+  </TablesProperties>
+  <EnrichmentsOrderList>
+  </EnrichmentsOrderList>
+  <ReferencesList>
+  </ReferencesList>
+  <Relations />
+  <DatabaseRelations>
+	  <Relation>
+        <From tableType="TableObject" table="customer" column="customer_id" columnId="customer_id" />
+        <To tableType="TableObject" table="address" populationObjectName="population.flow" column="customer_id" columnId="customer_id" />
+      </Relation>
+	  <Relation>
+        <From tableType="TableObject" table="customer" column="customer_id" columnId="customer_id" />
+        <To tableType="TableObject" table="payment_methods" populationObjectName="population.flow" column="customer_id" columnId="customer_id" />
+      </Relation>
+	  <Relation>
+        <From tableType="TableObject" table="customer" column="customer_id" columnId="customer_id" />
+        <To tableType="TableObject" table="activity" populationObjectName="population.flow" column="customer_id" columnId="customer_id" />
+      </Relation>
+	  <Relation>
+        <From tableType="TableObject" table="customer" column="customer_id" columnId="customer_id" />
+        <To tableType="TableObject" table="contract" populationObjectName="population.flow" column="customer_id" columnId="customer_id" />
+      </Relation>
+	  <Relation>
+        <From tableType="TableObject" table="customer" column="customer_id" columnId="customer_id" />
+        <To tableType="TableObject" table="recommendations" populationObjectName="population.flow" column="customer_id" columnId="customer_id" />
+      </Relation>
+	  <Relation>
+        <From tableType="TableObject" table="customer" column="customer_id" columnId="customer_id" />
+        <To tableType="TableObject" table="score" populationObjectName="population.flow" column="customer_id" columnId="customer_id" />
+      </Relation>
+	  <Relation>
+        <From tableType="TableObject" table="activity" column="activity_id" columnId="activity_id" />
+        <To tableType="TableObject" table="cases" populationObjectName="population.flow" column="activity_id" columnId="activity_id" />
+      </Relation>
+	  <Relation>
+        <From tableType="TableObject" table="cases" column="case_id" columnId="case_id" />
+        <To tableType="TableObject" table="case_note" populationObjectName="population.flow" column="case_id" columnId="case_id" />
+      </Relation>
+  </DatabaseRelations>
+  <DiagramGraph>
+    <Graph name="vdb.k2vdb.xml">
+      <Node name="customer" pos="120 631" viewType="Table" />
+      <Node name="address" pos="505 81" viewType="Table" />
+      <Node name="payment_methods" pos="505 306" viewType="Table" />
+      <Node name="activity" pos="505 531" viewType="Table" />
+      <Node name="cases" pos="889 581" viewType="Table" />
+      <Node name="case_note" pos="1275 631" viewType="Table" />
+      <Node name="contract" pos="505 756" viewType="Table" />
+      <Node name="recommendations" pos="505 981" viewType="Table" />
+      <Node name="score" pos="505 1206" viewType="Table" />
+    </Graph>
+  </DiagramGraph>
+</VirtualDB>

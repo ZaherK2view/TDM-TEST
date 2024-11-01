@@ -1,0 +1,113 @@
+{
+    "tags": [
+        "TDM",
+        "TDMCustomLogic"
+    ],
+    "levels": [
+        {
+            "stages": [
+                {
+                    "name": "Filter Reserved",
+                    "dependsOnList": [],
+                    "isLast": 0,
+                    "actors": [
+                        {
+                            "name": "Filter Reserved Entities",
+                            "actorType": {
+                                "parentType": "Filter",
+                                "inputs": [
+                                    {
+                                        "name": "flowName",
+                                        "const": "CheckIfReserved"
+                                    }
+                                ],
+                                "outputs": [
+                                    {
+                                        "name": "values",
+                                        "schema": {
+                                            "type": "array",
+                                            "items": {
+                                                "type": "object",
+                                                "properties": {
+                                                    "source_iid": {
+                                                        "type": "integer"
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "stages": [
+                {
+                    "name": "Create TDM EID",
+                    "dependsOnList": [],
+                    "isLast": 0,
+                    "actors": [
+                        {
+                            "name": "Format IID",
+                            "actorType": {
+                                "parentType": "Mapper",
+                                "inputs": [
+                                    {
+                                        "name": "flowName",
+                                        "const": "buildTDMEidForCustomLogic"
+                                    }
+                                ],
+                                "outputs": [
+                                    {
+                                        "name": "values",
+                                        "schema": {
+                                            "type": "array",
+                                            "items": {
+                                                "type": "string"
+                                            }
+                                        }
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "connections": [
+        {
+            "leftPort": {
+                "actor": "Filter Reserved Entities",
+                "name": "values"
+            },
+            "rightPort": {
+                "actor": "Format IID",
+                "name": "values"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "flowArgs",
+                "name": "values"
+            },
+            "rightPort": {
+                "actor": "Filter Reserved Entities",
+                "name": "values"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "Format IID",
+                "name": "values"
+            },
+            "rightPort": {
+                "actor": "flowArgs",
+                "name": "result"
+            }
+        }
+    ]
+}

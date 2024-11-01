@@ -1,0 +1,6 @@
+INSERT INTO public.tmp_databses(datname) VALUES ('CRM_DB')ON CONFLICT DO NOTHING;
+INSERT INTO public.tmp_databses(datname) VALUES ('BILLING_DB')ON CONFLICT DO NOTHING;
+INSERT INTO public.tmp_databses(datname) VALUES ('ASSET_DB')ON CONFLICT DO NOTHING;
+INSERT INTO public.tmp_databses(datname) VALUES ('TAR_CRM_DB')ON CONFLICT DO NOTHING;
+INSERT INTO public.tmp_databses(datname) VALUES ('TAR_BILLING_DB')ON CONFLICT DO NOTHING;
+INSERT INTO public.tmp_databses(datname) VALUES ('TAR_ASSET_DB')ON CONFLICT DO NOTHING;

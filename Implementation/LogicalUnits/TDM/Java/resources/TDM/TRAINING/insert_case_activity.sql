@@ -1,0 +1,8 @@
+insert into case_activity (activity_text, case_type, note_text) values ('The customer asked to check the latest invoice' , 'Payment Issue' , 'Credit card declined')ON CONFLICT DO NOTHING;
+insert into case_activity (activity_text, case_type, note_text) values ('The customer complained about poor service' , 'Faulty Communication Issue' , 'I''m afraid I still don''t understand, sir. Well, that''s certainly good to know.')ON CONFLICT DO NOTHING;
+insert into case_activity (activity_text, case_type, note_text) values ('Faulty equipment' , 'Bike Technical Issue' , 'Is threatening to change provider if asset is not repaired at once')ON CONFLICT DO NOTHING;
+insert into case_activity (activity_text, case_type, note_text) values ('The customer asked to check the latest invoice' , 'Billing Issue' , 'The customer wants to know whether the prices have gone up')ON CONFLICT DO NOTHING;
+insert into case_activity (activity_text, case_type, note_text) values ('Faulty equipment' , 'Battery Issue' , 'Is threatening to change provider if asset is not repaired at once')ON CONFLICT DO NOTHING;
+insert into case_activity (activity_text, case_type, note_text) values ('Faulty equipment' , 'Faulty Asset' , 'Called again - Asset still not working')ON CONFLICT DO NOTHING;
+insert into case_activity (activity_text, case_type, note_text) values ('The customer asked to check the latest invoice' , 'Billing Issue' , 'The invoice for this month is still not updated')ON CONFLICT DO NOTHING;
+insert into case_activity (activity_text, case_type, note_text) values ('Faulty equipment' , 'Battery Issue' , 'The customer called to complain about the battery.')ON CONFLICT DO NOTHING;

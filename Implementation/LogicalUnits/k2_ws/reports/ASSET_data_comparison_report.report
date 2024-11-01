@@ -1,0 +1,1031 @@
+{
+    "Name": "Report",
+    "Width": "10.7292in",
+    "ReportParameters": [
+        {
+            "DataType": "String",
+            "Name": "TaskExecID",
+            "Prompt": "Task Execution ID"
+        },
+        {
+            "DataType": "String",
+            "Name": "SourceID",
+            "Prompt": "Customer ID in SOURCE"
+        }
+    ],
+    "Layers": [
+        {
+            "Name": "default"
+        }
+    ],
+    "CustomProperties": [
+        {
+            "Name": "DisplayType",
+            "Value": "Page"
+        },
+        {
+            "Name": "SizeType",
+            "Value": "Default"
+        },
+        {
+            "Name": "PaperOrientation",
+            "Value": "Landscape"
+        },
+        {
+            "Name": "SRCInfo.SourceData_Data_Set_Fields",
+            "Value": "{\"TransactionData.transaction_start\":{\"dataType\":\"DateTime\"},\"TransactionData.transaction_end\":{\"dataType\":\"DateTime\"}}"
+        }
+    ],
+    "Page": {
+        "PageWidth": "11in",
+        "PageHeight": "8.5in",
+        "RightMargin": "0in",
+        "LeftMargin": "0in",
+        "TopMargin": "0in",
+        "BottomMargin": "0in",
+        "Columns": 1,
+        "ColumnSpacing": "0.5in"
+    },
+    "DataSources": [
+        {
+            "Name": "fabricApi",
+            "ConnectionProperties": {
+                "DataProvider": "JSON",
+                "ConnectString": "endpoint=/api/"
+            }
+        }
+    ],
+    "Body": {
+        "Height": "3.7744in",
+        "ReportItems": [
+            {
+                "Type": "textbox",
+                "Name": "MainTitle",
+                "CanGrow": true,
+                "KeepTogether": true,
+                "Value": "ASSET Data Comparison Report",
+                "Style": {
+                    "FontSize": "20pt",
+                    "FontWeight": "Bold",
+                    "PaddingLeft": "2pt",
+                    "PaddingRight": "2pt",
+                    "PaddingTop": "2pt",
+                    "PaddingBottom": "2pt",
+                    "Color": "#114b7a",
+                    "VerticalAlign": "Middle"
+                },
+                "Left": "0.2688in",
+                "Top": "0.2104in",
+                "Width": "5.7291in",
+                "Height": "0.4062in"
+            },
+            {
+                "Type": "line",
+                "Name": "Line4",
+                "ZIndex": 1,
+                "StartPoint": {
+                    "X": "0.3in",
+                    "Y": "0.7744in"
+                },
+                "EndPoint": {
+                    "X": "10.7292in",
+                    "Y": "0.7536in"
+                },
+                "LineWidth": "2pt",
+                "LineStyle": "Dashed",
+                "LineColor": "#114b7a"
+            },
+            {
+                "Type": "textbox",
+                "Name": "TextBox33",
+                "ZIndex": 2,
+                "CanGrow": true,
+                "KeepTogether": true,
+                "Value": "=\"Assets Data in: \" & Fields.Item(\"SRCInfo.SourceEnvName\").Value & \" (Source)\"",
+                "Style": {
+                    "FontSize": "14pt",
+                    "FontWeight": "SemiBold",
+                    "PaddingLeft": "2pt",
+                    "PaddingRight": "2pt",
+                    "PaddingTop": "2pt",
+                    "PaddingBottom": "2pt",
+                    "Color": "#1971b6"
+                },
+                "Left": "0.3in",
+                "Top": "1in",
+                "Width": "5.4896in",
+                "Height": "0.3333in"
+            },
+            {
+                "Type": "table",
+                "Name": "Table1",
+                "ZIndex": 3,
+                "DataSetName": "SRCInfo.SourceData",
+                "Style": {
+                    "Border": {
+                        "Color": "#1971b6",
+                        "Style": "Solid",
+                        "Width": "0.5pt"
+                    }
+                },
+                "TableColumns": [
+                    {
+                        "Width": "1.5in"
+                    },
+                    {
+                        "Width": "1.5in"
+                    },
+                    {
+                        "Width": "1.5in"
+                    },
+                    {
+                        "Width": "1.3in"
+                    },
+                    {
+                        "Width": "1.3in"
+                    },
+                    {
+                        "Width": "1.5in"
+                    },
+                    {
+                        "Width": "1.5in"
+                    }
+                ],
+                "Header": {
+                    "TableRows": [
+                        {
+                            "Height": "0.25in",
+                            "TableCells": [
+                                {
+                                    "Item": {
+                                        "Type": "textbox",
+                                        "Name": "TextBox2",
+                                        "CanGrow": true,
+                                        "KeepTogether": true,
+                                        "Value": "Transaction Start",
+                                        "Style": {
+                                            "FontSize": "9pt",
+                                            "FontWeight": "SemiBold",
+                                            "PaddingLeft": "2pt",
+                                            "PaddingRight": "2pt",
+                                            "PaddingTop": "2pt",
+                                            "PaddingBottom": "2pt",
+                                            "Color": "#114b7a",
+                                            "TextAlign": "Left",
+                                            "VerticalAlign": "Middle",
+                                            "BackgroundColor": "#90cbf9"
+                                        },
+                                        "Width": "1.5in",
+                                        "Height": "0.25in"
+                                    }
+                                },
+                                {
+                                    "Item": {
+                                        "Type": "textbox",
+                                        "Name": "TextBox5",
+                                        "CanGrow": true,
+                                        "KeepTogether": true,
+                                        "Value": "Transaction End",
+                                        "Style": {
+                                            "FontSize": "9pt",
+                                            "FontWeight": "SemiBold",
+                                            "PaddingLeft": "2pt",
+                                            "PaddingRight": "2pt",
+                                            "PaddingTop": "2pt",
+                                            "PaddingBottom": "2pt",
+                                            "Color": "#114b7a",
+                                            "TextAlign": "Left",
+                                            "VerticalAlign": "Middle",
+                                            "BackgroundColor": "#90cbf9"
+                                        },
+                                        "Width": "1.5in",
+                                        "Height": "0.25in"
+                                    }
+                                },
+                                {
+                                    "Item": {
+                                        "Type": "textbox",
+                                        "Name": "TextBox8",
+                                        "CanGrow": true,
+                                        "KeepTogether": true,
+                                        "Value": "Asset ID",
+                                        "Style": {
+                                            "FontSize": "9pt",
+                                            "FontWeight": "SemiBold",
+                                            "PaddingLeft": "2pt",
+                                            "PaddingRight": "2pt",
+                                            "PaddingTop": "2pt",
+                                            "PaddingBottom": "2pt",
+                                            "Color": "#114b7a",
+                                            "TextAlign": "Left",
+                                            "VerticalAlign": "Middle",
+                                            "BackgroundColor": "#90cbf9"
+                                        },
+                                        "Width": "1.5in",
+                                        "Height": "0.25in"
+                                    }
+                                },
+                                {
+                                    "Item": {
+                                        "Type": "textbox",
+                                        "Name": "TextBox9",
+                                        "CanGrow": true,
+                                        "KeepTogether": true,
+                                        "Value": "Subscriber ID",
+                                        "Style": {
+                                            "FontSize": "9pt",
+                                            "FontWeight": "SemiBold",
+                                            "PaddingLeft": "2pt",
+                                            "PaddingRight": "2pt",
+                                            "PaddingTop": "2pt",
+                                            "PaddingBottom": "2pt",
+                                            "Color": "#114b7a",
+                                            "TextAlign": "Left",
+                                            "VerticalAlign": "Middle",
+                                            "BackgroundColor": "#90cbf9"
+                                        },
+                                        "Width": "1.3in",
+                                        "Height": "0.25in"
+                                    }
+                                },
+                                {
+                                    "Item": {
+                                        "Type": "textbox",
+                                        "Name": "TextBox10",
+                                        "CanGrow": true,
+                                        "KeepTogether": true,
+                                        "Value": "Duration",
+                                        "Style": {
+                                            "FontSize": "9pt",
+                                            "FontWeight": "SemiBold",
+                                            "PaddingLeft": "2pt",
+                                            "PaddingRight": "2pt",
+                                            "PaddingTop": "2pt",
+                                            "PaddingBottom": "2pt",
+                                            "Color": "#114b7a",
+                                            "TextAlign": "Left",
+                                            "VerticalAlign": "Middle",
+                                            "BackgroundColor": "#90cbf9"
+                                        },
+                                        "Width": "1.3in",
+                                        "Height": "0.25in"
+                                    }
+                                },
+                                {
+                                    "Item": {
+                                        "Type": "textbox",
+                                        "Name": "TextBox11",
+                                        "CanGrow": true,
+                                        "KeepTogether": true,
+                                        "Value": "Transaction City",
+                                        "Style": {
+                                            "FontSize": "9pt",
+                                            "FontWeight": "SemiBold",
+                                            "PaddingLeft": "2pt",
+                                            "PaddingRight": "2pt",
+                                            "PaddingTop": "2pt",
+                                            "PaddingBottom": "2pt",
+                                            "Color": "#114b7a",
+                                            "TextAlign": "Left",
+                                            "VerticalAlign": "Middle",
+                                            "BackgroundColor": "#90cbf9"
+                                        },
+                                        "Width": "1.5in",
+                                        "Height": "0.25in"
+                                    }
+                                },
+                                {
+                                    "Item": {
+                                        "Type": "textbox",
+                                        "Name": "TextBox12",
+                                        "CanGrow": true,
+                                        "KeepTogether": true,
+                                        "Value": "Transaction Address",
+                                        "Style": {
+                                            "FontSize": "9pt",
+                                            "FontWeight": "SemiBold",
+                                            "PaddingLeft": "2pt",
+                                            "PaddingRight": "2pt",
+                                            "PaddingTop": "2pt",
+                                            "PaddingBottom": "2pt",
+                                            "Color": "#114b7a",
+                                            "TextAlign": "Left",
+                                            "VerticalAlign": "Middle",
+                                            "BackgroundColor": "#90cbf9"
+                                        },
+                                        "Width": "1.5in",
+                                        "Height": "0.25in"
+                                    }
+                                }
+                            ]
+                        }
+                    ],
+                    "RepeatOnNewPage": true
+                },
+                "Details": {
+                    "TableRows": [
+                        {
+                            "Height": "0.25in",
+                            "TableCells": [
+                                {
+                                    "Item": {
+                                        "Type": "textbox",
+                                        "Name": "TextBox14",
+                                        "DataElementName": "TransactionData.transaction_start",
+                                        "CanGrow": true,
+                                        "KeepTogether": true,
+                                        "Value": "=Fields.Item(\"TransactionData.transaction_start\").Value",
+                                        "Style": {
+                                            "PaddingLeft": "2pt",
+                                            "PaddingRight": "2pt",
+                                            "PaddingTop": "2pt",
+                                            "PaddingBottom": "2pt",
+                                            "Format": "t",
+                                            "TextAlign": "Left",
+                                            "VerticalAlign": "Middle"
+                                        },
+                                        "Width": "1.5in",
+                                        "Height": "0.25in"
+                                    }
+                                },
+                                {
+                                    "Item": {
+                                        "Type": "textbox",
+                                        "Name": "TextBox17",
+                                        "DataElementName": "TransactionData.transaction_end",
+                                        "CanGrow": true,
+                                        "KeepTogether": true,
+                                        "Value": "=Fields.Item(\"TransactionData.transaction_end\").Value",
+                                        "Style": {
+                                            "PaddingLeft": "2pt",
+                                            "PaddingRight": "2pt",
+                                            "PaddingTop": "2pt",
+                                            "PaddingBottom": "2pt",
+                                            "Format": "t",
+                                            "TextAlign": "Left",
+                                            "VerticalAlign": "Middle"
+                                        },
+                                        "Width": "1.5in",
+                                        "Height": "0.25in"
+                                    }
+                                },
+                                {
+                                    "Item": {
+                                        "Type": "textbox",
+                                        "Name": "TextBox20",
+                                        "DataElementName": "TransactionData.asset_id",
+                                        "CanGrow": true,
+                                        "KeepTogether": true,
+                                        "Value": "=Fields.Item(\"TransactionData.asset_id\").Value",
+                                        "Style": {
+                                            "PaddingLeft": "2pt",
+                                            "PaddingRight": "2pt",
+                                            "PaddingTop": "2pt",
+                                            "PaddingBottom": "2pt",
+                                            "TextAlign": "Left",
+                                            "VerticalAlign": "Middle"
+                                        },
+                                        "Width": "1.5in",
+                                        "Height": "0.25in"
+                                    }
+                                },
+                                {
+                                    "Item": {
+                                        "Type": "textbox",
+                                        "Name": "TextBox21",
+                                        "DataElementName": "TransactionData.subscriber_id",
+                                        "CanGrow": true,
+                                        "KeepTogether": true,
+                                        "Value": "=Fields.Item(\"TransactionData.subscriber_id\").Value",
+                                        "Style": {
+                                            "PaddingLeft": "2pt",
+                                            "PaddingRight": "2pt",
+                                            "PaddingTop": "2pt",
+                                            "PaddingBottom": "2pt",
+                                            "TextAlign": "Left",
+                                            "VerticalAlign": "Middle"
+                                        },
+                                        "Width": "1.3in",
+                                        "Height": "0.25in"
+                                    }
+                                },
+                                {
+                                    "Item": {
+                                        "Type": "textbox",
+                                        "Name": "TextBox22",
+                                        "DataElementName": "TransactionData.duration",
+                                        "CanGrow": true,
+                                        "KeepTogether": true,
+                                        "Value": "=Fields.Item(\"TransactionData.duration\").Value",
+                                        "Style": {
+                                            "PaddingLeft": "2pt",
+                                            "PaddingRight": "2pt",
+                                            "PaddingTop": "2pt",
+                                            "PaddingBottom": "2pt",
+                                            "TextAlign": "Left",
+                                            "VerticalAlign": "Middle"
+                                        },
+                                        "Width": "1.3in",
+                                        "Height": "0.25in"
+                                    }
+                                },
+                                {
+                                    "Item": {
+                                        "Type": "textbox",
+                                        "Name": "TextBox23",
+                                        "DataElementName": "TransactionData.transactioncity",
+                                        "CanGrow": true,
+                                        "KeepTogether": true,
+                                        "Value": "=Fields.Item(\"TransactionData.transactioncity\").Value",
+                                        "Style": {
+                                            "PaddingLeft": "2pt",
+                                            "PaddingRight": "2pt",
+                                            "PaddingTop": "2pt",
+                                            "PaddingBottom": "2pt",
+                                            "TextAlign": "Left",
+                                            "VerticalAlign": "Middle"
+                                        },
+                                        "Width": "1.5in",
+                                        "Height": "0.25in"
+                                    }
+                                },
+                                {
+                                    "Item": {
+                                        "Type": "textbox",
+                                        "Name": "TextBox24",
+                                        "DataElementName": "TransactionData.transactionaddress",
+                                        "CanGrow": true,
+                                        "KeepTogether": true,
+                                        "Value": "=Fields.Item(\"TransactionData.transactionaddress\").Value",
+                                        "Style": {
+                                            "PaddingLeft": "2pt",
+                                            "PaddingRight": "2pt",
+                                            "PaddingTop": "2pt",
+                                            "PaddingBottom": "2pt",
+                                            "TextAlign": "Left",
+                                            "VerticalAlign": "Middle"
+                                        },
+                                        "Width": "1.5in",
+                                        "Height": "0.25in"
+                                    }
+                                }
+                            ]
+                        }
+                    ]
+                },
+                "Left": "0.2708in",
+                "Top": "1.5313in",
+                "Width": "10.1in",
+                "Height": "0.5in"
+            },
+            {
+                "Type": "textbox",
+                "Name": "TextBox27",
+                "ZIndex": 4,
+                "CanGrow": true,
+                "KeepTogether": true,
+                "Value": "=\"Assets Data in: \" & Fields.Item(\"SRCInfo.TargetEnvName\").Value & \" (Target)\"",
+                "Style": {
+                    "FontSize": "14pt",
+                    "FontWeight": "SemiBold",
+                    "PaddingLeft": "2pt",
+                    "PaddingRight": "2pt",
+                    "PaddingTop": "2pt",
+                    "PaddingBottom": "2pt",
+                    "Color": "#1971b6"
+                },
+                "Left": "0.3in",
+                "Top": "2.3in",
+                "Width": "5.4896in",
+                "Height": "0.3333in"
+            },
+            {
+                "Type": "table",
+                "Name": "Table2",
+                "ZIndex": 5,
+                "DataSetName": "SRCInfo.TARInfo",
+                "Style": {
+                    "Border": {
+                        "Color": "#1971b6",
+                        "Style": "Solid",
+                        "Width": "0.5pt"
+                    }
+                },
+                "TableColumns": [
+                    {
+                        "Width": "1.5in"
+                    },
+                    {
+                        "Width": "1.5in"
+                    },
+                    {
+                        "Width": "1.5in"
+                    },
+                    {
+                        "Width": "1.3in"
+                    },
+                    {
+                        "Width": "1.3in"
+                    },
+                    {
+                        "Width": "1.5in"
+                    },
+                    {
+                        "Width": "1.5in"
+                    }
+                ],
+                "Header": {
+                    "TableRows": [
+                        {
+                            "Height": "0.25in",
+                            "TableCells": [
+                                {
+                                    "Item": {
+                                        "Type": "textbox",
+                                        "Name": "TextBox3",
+                                        "CanGrow": true,
+                                        "KeepTogether": true,
+                                        "Value": "Transaction Start",
+                                        "Style": {
+                                            "FontSize": "9pt",
+                                            "FontWeight": "SemiBold",
+                                            "PaddingLeft": "2pt",
+                                            "PaddingRight": "2pt",
+                                            "PaddingTop": "2pt",
+                                            "PaddingBottom": "2pt",
+                                            "Color": "#114b7a",
+                                            "TextAlign": "Left",
+                                            "VerticalAlign": "Middle",
+                                            "BackgroundColor": "#90cbf9"
+                                        },
+                                        "Width": "1.5in",
+                                        "Height": "0.25in"
+                                    }
+                                },
+                                {
+                                    "Item": {
+                                        "Type": "textbox",
+                                        "Name": "TextBox7",
+                                        "CanGrow": true,
+                                        "KeepTogether": true,
+                                        "Value": "Transaction End",
+                                        "Style": {
+                                            "FontSize": "9pt",
+                                            "FontWeight": "SemiBold",
+                                            "PaddingLeft": "2pt",
+                                            "PaddingRight": "2pt",
+                                            "PaddingTop": "2pt",
+                                            "PaddingBottom": "2pt",
+                                            "Color": "#114b7a",
+                                            "TextAlign": "Left",
+                                            "VerticalAlign": "Middle",
+                                            "BackgroundColor": "#90cbf9"
+                                        },
+                                        "Width": "1.5in",
+                                        "Height": "0.25in"
+                                    }
+                                },
+                                {
+                                    "Item": {
+                                        "Type": "textbox",
+                                        "Name": "TextBox16",
+                                        "CanGrow": true,
+                                        "KeepTogether": true,
+                                        "Value": "Asset ID",
+                                        "Style": {
+                                            "FontSize": "9pt",
+                                            "FontWeight": "SemiBold",
+                                            "PaddingLeft": "2pt",
+                                            "PaddingRight": "2pt",
+                                            "PaddingTop": "2pt",
+                                            "PaddingBottom": "2pt",
+                                            "Color": "#114b7a",
+                                            "TextAlign": "Left",
+                                            "VerticalAlign": "Middle",
+                                            "BackgroundColor": "#90cbf9"
+                                        },
+                                        "Width": "1.5in",
+                                        "Height": "0.25in"
+                                    }
+                                },
+                                {
+                                    "Item": {
+                                        "Type": "textbox",
+                                        "Name": "TextBox18",
+                                        "CanGrow": true,
+                                        "KeepTogether": true,
+                                        "Value": "Subscriber ID",
+                                        "Style": {
+                                            "FontSize": "9pt",
+                                            "FontWeight": "SemiBold",
+                                            "PaddingLeft": "2pt",
+                                            "PaddingRight": "2pt",
+                                            "PaddingTop": "2pt",
+                                            "PaddingBottom": "2pt",
+                                            "Color": "#114b7a",
+                                            "TextAlign": "Left",
+                                            "VerticalAlign": "Middle",
+                                            "BackgroundColor": "#90cbf9"
+                                        },
+                                        "Width": "1.3in",
+                                        "Height": "0.25in"
+                                    }
+                                },
+                                {
+                                    "Item": {
+                                        "Type": "textbox",
+                                        "Name": "TextBox19",
+                                        "CanGrow": true,
+                                        "KeepTogether": true,
+                                        "Value": "Duration",
+                                        "Style": {
+                                            "FontSize": "9pt",
+                                            "FontWeight": "SemiBold",
+                                            "PaddingLeft": "2pt",
+                                            "PaddingRight": "2pt",
+                                            "PaddingTop": "2pt",
+                                            "PaddingBottom": "2pt",
+                                            "Color": "#114b7a",
+                                            "TextAlign": "Left",
+                                            "VerticalAlign": "Middle",
+                                            "BackgroundColor": "#90cbf9"
+                                        },
+                                        "Width": "1.3in",
+                                        "Height": "0.25in"
+                                    }
+                                },
+                                {
+                                    "Item": {
+                                        "Type": "textbox",
+                                        "Name": "TextBox25",
+                                        "CanGrow": true,
+                                        "KeepTogether": true,
+                                        "Value": "Transaction City",
+                                        "Style": {
+                                            "FontSize": "9pt",
+                                            "FontWeight": "SemiBold",
+                                            "PaddingLeft": "2pt",
+                                            "PaddingRight": "2pt",
+                                            "PaddingTop": "2pt",
+                                            "PaddingBottom": "2pt",
+                                            "Color": "#114b7a",
+                                            "TextAlign": "Left",
+                                            "VerticalAlign": "Middle",
+                                            "BackgroundColor": "#90cbf9"
+                                        },
+                                        "Width": "1.5in",
+                                        "Height": "0.25in"
+                                    }
+                                },
+                                {
+                                    "Item": {
+                                        "Type": "textbox",
+                                        "Name": "TextBox26",
+                                        "CanGrow": true,
+                                        "KeepTogether": true,
+                                        "Value": "Transaction Address",
+                                        "Style": {
+                                            "FontSize": "9pt",
+                                            "FontWeight": "SemiBold",
+                                            "PaddingLeft": "2pt",
+                                            "PaddingRight": "2pt",
+                                            "PaddingTop": "2pt",
+                                            "PaddingBottom": "2pt",
+                                            "Color": "#114b7a",
+                                            "TextAlign": "Left",
+                                            "VerticalAlign": "Middle",
+                                            "BackgroundColor": "#90cbf9"
+                                        },
+                                        "Width": "1.5in",
+                                        "Height": "0.25in"
+                                    }
+                                }
+                            ]
+                        }
+                    ],
+                    "RepeatOnNewPage": true
+                },
+                "Details": {
+                    "TableRows": [
+                        {
+                            "Height": "0.25in",
+                            "TableCells": [
+                                {
+                                    "Item": {
+                                        "Type": "textbox",
+                                        "Name": "TextBox29",
+                                        "DataElementName": "TargetData.TargetTransactionData.transaction_start",
+                                        "CanGrow": true,
+                                        "KeepTogether": true,
+                                        "Value": "=Fields.Item(\"TargetData.TargetTransactionData.transaction_start\").Value",
+                                        "Style": {
+                                            "PaddingLeft": "2pt",
+                                            "PaddingRight": "2pt",
+                                            "PaddingTop": "2pt",
+                                            "PaddingBottom": "2pt",
+                                            "TextAlign": "Left",
+                                            "VerticalAlign": "Middle"
+                                        },
+                                        "Width": "1.5in",
+                                        "Height": "0.25in"
+                                    }
+                                },
+                                {
+                                    "Item": {
+                                        "Type": "textbox",
+                                        "Name": "TextBox32",
+                                        "DataElementName": "TargetData.TargetTransactionData.transaction_end",
+                                        "CanGrow": true,
+                                        "KeepTogether": true,
+                                        "Value": "=Fields.Item(\"TargetData.TargetTransactionData.transaction_end\").Value",
+                                        "Style": {
+                                            "PaddingLeft": "2pt",
+                                            "PaddingRight": "2pt",
+                                            "PaddingTop": "2pt",
+                                            "PaddingBottom": "2pt",
+                                            "TextAlign": "Left",
+                                            "VerticalAlign": "Middle"
+                                        },
+                                        "Width": "1.5in",
+                                        "Height": "0.25in"
+                                    }
+                                },
+                                {
+                                    "Item": {
+                                        "Type": "textbox",
+                                        "Name": "TextBox36",
+                                        "DataElementName": "TargetData.TargetTransactionData.asset_id",
+                                        "CanGrow": true,
+                                        "KeepTogether": true,
+                                        "Value": "=Fields.Item(\"TargetData.TargetTransactionData.asset_id\").Value",
+                                        "Style": {
+                                            "PaddingLeft": "2pt",
+                                            "PaddingRight": "2pt",
+                                            "PaddingTop": "2pt",
+                                            "PaddingBottom": "2pt",
+                                            "TextAlign": "Left",
+                                            "VerticalAlign": "Middle"
+                                        },
+                                        "Width": "1.5in",
+                                        "Height": "0.25in"
+                                    }
+                                },
+                                {
+                                    "Item": {
+                                        "Type": "textbox",
+                                        "Name": "TextBox37",
+                                        "DataElementName": "TargetData.TargetTransactionData.subscriber_id",
+                                        "CanGrow": true,
+                                        "KeepTogether": true,
+                                        "Value": "=Fields.Item(\"TargetData.TargetTransactionData.subscriber_id\").Value",
+                                        "Style": {
+                                            "PaddingLeft": "2pt",
+                                            "PaddingRight": "2pt",
+                                            "PaddingTop": "2pt",
+                                            "PaddingBottom": "2pt",
+                                            "TextAlign": "Left",
+                                            "VerticalAlign": "Middle"
+                                        },
+                                        "Width": "1.3in",
+                                        "Height": "0.25in"
+                                    }
+                                },
+                                {
+                                    "Item": {
+                                        "Type": "textbox",
+                                        "Name": "TextBox38",
+                                        "DataElementName": "TargetData.TargetTransactionData.duration",
+                                        "CanGrow": true,
+                                        "KeepTogether": true,
+                                        "Value": "=Fields.Item(\"TargetData.TargetTransactionData.duration\").Value",
+                                        "Style": {
+                                            "PaddingLeft": "2pt",
+                                            "PaddingRight": "2pt",
+                                            "PaddingTop": "2pt",
+                                            "PaddingBottom": "2pt",
+                                            "TextAlign": "Left",
+                                            "VerticalAlign": "Middle"
+                                        },
+                                        "Width": "1.3in",
+                                        "Height": "0.25in"
+                                    }
+                                },
+                                {
+                                    "Item": {
+                                        "Type": "textbox",
+                                        "Name": "TextBox39",
+                                        "DataElementName": "TargetData.TargetTransactionData.transactioncity",
+                                        "CanGrow": true,
+                                        "KeepTogether": true,
+                                        "Value": "=Fields.Item(\"TargetData.TargetTransactionData.transactioncity\").Value",
+                                        "Style": {
+                                            "PaddingLeft": "2pt",
+                                            "PaddingRight": "2pt",
+                                            "PaddingTop": "2pt",
+                                            "PaddingBottom": "2pt",
+                                            "TextAlign": "Left",
+                                            "VerticalAlign": "Middle"
+                                        },
+                                        "Width": "1.5in",
+                                        "Height": "0.25in"
+                                    }
+                                },
+                                {
+                                    "Item": {
+                                        "Type": "textbox",
+                                        "Name": "TextBox40",
+                                        "DataElementName": "TargetData.TargetTransactionData.transactionaddress",
+                                        "CanGrow": true,
+                                        "KeepTogether": true,
+                                        "Value": "=Fields.Item(\"TargetData.TargetTransactionData.transactionaddress\").Value",
+                                        "Style": {
+                                            "PaddingLeft": "2pt",
+                                            "PaddingRight": "2pt",
+                                            "PaddingTop": "2pt",
+                                            "PaddingBottom": "2pt",
+                                            "TextAlign": "Left",
+                                            "VerticalAlign": "Middle"
+                                        },
+                                        "Width": "1.5in",
+                                        "Height": "0.25in"
+                                    }
+                                }
+                            ]
+                        }
+                    ]
+                },
+                "Left": "0.2813in",
+                "Top": "2.8021in",
+                "Width": "10.1in",
+                "Height": "0.5in"
+            },
+            {
+                "Type": "line",
+                "Name": "Line1",
+                "ZIndex": 6,
+                "StartPoint": {
+                    "X": "0.3in",
+                    "Y": "3.7744in"
+                },
+                "EndPoint": {
+                    "X": "10.7292in",
+                    "Y": "3.7536in"
+                },
+                "LineWidth": "2pt",
+                "LineStyle": "Dashed",
+                "LineColor": "#114b7a"
+            }
+        ]
+    },
+    "DataSets": [
+        {
+            "Name": "DataSet",
+            "Fields": [
+                {
+                    "Name": "SRCInfo.SourceEnvName",
+                    "DataField": "SRCInfo.SourceEnvName"
+                },
+                {
+                    "Name": "SRCInfo.SourceData",
+                    "DataField": "SRCInfo.SourceData"
+                },
+                {
+                    "Name": "SRCInfo.TargetEnvName",
+                    "DataField": "SRCInfo.TargetEnvName"
+                },
+                {
+                    "Name": "SRCInfo.TARInfo",
+                    "DataField": "SRCInfo.TARInfo"
+                }
+            ],
+            "Query": {
+                "DataSourceName": "fabricApi",
+                "CommandText": "=\"uri=ASSETReport?SourceID=\" & Parameters!SourceID.Value & \"&TaskExecID=\" & Parameters!TaskExecID.Value & \";jpath=$\""
+            },
+            "CaseSensitivity": "Auto",
+            "KanatypeSensitivity": "Auto",
+            "AccentSensitivity": "Auto",
+            "WidthSensitivity": "Auto"
+        },
+        {
+            "Name": "SRCInfo.SourceData",
+            "Fields": [
+                {
+                    "Name": "TransactionData.transaction_id",
+                    "DataField": "TransactionData.transaction_id"
+                },
+                {
+                    "Name": "TransactionData.transaction_start",
+                    "DataField": "TransactionData.transaction_start[Date]"
+                },
+                {
+                    "Name": "TransactionData.startlat",
+                    "DataField": "TransactionData.startlat"
+                },
+                {
+                    "Name": "TransactionData.startlong",
+                    "DataField": "TransactionData.startlong"
+                },
+                {
+                    "Name": "TransactionData.transaction_end",
+                    "DataField": "TransactionData.transaction_end[Date]"
+                },
+                {
+                    "Name": "TransactionData.endlat",
+                    "DataField": "TransactionData.endlat"
+                },
+                {
+                    "Name": "TransactionData.endlong",
+                    "DataField": "TransactionData.endlong"
+                },
+                {
+                    "Name": "TransactionData.asset_id",
+                    "DataField": "TransactionData.asset_id"
+                },
+                {
+                    "Name": "TransactionData.subscriber_id",
+                    "DataField": "TransactionData.subscriber_id"
+                },
+                {
+                    "Name": "TransactionData.duration",
+                    "DataField": "TransactionData.duration"
+                },
+                {
+                    "Name": "TransactionData.transactioncity",
+                    "DataField": "TransactionData.transactioncity"
+                },
+                {
+                    "Name": "TransactionData.transactionaddress",
+                    "DataField": "TransactionData.transactionaddress"
+                }
+            ],
+            "Query": {
+                "DataSourceName": "$dataset:DataSet/SRCInfo.SourceData"
+            },
+            "CaseSensitivity": "Auto",
+            "KanatypeSensitivity": "Auto",
+            "AccentSensitivity": "Auto",
+            "WidthSensitivity": "Auto"
+        },
+        {
+            "Name": "SRCInfo.TARInfo",
+            "Fields": [
+                {
+                    "Name": "TargetData.TargetTransactionData.transaction_id",
+                    "DataField": "TargetData.TargetTransactionData.transaction_id"
+                },
+                {
+                    "Name": "TargetData.TargetTransactionData.transaction_start",
+                    "DataField": "TargetData.TargetTransactionData.transaction_start"
+                },
+                {
+                    "Name": "TargetData.TargetTransactionData.startlat",
+                    "DataField": "TargetData.TargetTransactionData.startlat"
+                },
+                {
+                    "Name": "TargetData.TargetTransactionData.startlong",
+                    "DataField": "TargetData.TargetTransactionData.startlong"
+                },
+                {
+                    "Name": "TargetData.TargetTransactionData.transaction_end",
+                    "DataField": "TargetData.TargetTransactionData.transaction_end"
+                },
+                {
+                    "Name": "TargetData.TargetTransactionData.endlat",
+                    "DataField": "TargetData.TargetTransactionData.endlat"
+                },
+                {
+                    "Name": "TargetData.TargetTransactionData.endlong",
+                    "DataField": "TargetData.TargetTransactionData.endlong"
+                },
+                {
+                    "Name": "TargetData.TargetTransactionData.asset_id",
+                    "DataField": "TargetData.TargetTransactionData.asset_id"
+                },
+                {
+                    "Name": "TargetData.TargetTransactionData.subscriber_id",
+                    "DataField": "TargetData.TargetTransactionData.subscriber_id"
+                },
+                {
+                    "Name": "TargetData.TargetTransactionData.duration",
+                    "DataField": "TargetData.TargetTransactionData.duration"
+                },
+                {
+                    "Name": "TargetData.TargetTransactionData.transactioncity",
+                    "DataField": "TargetData.TargetTransactionData.transactioncity"
+                },
+                {
+                    "Name": "TargetData.TargetTransactionData.transactionaddress",
+                    "DataField": "TargetData.TargetTransactionData.transactionaddress"
+                }
+            ],
+            "Query": {
+                "DataSourceName": "$dataset:DataSet/SRCInfo.TARInfo"
+            },
+            "CaseSensitivity": "Auto",
+            "KanatypeSensitivity": "Auto",
+            "AccentSensitivity": "Auto",
+            "WidthSensitivity": "Auto"
+        }
+    ]
+}

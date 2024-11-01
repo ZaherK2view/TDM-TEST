@@ -1,0 +1,39 @@
+{
+  "type": "customLogicDirectFlowShared",
+  "parentType": "InnerFlow",
+  "actorClass": null,
+  "inputs": [
+    {
+      "name": "values",
+      "schema": {
+        "type": "array",
+        "items": {}
+      }
+    },
+    {
+      "name": "flowName",
+      "schema": {
+        "type": "string"
+      },
+      "const": "customLogicDirectFlowShared",
+      "mandatory": true
+    }
+  ],
+  "outputs": [
+    {
+      "name": "result",
+      "schema": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      },
+      "const": null
+    }
+  ],
+  "tags": [
+    "TDM",
+    "Custom Logic"
+  ],
+  "doc": ""
+}

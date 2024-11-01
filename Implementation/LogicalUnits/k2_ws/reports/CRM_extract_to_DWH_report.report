@@ -1,0 +1,1552 @@
+{
+    "Name": "Report",
+    "Width": "10.75in",
+    "ReportParameters": [
+        {
+            "DataType": "String",
+            "Name": "TaskExecID",
+            "Prompt": "Task Execution ID"
+        },
+        {
+            "DataType": "String",
+            "Name": "SourceID",
+            "Prompt": "Customer ID in SOURCE"
+        }
+    ],
+    "Layers": [
+        {
+            "Name": "default"
+        }
+    ],
+    "CustomProperties": [
+        {
+            "Name": "DisplayType",
+            "Value": "Page"
+        },
+        {
+            "Name": "SizeType",
+            "Value": "Default"
+        },
+        {
+            "Name": "PaperOrientation",
+            "Value": "Landscape"
+        }
+    ],
+    "Page": {
+        "PageWidth": "11in",
+        "PageHeight": "8.5in",
+        "RightMargin": "0in",
+        "LeftMargin": "0in",
+        "TopMargin": "0in",
+        "BottomMargin": "0in",
+        "Columns": 1,
+        "ColumnSpacing": "0.5in"
+    },
+    "DataSources": [
+        {
+            "Name": "fabricApi",
+            "ConnectionProperties": {
+                "DataProvider": "JSON",
+                "ConnectString": "endpoint=/api/"
+            }
+        }
+    ],
+    "Body": {
+        "Height": "5.5313in",
+        "ReportItems": [
+            {
+                "Type": "textbox",
+                "Name": "MainTitle",
+                "ZIndex": 2,
+                "CanGrow": true,
+                "KeepTogether": true,
+                "Value": "CRM Extract to DWH Report",
+                "Style": {
+                    "FontSize": "20pt",
+                    "FontWeight": "Bold",
+                    "PaddingLeft": "2pt",
+                    "PaddingRight": "2pt",
+                    "PaddingTop": "2pt",
+                    "PaddingBottom": "2pt",
+                    "Color": "#114b7a",
+                    "VerticalAlign": "Middle"
+                },
+                "Left": "0.5in",
+                "Top": "0.2in",
+                "Width": "5in",
+                "Height": "0.4in"
+            },
+            {
+                "Type": "textbox",
+                "Name": "TextBox33",
+                "ZIndex": 3,
+                "CanGrow": true,
+                "KeepTogether": true,
+                "Value": "=\"Customer Info in: \" & Fields.Item(\"SourceInfo.SourceEnvInfo\").Value & \" (Source)\"",
+                "Style": {
+                    "FontSize": "14pt",
+                    "FontWeight": "SemiBold",
+                    "PaddingLeft": "2pt",
+                    "PaddingRight": "2pt",
+                    "PaddingTop": "2pt",
+                    "PaddingBottom": "2pt",
+                    "Color": "#1971b6"
+                },
+                "Left": "0.5in",
+                "Top": "1in",
+                "Width": "6.2396in",
+                "Height": "0.25in"
+            },
+            {
+                "Type": "textbox",
+                "Name": "TextBox34",
+                "ZIndex": 4,
+                "CanGrow": true,
+                "KeepTogether": true,
+                "Value": "Customer Info in: TDM Warehouse (Target)",
+                "Style": {
+                    "FontSize": "14pt",
+                    "FontWeight": "SemiBold",
+                    "PaddingLeft": "2pt",
+                    "PaddingRight": "2pt",
+                    "PaddingTop": "2pt",
+                    "PaddingBottom": "2pt",
+                    "Color": "#1971b6"
+                },
+                "Left": "0.5in",
+                "Top": "3.5521in",
+                "Width": "6.25in",
+                "Height": "0.3125in"
+            },
+            {
+                "Type": "line",
+                "Name": "Line2",
+                "ZIndex": 10,
+                "StartPoint": {
+                    "X": "0.3in",
+                    "Y": "3.0313in"
+                },
+                "EndPoint": {
+                    "X": "10.75in",
+                    "Y": "3.0105in"
+                },
+                "LineWidth": "2pt",
+                "LineStyle": "Dashed",
+                "LineColor": "#114b7a"
+            },
+            {
+                "Type": "line",
+                "Name": "Line4",
+                "ZIndex": 12,
+                "StartPoint": {
+                    "X": "0.3in",
+                    "Y": "0.7744in"
+                },
+                "EndPoint": {
+                    "X": "10.7292in",
+                    "Y": "0.7536in"
+                },
+                "LineWidth": "2pt",
+                "LineStyle": "Dashed",
+                "LineColor": "#114b7a"
+            },
+            {
+                "Type": "line",
+                "Name": "Line1",
+                "ZIndex": 13,
+                "StartPoint": {
+                    "X": "0.3in",
+                    "Y": "5.5313in"
+                },
+                "EndPoint": {
+                    "X": "10.75in",
+                    "Y": "5.5105in"
+                },
+                "LineWidth": "2pt",
+                "LineStyle": "Dashed",
+                "LineColor": "#114b7a"
+            },
+            {
+                "Type": "table",
+                "Name": "Table1",
+                "ZIndex": 16,
+                "DataSetName": "SourceInfo.CustomerData",
+                "Style": {
+                    "Border": {
+                        "Color": "#1971b6",
+                        "Style": "Solid",
+                        "Width": "0.5pt"
+                    }
+                },
+                "TableColumns": [
+                    {
+                        "Width": "1in"
+                    },
+                    {
+                        "Width": "1.2in"
+                    },
+                    {
+                        "Width": "1.2in"
+                    },
+                    {
+                        "Width": "1.2in"
+                    },
+                    {
+                        "Width": "1.7in"
+                    },
+                    {
+                        "Width": "1.2in"
+                    },
+                    {
+                        "Width": "1.2in"
+                    },
+                    {
+                        "Width": "1.2in"
+                    }
+                ],
+                "Header": {
+                    "TableRows": [
+                        {
+                            "Height": "0.25in",
+                            "TableCells": [
+                                {
+                                    "Item": {
+                                        "Type": "textbox",
+                                        "Name": "TextBox55",
+                                        "CanGrow": true,
+                                        "KeepTogether": true,
+                                        "Value": "Customer ID",
+                                        "Style": {
+                                            "FontSize": "9pt",
+                                            "FontWeight": "SemiBold",
+                                            "PaddingLeft": "2pt",
+                                            "PaddingRight": "2pt",
+                                            "PaddingTop": "2pt",
+                                            "PaddingBottom": "2pt",
+                                            "Color": "#114b7a",
+                                            "TextAlign": "Left",
+                                            "VerticalAlign": "Middle",
+                                            "BackgroundColor": "#90cbf9"
+                                        },
+                                        "Width": "1in",
+                                        "Height": "0.25in"
+                                    }
+                                },
+                                {
+                                    "Item": {
+                                        "Type": "textbox",
+                                        "Name": "TextBox56",
+                                        "CanGrow": true,
+                                        "KeepTogether": true,
+                                        "Value": "SSN",
+                                        "Style": {
+                                            "FontSize": "9pt",
+                                            "FontWeight": "SemiBold",
+                                            "PaddingLeft": "2pt",
+                                            "PaddingRight": "2pt",
+                                            "PaddingTop": "2pt",
+                                            "PaddingBottom": "2pt",
+                                            "Color": "#114b7a",
+                                            "TextAlign": "Left",
+                                            "VerticalAlign": "Middle",
+                                            "BackgroundColor": "#90cbf9"
+                                        },
+                                        "Width": "1.2in",
+                                        "Height": "0.25in"
+                                    }
+                                },
+                                {
+                                    "Item": {
+                                        "Type": "textbox",
+                                        "Name": "TextBox57",
+                                        "CanGrow": true,
+                                        "KeepTogether": true,
+                                        "Value": "First Name",
+                                        "Style": {
+                                            "FontSize": "9pt",
+                                            "FontWeight": "SemiBold",
+                                            "PaddingLeft": "2pt",
+                                            "PaddingRight": "2pt",
+                                            "PaddingTop": "2pt",
+                                            "PaddingBottom": "2pt",
+                                            "Color": "#114b7a",
+                                            "TextAlign": "Left",
+                                            "VerticalAlign": "Middle",
+                                            "BackgroundColor": "#90cbf9"
+                                        },
+                                        "Width": "1.2in",
+                                        "Height": "0.25in"
+                                    }
+                                },
+                                {
+                                    "Item": {
+                                        "Type": "textbox",
+                                        "Name": "TextBox58",
+                                        "CanGrow": true,
+                                        "KeepTogether": true,
+                                        "Value": "Last Name",
+                                        "Style": {
+                                            "FontSize": "9pt",
+                                            "FontWeight": "SemiBold",
+                                            "PaddingLeft": "2pt",
+                                            "PaddingRight": "2pt",
+                                            "PaddingTop": "2pt",
+                                            "PaddingBottom": "2pt",
+                                            "Color": "#114b7a",
+                                            "TextAlign": "Left",
+                                            "VerticalAlign": "Middle",
+                                            "BackgroundColor": "#90cbf9"
+                                        },
+                                        "Width": "1.2in",
+                                        "Height": "0.25in"
+                                    }
+                                },
+                                {
+                                    "Item": {
+                                        "Type": "textbox",
+                                        "Name": "TextBox59",
+                                        "CanGrow": true,
+                                        "KeepTogether": true,
+                                        "Value": "Email",
+                                        "Style": {
+                                            "FontSize": "9pt",
+                                            "FontWeight": "SemiBold",
+                                            "PaddingLeft": "2pt",
+                                            "PaddingRight": "2pt",
+                                            "PaddingTop": "2pt",
+                                            "PaddingBottom": "2pt",
+                                            "Color": "#114b7a",
+                                            "TextAlign": "Left",
+                                            "VerticalAlign": "Middle",
+                                            "BackgroundColor": "#90cbf9"
+                                        },
+                                        "Width": "1.7in",
+                                        "Height": "0.25in"
+                                    }
+                                },
+                                {
+                                    "Item": {
+                                        "Type": "textbox",
+                                        "Name": "TextBox60",
+                                        "CanGrow": true,
+                                        "KeepTogether": true,
+                                        "Value": "Latest Score Type",
+                                        "Style": {
+                                            "FontSize": "9pt",
+                                            "FontWeight": "SemiBold",
+                                            "PaddingLeft": "2pt",
+                                            "PaddingRight": "2pt",
+                                            "PaddingTop": "2pt",
+                                            "PaddingBottom": "2pt",
+                                            "Color": "#114b7a",
+                                            "TextAlign": "Left",
+                                            "VerticalAlign": "Middle",
+                                            "BackgroundColor": "#90cbf9"
+                                        },
+                                        "Width": "1.2in",
+                                        "Height": "0.25in"
+                                    }
+                                },
+                                {
+                                    "Item": {
+                                        "Type": "textbox",
+                                        "Name": "TextBox61",
+                                        "CanGrow": true,
+                                        "KeepTogether": true,
+                                        "Value": "Latest Score Value",
+                                        "Style": {
+                                            "FontSize": "9pt",
+                                            "FontWeight": "SemiBold",
+                                            "PaddingLeft": "2pt",
+                                            "PaddingRight": "2pt",
+                                            "PaddingTop": "2pt",
+                                            "PaddingBottom": "2pt",
+                                            "Color": "#114b7a",
+                                            "TextAlign": "Left",
+                                            "VerticalAlign": "Middle",
+                                            "BackgroundColor": "#90cbf9"
+                                        },
+                                        "Width": "1.2in",
+                                        "Height": "0.25in"
+                                    }
+                                },
+                                {
+                                    "Item": {
+                                        "Type": "textbox",
+                                        "Name": "TextBox62",
+                                        "CanGrow": true,
+                                        "KeepTogether": true,
+                                        "Value": "List of open cases",
+                                        "Style": {
+                                            "FontSize": "9pt",
+                                            "FontWeight": "SemiBold",
+                                            "PaddingLeft": "2pt",
+                                            "PaddingRight": "2pt",
+                                            "PaddingTop": "2pt",
+                                            "PaddingBottom": "2pt",
+                                            "Color": "#114b7a",
+                                            "TextAlign": "Left",
+                                            "VerticalAlign": "Middle",
+                                            "BackgroundColor": "#90cbf9"
+                                        },
+                                        "Width": "1.2in",
+                                        "Height": "0.25in"
+                                    }
+                                }
+                            ]
+                        }
+                    ],
+                    "RepeatOnNewPage": true
+                },
+                "Details": {
+                    "TableRows": [
+                        {
+                            "Height": "0.25in",
+                            "TableCells": [
+                                {
+                                    "Item": {
+                                        "Type": "textbox",
+                                        "Name": "TextBox63",
+                                        "DataElementName": "Customer ID",
+                                        "CanGrow": true,
+                                        "KeepTogether": true,
+                                        "Value": "=Fields.Item(\"Customer ID\").Value",
+                                        "Style": {
+                                            "PaddingLeft": "2pt",
+                                            "PaddingRight": "2pt",
+                                            "PaddingTop": "2pt",
+                                            "PaddingBottom": "2pt",
+                                            "TextAlign": "Left",
+                                            "VerticalAlign": "Middle"
+                                        },
+                                        "Width": "1in",
+                                        "Height": "0.25in"
+                                    }
+                                },
+                                {
+                                    "Item": {
+                                        "Type": "textbox",
+                                        "Name": "TextBox64",
+                                        "DataElementName": "SSN",
+                                        "CanGrow": true,
+                                        "KeepTogether": true,
+                                        "Value": "=Fields!SSN.Value",
+                                        "Style": {
+                                            "PaddingLeft": "2pt",
+                                            "PaddingRight": "2pt",
+                                            "PaddingTop": "2pt",
+                                            "PaddingBottom": "2pt",
+                                            "TextAlign": "Left",
+                                            "VerticalAlign": "Middle"
+                                        },
+                                        "Width": "1.2in",
+                                        "Height": "0.25in"
+                                    }
+                                },
+                                {
+                                    "Item": {
+                                        "Type": "textbox",
+                                        "Name": "TextBox65",
+                                        "DataElementName": "First Name",
+                                        "CanGrow": true,
+                                        "KeepTogether": true,
+                                        "Value": "=Fields.Item(\"First Name\").Value",
+                                        "Style": {
+                                            "PaddingLeft": "2pt",
+                                            "PaddingRight": "2pt",
+                                            "PaddingTop": "2pt",
+                                            "PaddingBottom": "2pt",
+                                            "TextAlign": "Left",
+                                            "VerticalAlign": "Middle"
+                                        },
+                                        "Width": "1.2in",
+                                        "Height": "0.25in"
+                                    }
+                                },
+                                {
+                                    "Item": {
+                                        "Type": "textbox",
+                                        "Name": "TextBox66",
+                                        "DataElementName": "Last Name",
+                                        "CanGrow": true,
+                                        "KeepTogether": true,
+                                        "Value": "=Fields.Item(\"Last Name\").Value",
+                                        "Style": {
+                                            "PaddingLeft": "2pt",
+                                            "PaddingRight": "2pt",
+                                            "PaddingTop": "2pt",
+                                            "PaddingBottom": "2pt",
+                                            "TextAlign": "Left",
+                                            "VerticalAlign": "Middle"
+                                        },
+                                        "Width": "1.2in",
+                                        "Height": "0.25in"
+                                    }
+                                },
+                                {
+                                    "Item": {
+                                        "Type": "textbox",
+                                        "Name": "TextBox67",
+                                        "DataElementName": "Email",
+                                        "CanGrow": true,
+                                        "KeepTogether": true,
+                                        "Value": "=Fields!Email.Value",
+                                        "Style": {
+                                            "PaddingLeft": "2pt",
+                                            "PaddingRight": "2pt",
+                                            "PaddingTop": "2pt",
+                                            "PaddingBottom": "2pt",
+                                            "TextAlign": "Left",
+                                            "VerticalAlign": "Middle"
+                                        },
+                                        "Width": "1.7in",
+                                        "Height": "0.25in"
+                                    }
+                                },
+                                {
+                                    "Item": {
+                                        "Type": "textbox",
+                                        "Name": "TextBox68",
+                                        "DataElementName": "Latest Score Type",
+                                        "CanGrow": true,
+                                        "KeepTogether": true,
+                                        "Value": "=Fields.Item(\"Latest Score Type\").Value",
+                                        "Style": {
+                                            "PaddingLeft": "2pt",
+                                            "PaddingRight": "2pt",
+                                            "PaddingTop": "2pt",
+                                            "PaddingBottom": "2pt",
+                                            "TextAlign": "Left",
+                                            "VerticalAlign": "Middle"
+                                        },
+                                        "Width": "1.2in",
+                                        "Height": "0.25in"
+                                    }
+                                },
+                                {
+                                    "Item": {
+                                        "Type": "textbox",
+                                        "Name": "TextBox69",
+                                        "DataElementName": "Latest Score Value",
+                                        "CanGrow": true,
+                                        "KeepTogether": true,
+                                        "Value": "=Fields.Item(\"Latest Score Value\").Value",
+                                        "Style": {
+                                            "PaddingLeft": "2pt",
+                                            "PaddingRight": "2pt",
+                                            "PaddingTop": "2pt",
+                                            "PaddingBottom": "2pt",
+                                            "TextAlign": "Left",
+                                            "VerticalAlign": "Middle"
+                                        },
+                                        "Width": "1.2in",
+                                        "Height": "0.25in"
+                                    }
+                                },
+                                {
+                                    "Item": {
+                                        "Type": "textbox",
+                                        "Name": "TextBox70",
+                                        "DataElementName": "List of open cases",
+                                        "CanGrow": true,
+                                        "KeepTogether": true,
+                                        "Value": "=Fields.Item(\"List of open cases\").Value",
+                                        "Style": {
+                                            "PaddingLeft": "2pt",
+                                            "PaddingRight": "2pt",
+                                            "PaddingTop": "2pt",
+                                            "PaddingBottom": "2pt",
+                                            "TextAlign": "Left",
+                                            "VerticalAlign": "Middle"
+                                        },
+                                        "Width": "1.2in",
+                                        "Height": "0.25in"
+                                    }
+                                }
+                            ]
+                        }
+                    ]
+                },
+                "Left": "0.5in",
+                "Top": "1.5in",
+                "Width": "9.9in",
+                "Height": "0.5in"
+            },
+            {
+                "Type": "table",
+                "Name": "Table3",
+                "ZIndex": 17,
+                "DataSetName": "TDMWarehouseInfo.CustomerData",
+                "Style": {
+                    "Border": {
+                        "Color": "#1971b6",
+                        "Style": "Solid",
+                        "Width": "0.5pt"
+                    }
+                },
+                "TableColumns": [
+                    {
+                        "Width": "1in"
+                    },
+                    {
+                        "Width": "1.2in"
+                    },
+                    {
+                        "Width": "1.2in"
+                    },
+                    {
+                        "Width": "1.2in"
+                    },
+                    {
+                        "Width": "1.7in"
+                    },
+                    {
+                        "Width": "1.2in"
+                    },
+                    {
+                        "Width": "1.2in"
+                    },
+                    {
+                        "Width": "1.2in"
+                    }
+                ],
+                "Header": {
+                    "TableRows": [
+                        {
+                            "Height": "0.25in",
+                            "TableCells": [
+                                {
+                                    "Item": {
+                                        "Type": "textbox",
+                                        "Name": "TextBox1",
+                                        "CanGrow": true,
+                                        "KeepTogether": true,
+                                        "Value": "Customer ID",
+                                        "Style": {
+                                            "FontSize": "9pt",
+                                            "FontWeight": "SemiBold",
+                                            "PaddingLeft": "2pt",
+                                            "PaddingRight": "2pt",
+                                            "PaddingTop": "2pt",
+                                            "PaddingBottom": "2pt",
+                                            "Color": "#114b7a",
+                                            "TextAlign": "Left",
+                                            "VerticalAlign": "Middle",
+                                            "BackgroundColor": "#90cbf9"
+                                        },
+                                        "Width": "1in",
+                                        "Height": "0.25in"
+                                    }
+                                },
+                                {
+                                    "Item": {
+                                        "Type": "textbox",
+                                        "Name": "TextBox2",
+                                        "CanGrow": true,
+                                        "KeepTogether": true,
+                                        "Value": "SSN",
+                                        "Style": {
+                                            "FontSize": "9pt",
+                                            "FontWeight": "SemiBold",
+                                            "PaddingLeft": "2pt",
+                                            "PaddingRight": "2pt",
+                                            "PaddingTop": "2pt",
+                                            "PaddingBottom": "2pt",
+                                            "Color": "#114b7a",
+                                            "TextAlign": "Left",
+                                            "VerticalAlign": "Middle",
+                                            "BackgroundColor": "#90cbf9"
+                                        },
+                                        "Width": "1.2in",
+                                        "Height": "0.25in"
+                                    }
+                                },
+                                {
+                                    "Item": {
+                                        "Type": "textbox",
+                                        "Name": "TextBox3",
+                                        "CanGrow": true,
+                                        "KeepTogether": true,
+                                        "Value": "First Name",
+                                        "Style": {
+                                            "FontSize": "9pt",
+                                            "FontWeight": "SemiBold",
+                                            "PaddingLeft": "2pt",
+                                            "PaddingRight": "2pt",
+                                            "PaddingTop": "2pt",
+                                            "PaddingBottom": "2pt",
+                                            "Color": "#114b7a",
+                                            "TextAlign": "Left",
+                                            "VerticalAlign": "Middle",
+                                            "BackgroundColor": "#90cbf9"
+                                        },
+                                        "Width": "1.2in",
+                                        "Height": "0.25in"
+                                    }
+                                },
+                                {
+                                    "Item": {
+                                        "Type": "textbox",
+                                        "Name": "TextBox4",
+                                        "CanGrow": true,
+                                        "KeepTogether": true,
+                                        "Value": "Last Name",
+                                        "Style": {
+                                            "FontSize": "9pt",
+                                            "FontWeight": "SemiBold",
+                                            "PaddingLeft": "2pt",
+                                            "PaddingRight": "2pt",
+                                            "PaddingTop": "2pt",
+                                            "PaddingBottom": "2pt",
+                                            "Color": "#114b7a",
+                                            "TextAlign": "Left",
+                                            "VerticalAlign": "Middle",
+                                            "BackgroundColor": "#90cbf9"
+                                        },
+                                        "Width": "1.2in",
+                                        "Height": "0.25in"
+                                    }
+                                },
+                                {
+                                    "Item": {
+                                        "Type": "textbox",
+                                        "Name": "TextBox5",
+                                        "CanGrow": true,
+                                        "KeepTogether": true,
+                                        "Value": "Email",
+                                        "Style": {
+                                            "FontSize": "9pt",
+                                            "FontWeight": "SemiBold",
+                                            "PaddingLeft": "2pt",
+                                            "PaddingRight": "2pt",
+                                            "PaddingTop": "2pt",
+                                            "PaddingBottom": "2pt",
+                                            "Color": "#114b7a",
+                                            "TextAlign": "Left",
+                                            "VerticalAlign": "Middle",
+                                            "BackgroundColor": "#90cbf9"
+                                        },
+                                        "Width": "1.7in",
+                                        "Height": "0.25in"
+                                    }
+                                },
+                                {
+                                    "Item": {
+                                        "Type": "textbox",
+                                        "Name": "TextBox6",
+                                        "CanGrow": true,
+                                        "KeepTogether": true,
+                                        "Value": "Latest Score Type",
+                                        "Style": {
+                                            "FontSize": "9pt",
+                                            "FontWeight": "SemiBold",
+                                            "PaddingLeft": "2pt",
+                                            "PaddingRight": "2pt",
+                                            "PaddingTop": "2pt",
+                                            "PaddingBottom": "2pt",
+                                            "Color": "#114b7a",
+                                            "TextAlign": "Left",
+                                            "VerticalAlign": "Middle",
+                                            "BackgroundColor": "#90cbf9"
+                                        },
+                                        "Width": "1.2in",
+                                        "Height": "0.25in"
+                                    }
+                                },
+                                {
+                                    "Item": {
+                                        "Type": "textbox",
+                                        "Name": "TextBox7",
+                                        "CanGrow": true,
+                                        "KeepTogether": true,
+                                        "Value": "Latest Score Value",
+                                        "Style": {
+                                            "FontSize": "9pt",
+                                            "FontWeight": "SemiBold",
+                                            "PaddingLeft": "2pt",
+                                            "PaddingRight": "2pt",
+                                            "PaddingTop": "2pt",
+                                            "PaddingBottom": "2pt",
+                                            "Color": "#114b7a",
+                                            "TextAlign": "Left",
+                                            "VerticalAlign": "Middle",
+                                            "BackgroundColor": "#90cbf9"
+                                        },
+                                        "Width": "1.2in",
+                                        "Height": "0.25in"
+                                    }
+                                },
+                                {
+                                    "Item": {
+                                        "Type": "textbox",
+                                        "Name": "TextBox8",
+                                        "CanGrow": true,
+                                        "KeepTogether": true,
+                                        "Value": "List of open cases",
+                                        "Style": {
+                                            "FontSize": "9pt",
+                                            "FontWeight": "SemiBold",
+                                            "PaddingLeft": "2pt",
+                                            "PaddingRight": "2pt",
+                                            "PaddingTop": "2pt",
+                                            "PaddingBottom": "2pt",
+                                            "Color": "#114b7a",
+                                            "TextAlign": "Left",
+                                            "VerticalAlign": "Middle",
+                                            "BackgroundColor": "#90cbf9"
+                                        },
+                                        "Width": "1.2in",
+                                        "Height": "0.25in"
+                                    }
+                                }
+                            ]
+                        }
+                    ],
+                    "RepeatOnNewPage": true
+                },
+                "Details": {
+                    "TableRows": [
+                        {
+                            "Height": "0.25in",
+                            "TableCells": [
+                                {
+                                    "Item": {
+                                        "Type": "textbox",
+                                        "Name": "TextBox9",
+                                        "DataElementName": "Customer ID",
+                                        "CanGrow": true,
+                                        "KeepTogether": true,
+                                        "Value": "=Fields.Item(\"Customer ID\").Value",
+                                        "Style": {
+                                            "PaddingLeft": "2pt",
+                                            "PaddingRight": "2pt",
+                                            "PaddingTop": "2pt",
+                                            "PaddingBottom": "2pt",
+                                            "TextAlign": "Left",
+                                            "VerticalAlign": "Middle"
+                                        },
+                                        "Width": "1in",
+                                        "Height": "0.25in"
+                                    }
+                                },
+                                {
+                                    "Item": {
+                                        "Type": "textbox",
+                                        "Name": "TextBox10",
+                                        "DataElementName": "SSN",
+                                        "CanGrow": true,
+                                        "KeepTogether": true,
+                                        "Value": "=Fields!SSN.Value",
+                                        "Style": {
+                                            "PaddingLeft": "2pt",
+                                            "PaddingRight": "2pt",
+                                            "PaddingTop": "2pt",
+                                            "PaddingBottom": "2pt",
+                                            "TextAlign": "Left",
+                                            "VerticalAlign": "Middle"
+                                        },
+                                        "Width": "1.2in",
+                                        "Height": "0.25in"
+                                    }
+                                },
+                                {
+                                    "Item": {
+                                        "Type": "textbox",
+                                        "Name": "TextBox11",
+                                        "DataElementName": "First Name",
+                                        "CanGrow": true,
+                                        "KeepTogether": true,
+                                        "Value": "=Fields.Item(\"First Name\").Value",
+                                        "Style": {
+                                            "PaddingLeft": "2pt",
+                                            "PaddingRight": "2pt",
+                                            "PaddingTop": "2pt",
+                                            "PaddingBottom": "2pt",
+                                            "TextAlign": "Left",
+                                            "VerticalAlign": "Middle"
+                                        },
+                                        "Width": "1.2in",
+                                        "Height": "0.25in"
+                                    }
+                                },
+                                {
+                                    "Item": {
+                                        "Type": "textbox",
+                                        "Name": "TextBox12",
+                                        "DataElementName": "Last Name",
+                                        "CanGrow": true,
+                                        "KeepTogether": true,
+                                        "Value": "=Fields.Item(\"Last Name\").Value",
+                                        "Style": {
+                                            "PaddingLeft": "2pt",
+                                            "PaddingRight": "2pt",
+                                            "PaddingTop": "2pt",
+                                            "PaddingBottom": "2pt",
+                                            "TextAlign": "Left",
+                                            "VerticalAlign": "Middle"
+                                        },
+                                        "Width": "1.2in",
+                                        "Height": "0.25in"
+                                    }
+                                },
+                                {
+                                    "Item": {
+                                        "Type": "textbox",
+                                        "Name": "TextBox13",
+                                        "DataElementName": "Email",
+                                        "CanGrow": true,
+                                        "KeepTogether": true,
+                                        "Value": "=Fields!Email.Value",
+                                        "Style": {
+                                            "PaddingLeft": "2pt",
+                                            "PaddingRight": "2pt",
+                                            "PaddingTop": "2pt",
+                                            "PaddingBottom": "2pt",
+                                            "TextAlign": "Left",
+                                            "VerticalAlign": "Middle"
+                                        },
+                                        "Width": "1.7in",
+                                        "Height": "0.25in"
+                                    }
+                                },
+                                {
+                                    "Item": {
+                                        "Type": "textbox",
+                                        "Name": "TextBox14",
+                                        "DataElementName": "Latest Score Type",
+                                        "CanGrow": true,
+                                        "KeepTogether": true,
+                                        "Value": "=Fields.Item(\"Latest Score Type\").Value",
+                                        "Style": {
+                                            "PaddingLeft": "2pt",
+                                            "PaddingRight": "2pt",
+                                            "PaddingTop": "2pt",
+                                            "PaddingBottom": "2pt",
+                                            "TextAlign": "Left",
+                                            "VerticalAlign": "Middle"
+                                        },
+                                        "Width": "1.2in",
+                                        "Height": "0.25in"
+                                    }
+                                },
+                                {
+                                    "Item": {
+                                        "Type": "textbox",
+                                        "Name": "TextBox15",
+                                        "DataElementName": "Latest Score Value",
+                                        "CanGrow": true,
+                                        "KeepTogether": true,
+                                        "Value": "=Fields.Item(\"Latest Score Value\").Value",
+                                        "Style": {
+                                            "PaddingLeft": "2pt",
+                                            "PaddingRight": "2pt",
+                                            "PaddingTop": "2pt",
+                                            "PaddingBottom": "2pt",
+                                            "TextAlign": "Left",
+                                            "VerticalAlign": "Middle"
+                                        },
+                                        "Width": "1.2in",
+                                        "Height": "0.25in"
+                                    }
+                                },
+                                {
+                                    "Item": {
+                                        "Type": "textbox",
+                                        "Name": "TextBox16",
+                                        "DataElementName": "List of open cases",
+                                        "CanGrow": true,
+                                        "KeepTogether": true,
+                                        "Value": "=Fields.Item(\"List of open cases\").Value",
+                                        "Style": {
+                                            "PaddingLeft": "2pt",
+                                            "PaddingRight": "2pt",
+                                            "PaddingTop": "2pt",
+                                            "PaddingBottom": "2pt",
+                                            "TextAlign": "Left",
+                                            "VerticalAlign": "Middle"
+                                        },
+                                        "Width": "1.2in",
+                                        "Height": "0.25in"
+                                    }
+                                }
+                            ]
+                        }
+                    ]
+                },
+                "Left": "0.5in",
+                "Top": "4in",
+                "Width": "9.9in",
+                "Height": "0.5in"
+            },
+            {
+                "Type": "table",
+                "Name": "Table2",
+                "ZIndex": 18,
+                "DataSetName": "SourceInfo.paymentMethodsData",
+                "Style": {
+                    "Border": {
+                        "Color": "#3da7a8",
+                        "Style": "Solid",
+                        "Width": "0.5pt"
+                    }
+                },
+                "TableColumns": [
+                    {
+                        "Width": "2.2in"
+                    },
+                    {
+                        "Width": "2.4in"
+                    }
+                ],
+                "Header": {
+                    "TableRows": [
+                        {
+                            "Height": "0.25in",
+                            "TableCells": [
+                                {
+                                    "Item": {
+                                        "Type": "textbox",
+                                        "Name": "TextBox18",
+                                        "CanGrow": true,
+                                        "KeepTogether": true,
+                                        "Value": "Credit Card Number",
+                                        "Style": {
+                                            "FontSize": "9pt",
+                                            "FontWeight": "SemiBold",
+                                            "PaddingLeft": "2pt",
+                                            "PaddingRight": "2pt",
+                                            "PaddingTop": "2pt",
+                                            "PaddingBottom": "2pt",
+                                            "Color": "#367070",
+                                            "TextAlign": "Left",
+                                            "VerticalAlign": "Middle",
+                                            "BackgroundColor": "#abe0e1"
+                                        },
+                                        "Width": "2.2in",
+                                        "Height": "0.25in"
+                                    }
+                                },
+                                {
+                                    "Item": {
+                                        "Type": "textbox",
+                                        "Name": "TextBox20",
+                                        "CanGrow": true,
+                                        "KeepTogether": true,
+                                        "Value": "CC Company",
+                                        "Style": {
+                                            "FontSize": "9pt",
+                                            "FontWeight": "SemiBold",
+                                            "PaddingLeft": "2pt",
+                                            "PaddingRight": "2pt",
+                                            "PaddingTop": "2pt",
+                                            "PaddingBottom": "2pt",
+                                            "Color": "#367070",
+                                            "TextAlign": "Left",
+                                            "VerticalAlign": "Middle",
+                                            "BackgroundColor": "#abe0e1"
+                                        },
+                                        "Width": "2.4in",
+                                        "Height": "0.25in"
+                                    }
+                                }
+                            ]
+                        }
+                    ],
+                    "RepeatOnNewPage": true
+                },
+                "Details": {
+                    "TableRows": [
+                        {
+                            "Height": "0.25in",
+                            "TableCells": [
+                                {
+                                    "Item": {
+                                        "Type": "textbox",
+                                        "Name": "TextBox22",
+                                        "DataElementName": "Credit Card Number",
+                                        "CanGrow": true,
+                                        "KeepTogether": true,
+                                        "Value": "=Fields.Item(\"Credit Card Number\").Value",
+                                        "Style": {
+                                            "PaddingLeft": "2pt",
+                                            "PaddingRight": "2pt",
+                                            "PaddingTop": "2pt",
+                                            "PaddingBottom": "2pt",
+                                            "TextAlign": "Left",
+                                            "VerticalAlign": "Middle"
+                                        },
+                                        "Width": "2.2in",
+                                        "Height": "0.25in"
+                                    }
+                                },
+                                {
+                                    "Item": {
+                                        "Type": "textbox",
+                                        "Name": "TextBox24",
+                                        "DataElementName": "CC Company",
+                                        "CanGrow": true,
+                                        "KeepTogether": true,
+                                        "Value": "=Fields.Item(\"CC Company\").Value",
+                                        "Style": {
+                                            "PaddingLeft": "2pt",
+                                            "PaddingRight": "2pt",
+                                            "PaddingTop": "2pt",
+                                            "PaddingBottom": "2pt",
+                                            "Format": "d",
+                                            "TextAlign": "Left",
+                                            "VerticalAlign": "Middle"
+                                        },
+                                        "Width": "2.4in",
+                                        "Height": "0.25in"
+                                    }
+                                }
+                            ]
+                        }
+                    ]
+                },
+                "Left": "0.5in",
+                "Top": "2.2in",
+                "Width": "4.6in",
+                "Height": "0.5in"
+            },
+            {
+                "Type": "table",
+                "Name": "Table4",
+                "ZIndex": 19,
+                "DataSetName": "TDMWarehouseInfo.paymentMethodsData",
+                "Style": {
+                    "Border": {
+                        "Color": "#3da7a8",
+                        "Style": "Solid",
+                        "Width": "0.5pt"
+                    }
+                },
+                "TableColumns": [
+                    {
+                        "Width": "2.2in"
+                    },
+                    {
+                        "Width": "2.4in"
+                    }
+                ],
+                "Header": {
+                    "TableRows": [
+                        {
+                            "Height": "0.25in",
+                            "TableCells": [
+                                {
+                                    "Item": {
+                                        "Type": "textbox",
+                                        "Name": "TextBox26",
+                                        "CanGrow": true,
+                                        "KeepTogether": true,
+                                        "Value": "Credit Card Number",
+                                        "Style": {
+                                            "FontSize": "9pt",
+                                            "FontWeight": "SemiBold",
+                                            "PaddingLeft": "2pt",
+                                            "PaddingRight": "2pt",
+                                            "PaddingTop": "2pt",
+                                            "PaddingBottom": "2pt",
+                                            "Color": "#367070",
+                                            "TextAlign": "Left",
+                                            "VerticalAlign": "Middle",
+                                            "BackgroundColor": "#abe0e1"
+                                        },
+                                        "Width": "2.2in",
+                                        "Height": "0.25in"
+                                    }
+                                },
+                                {
+                                    "Item": {
+                                        "Type": "textbox",
+                                        "Name": "TextBox28",
+                                        "CanGrow": true,
+                                        "KeepTogether": true,
+                                        "Value": "CC Company",
+                                        "Style": {
+                                            "FontSize": "9pt",
+                                            "FontWeight": "SemiBold",
+                                            "PaddingLeft": "2pt",
+                                            "PaddingRight": "2pt",
+                                            "PaddingTop": "2pt",
+                                            "PaddingBottom": "2pt",
+                                            "Color": "#367070",
+                                            "TextAlign": "Left",
+                                            "VerticalAlign": "Middle",
+                                            "BackgroundColor": "#abe0e1"
+                                        },
+                                        "Width": "2.4in",
+                                        "Height": "0.25in"
+                                    }
+                                }
+                            ]
+                        }
+                    ],
+                    "RepeatOnNewPage": true
+                },
+                "Details": {
+                    "TableRows": [
+                        {
+                            "Height": "0.25in",
+                            "TableCells": [
+                                {
+                                    "Item": {
+                                        "Type": "textbox",
+                                        "Name": "TextBox30",
+                                        "DataElementName": "Credit Card Number",
+                                        "CanGrow": true,
+                                        "KeepTogether": true,
+                                        "Value": "=Fields.Item(\"Credit Card Number\").Value",
+                                        "Style": {
+                                            "PaddingLeft": "2pt",
+                                            "PaddingRight": "2pt",
+                                            "PaddingTop": "2pt",
+                                            "PaddingBottom": "2pt",
+                                            "TextAlign": "Left",
+                                            "VerticalAlign": "Middle"
+                                        },
+                                        "Width": "2.2in",
+                                        "Height": "0.25in"
+                                    }
+                                },
+                                {
+                                    "Item": {
+                                        "Type": "textbox",
+                                        "Name": "TextBox32",
+                                        "DataElementName": "CC Company",
+                                        "CanGrow": true,
+                                        "KeepTogether": true,
+                                        "Value": "=Fields.Item(\"CC Company\").Value",
+                                        "Style": {
+                                            "PaddingLeft": "2pt",
+                                            "PaddingRight": "2pt",
+                                            "PaddingTop": "2pt",
+                                            "PaddingBottom": "2pt",
+                                            "Format": "d",
+                                            "TextAlign": "Left",
+                                            "VerticalAlign": "Middle"
+                                        },
+                                        "Width": "2.4in",
+                                        "Height": "0.25in"
+                                    }
+                                }
+                            ]
+                        }
+                    ]
+                },
+                "Left": "0.5in",
+                "Top": "4.7in",
+                "Width": "4.6in",
+                "Height": "0.5in"
+            }
+        ]
+    },
+    "DataSets": [
+        {
+            "Name": "DataSet",
+            "Fields": [
+                {
+                    "Name": "SourceInfo.SourceEnvInfo",
+                    "DataField": "SourceInfo.SourceEnvInfo"
+                },
+                {
+                    "Name": "SourceInfo.CustomerData",
+                    "DataField": "SourceInfo.CustomerData"
+                },
+                {
+                    "Name": "SourceInfo.ContractsData",
+                    "DataField": "SourceInfo.ContractsData"
+                },
+                {
+                    "Name": "SourceInfo.paymentMethodsData",
+                    "DataField": "SourceInfo.paymentMethodsData"
+                },
+                {
+                    "Name": "TDMWarehouseInfo.CustomerData",
+                    "DataField": "TDMWarehouseInfo.CustomerData"
+                },
+                {
+                    "Name": "TDMWarehouseInfo.ContractsData",
+                    "DataField": "TDMWarehouseInfo.ContractsData"
+                },
+                {
+                    "Name": "TDMWarehouseInfo.paymentMethodsData",
+                    "DataField": "TDMWarehouseInfo.paymentMethodsData"
+                },
+                {
+                    "Name": "TargetInfo.TargetEnvInfo",
+                    "DataField": "TargetInfo.TargetEnvInfo"
+                },
+                {
+                    "Name": "TargetInfo.CustomerData",
+                    "DataField": "TargetInfo.CustomerData"
+                },
+                {
+                    "Name": "TargetInfo.ContractsData",
+                    "DataField": "TargetInfo.ContractsData"
+                },
+                {
+                    "Name": "TargetInfo.paymentMethodsData",
+                    "DataField": "TargetInfo.paymentMethodsData"
+                }
+            ],
+            "Query": {
+                "DataSourceName": "fabricApi",
+                "CommandText": "=\"uri=CRMReport?SourceID=\" & Parameters!SourceID.Value & \"&TaskExecID=\" & Parameters!TaskExecID.Value & \";jpath=$\""
+            },
+            "CaseSensitivity": "Auto",
+            "KanatypeSensitivity": "Auto",
+            "AccentSensitivity": "Auto",
+            "WidthSensitivity": "Auto"
+        },
+        {
+            "Name": "SourceInfo.CustomerData",
+            "Fields": [
+                {
+                    "Name": "Customer ID",
+                    "DataField": "Customer ID"
+                },
+                {
+                    "Name": "SSN",
+                    "DataField": "SSN"
+                },
+                {
+                    "Name": "First Name",
+                    "DataField": "First Name"
+                },
+                {
+                    "Name": "Last Name",
+                    "DataField": "Last Name"
+                },
+                {
+                    "Name": "Email",
+                    "DataField": "Email"
+                },
+                {
+                    "Name": "Latest Score Type",
+                    "DataField": "Latest Score Type"
+                },
+                {
+                    "Name": "Latest Score Value",
+                    "DataField": "Latest Score Value"
+                },
+                {
+                    "Name": "List of open cases",
+                    "DataField": "List of open cases"
+                },
+                {
+                    "Name": "City",
+                    "DataField": "City"
+                }
+            ],
+            "Query": {
+                "DataSourceName": "$dataset:DataSet/SourceInfo.CustomerData"
+            },
+            "CaseSensitivity": "Auto",
+            "KanatypeSensitivity": "Auto",
+            "AccentSensitivity": "Auto",
+            "WidthSensitivity": "Auto"
+        },
+        {
+            "Name": "SourceInfo.ContractsData",
+            "Fields": [
+                {
+                    "Name": "Contract ID",
+                    "DataField": "Contract ID"
+                },
+                {
+                    "Name": "Contract Description",
+                    "DataField": "Contract Description"
+                },
+                {
+                    "Name": "From Date",
+                    "DataField": "From Date"
+                },
+                {
+                    "Name": "To Date",
+                    "DataField": "To Date"
+                }
+            ],
+            "Query": {
+                "DataSourceName": "$dataset:DataSet/SourceInfo.ContractsData"
+            },
+            "CaseSensitivity": "Auto",
+            "KanatypeSensitivity": "Auto",
+            "AccentSensitivity": "Auto",
+            "WidthSensitivity": "Auto"
+        },
+        {
+            "Name": "TargetInfo.CustomerData",
+            "Fields": [
+                {
+                    "Name": "Field1",
+                    "DataField": "Field1"
+                }
+            ],
+            "Query": {
+                "DataSourceName": "$dataset:DataSet/TargetInfo.CustomerData"
+            },
+            "CaseSensitivity": "Auto",
+            "KanatypeSensitivity": "Auto",
+            "AccentSensitivity": "Auto",
+            "WidthSensitivity": "Auto"
+        },
+        {
+            "Name": "TargetInfo.ContractsData",
+            "Fields": [
+                {
+                    "Name": "Field1",
+                    "DataField": "Field1"
+                }
+            ],
+            "Query": {
+                "DataSourceName": "$dataset:DataSet/TargetInfo.ContractsData"
+            },
+            "CaseSensitivity": "Auto",
+            "KanatypeSensitivity": "Auto",
+            "AccentSensitivity": "Auto",
+            "WidthSensitivity": "Auto"
+        },
+        {
+            "Name": "TDMWarehouseInfo.CustomerData",
+            "Fields": [
+                {
+                    "Name": "Customer ID",
+                    "DataField": "Customer ID"
+                },
+                {
+                    "Name": "SSN",
+                    "DataField": "SSN"
+                },
+                {
+                    "Name": "First Name",
+                    "DataField": "First Name"
+                },
+                {
+                    "Name": "Last Name",
+                    "DataField": "Last Name"
+                },
+                {
+                    "Name": "Email",
+                    "DataField": "Email"
+                },
+                {
+                    "Name": "Latest Score Type",
+                    "DataField": "Latest Score Type"
+                },
+                {
+                    "Name": "Latest Score Value",
+                    "DataField": "Latest Score Value"
+                },
+                {
+                    "Name": "List of open cases",
+                    "DataField": "List of open cases"
+                },
+                {
+                    "Name": "City",
+                    "DataField": "City"
+                }
+            ],
+            "Query": {
+                "DataSourceName": "$dataset:DataSet/TDMWarehouseInfo.CustomerData"
+            },
+            "CaseSensitivity": "Auto",
+            "KanatypeSensitivity": "Auto",
+            "AccentSensitivity": "Auto",
+            "WidthSensitivity": "Auto"
+        },
+        {
+            "Name": "TDMWarehouseInfo.ContractsData",
+            "Fields": [
+                {
+                    "Name": "Contract ID",
+                    "DataField": "Contract ID"
+                },
+                {
+                    "Name": "Contract Description",
+                    "DataField": "Contract Description"
+                },
+                {
+                    "Name": "From Date",
+                    "DataField": "From Date"
+                },
+                {
+                    "Name": "To Date",
+                    "DataField": "To Date"
+                }
+            ],
+            "Query": {
+                "DataSourceName": "$dataset:DataSet/TDMWarehouseInfo.ContractsData"
+            },
+            "CaseSensitivity": "Auto",
+            "KanatypeSensitivity": "Auto",
+            "AccentSensitivity": "Auto",
+            "WidthSensitivity": "Auto"
+        },
+        {
+            "Name": "SourceInfo.paymentMethodsData",
+            "Fields": [
+                {
+                    "Name": "Customer Id",
+                    "DataField": "Customer Id"
+                },
+                {
+                    "Name": "CC Company",
+                    "DataField": "CC Company"
+                },
+                {
+                    "Name": "Credit Card Number",
+                    "DataField": "Credit Card Number"
+                }
+            ],
+            "Query": {
+                "DataSourceName": "$dataset:DataSet/SourceInfo.paymentMethodsData"
+            },
+            "CaseSensitivity": "Auto",
+            "KanatypeSensitivity": "Auto",
+            "AccentSensitivity": "Auto",
+            "WidthSensitivity": "Auto"
+        },
+        {
+            "Name": "TDMWarehouseInfo.paymentMethodsData",
+            "Fields": [
+                {
+                    "Name": "Customer Id",
+                    "DataField": "Customer Id"
+                },
+                {
+                    "Name": "CC Company",
+                    "DataField": "CC Company"
+                },
+                {
+                    "Name": "Credit Card Number",
+                    "DataField": "Credit Card Number"
+                }
+            ],
+            "Query": {
+                "DataSourceName": "$dataset:DataSet/TDMWarehouseInfo.paymentMethodsData"
+            },
+            "CaseSensitivity": "Auto",
+            "KanatypeSensitivity": "Auto",
+            "AccentSensitivity": "Auto",
+            "WidthSensitivity": "Auto"
+        },
+        {
+            "Name": "TargetInfo.paymentMethodsData",
+            "Fields": [
+                {
+                    "Name": "Field1",
+                    "DataField": "Field1"
+                }
+            ],
+            "Query": {
+                "DataSourceName": "$dataset:DataSet/TargetInfo.paymentMethodsData"
+            },
+            "CaseSensitivity": "Auto",
+            "KanatypeSensitivity": "Auto",
+            "AccentSensitivity": "Auto",
+            "WidthSensitivity": "Auto"
+        }
+    ]
+}

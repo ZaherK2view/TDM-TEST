@@ -1,0 +1,417 @@
+{
+    "levels": [
+        {
+            "stages": [
+                {
+                    "name": "Stage 1",
+                    "dependsOnList": [],
+                    "isLast": 0,
+                    "actors": [
+                        {
+                            "name": "JsonParser1",
+                            "actorType": {
+                                "parentType": "JsonParser",
+                                "inputs": [],
+                                "outputs": [
+                                    {
+                                        "name": "object",
+                                        "schema": {
+                                            "type": "object",
+                                            "properties": {
+                                                "filterout_reserved": {
+                                                    "type": "boolean"
+                                                },
+                                                "target_environment_name": {
+                                                    "type": "string"
+                                                },
+                                                "be_id": {
+                                                    "type": "integer"
+                                                },
+                                                "reserve_retention_period_type": {
+                                                    "type": "string"
+                                                },
+                                                "environment_id": {
+                                                    "type": "integer"
+                                                },
+                                                "selection_method": {
+                                                    "type": "string"
+                                                },
+                                                "task_execution_id": {
+                                                    "type": "integer"
+                                                },
+                                                "user_roles": {
+                                                    "type": "string"
+                                                },
+                                                "num_of_entities": {
+                                                    "type": "integer"
+                                                },
+                                                "product_id": {
+                                                    "type": "integer"
+                                                },
+                                                "load_entity": {
+                                                    "type": "string"
+                                                },
+                                                "retention_period_type": {
+                                                    "type": "string"
+                                                },
+                                                "selection_param_value": {
+                                                    "type": "string"
+                                                },
+                                                "creation_date": {
+                                                    "type": "string"
+                                                },
+                                                "sync_mode": {
+                                                    "type": "string"
+                                                },
+                                                "parent_lu_status": {
+                                                    "type": "string"
+                                                },
+                                                "lu_name": {
+                                                    "type": "string"
+                                                },
+                                                "lu_id": {
+                                                    "type": "integer"
+                                                },
+                                                "reserve_retention_period_value": {
+                                                    "type": "integer"
+                                                },
+                                                "process_id": {
+                                                    "type": "integer"
+                                                },
+                                                "task_id": {
+                                                    "type": "integer"
+                                                },
+                                                "source_environment_id": {
+                                                    "type": "integer"
+                                                },
+                                                "parent_lu_id": {
+                                                    "type": "integer"
+                                                },
+                                                "version_datetime": {
+                                                    "type": "string"
+                                                },
+                                                "source_env_name": {
+                                                    "type": "string"
+                                                },
+                                                "reserve_ind": {
+                                                    "type": "boolean"
+                                                },
+                                                "task_title": {
+                                                    "type": "string"
+                                                },
+                                                "delete_before_load": {
+                                                    "type": "string"
+                                                },
+                                                "retention_period_value": {
+                                                    "type": "string"
+                                                },
+                                                "version_ind": {
+                                                    "type": "string"
+                                                },
+                                                "tdm_target_product_version": {
+                                                    "type": "string"
+                                                },
+                                                "tdm_source_product_version": {
+                                                    "type": "string"
+                                                },
+                                                "source_environment_name": {
+                                                    "type": "string"
+                                                },
+                                                "task_type": {
+                                                    "type": "string"
+                                                },
+                                                "task_executed_by": {
+                                                    "type": "string"
+                                                }
+                                            }
+                                        }
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "stages": [
+                {
+                    "name": "Stage 2",
+                    "dependsOnList": [],
+                    "isLast": 0,
+                    "actors": [
+                        {
+                            "name": "Get TDMDB Schema",
+                            "actorType": {
+                                "parentType": "FabricSetRead",
+                                "inputs": [
+                                    {
+                                        "name": "key",
+                                        "const": "TDMDB_SCHEMA",
+                                        "isDefault": false
+                                    }
+                                ],
+                                "outputs": []
+                            }
+                        },
+                        {
+                            "name": "LuFunction1",
+                            "actorType": {
+                                "parentType": "LuFunction",
+                                "inputs": [
+                                    {
+                                        "name": "functionName",
+                                        "const": "fnExecuteLoadBatch"
+                                    },
+                                    {
+                                        "name": "taskProperties",
+                                        "schema": {
+                                            "type": "object",
+                                            "properties": {
+                                                "filterout_reserved": {
+                                                    "type": "boolean"
+                                                },
+                                                "target_environment_name": {
+                                                    "type": "string"
+                                                },
+                                                "be_id": {
+                                                    "type": "integer"
+                                                },
+                                                "environment_id": {
+                                                    "type": "integer"
+                                                },
+                                                "selection_method": {
+                                                    "type": "string"
+                                                },
+                                                "refresh_reference_data": {
+                                                    "type": "string"
+                                                },
+                                                "task_execution_id": {
+                                                    "type": "integer"
+                                                },
+                                                "user_roles": {
+                                                    "type": "string"
+                                                },
+                                                "num_of_entities": {
+                                                    "type": "integer"
+                                                },
+                                                "product_id": {
+                                                    "type": "integer"
+                                                },
+                                                "load_entity": {
+                                                    "type": "string"
+                                                },
+                                                "retention_period_type": {
+                                                    "type": "string"
+                                                },
+                                                "selection_param_value": {
+                                                    "type": "string"
+                                                },
+                                                "creation_date": {
+                                                    "type": "string"
+                                                },
+                                                "sync_mode": {
+                                                    "type": "string"
+                                                },
+                                                "replace_sequences": {
+                                                    "type": "string"
+                                                },
+                                                "parent_lu_status": {
+                                                    "type": "string"
+                                                },
+                                                "lu_name": {
+                                                    "type": "string"
+                                                },
+                                                "lu_id": {
+                                                    "type": "integer"
+                                                },
+                                                "parameters": {
+                                                    "type": "string"
+                                                },
+                                                "process_id": {
+                                                    "type": "integer"
+                                                },
+                                                "task_id": {
+                                                    "type": "integer"
+                                                },
+                                                "source_environment_id": {
+                                                    "type": "integer"
+                                                },
+                                                "parent_lu_id": {
+                                                    "type": "integer"
+                                                },
+                                                "version_datetime": {
+                                                    "type": "string"
+                                                },
+                                                "source_env_name": {
+                                                    "type": "string"
+                                                },
+                                                "reserve_ind": {
+                                                    "type": "boolean"
+                                                },
+                                                "task_title": {
+                                                    "type": "string"
+                                                },
+                                                "delete_before_load": {
+                                                    "type": "string"
+                                                },
+                                                "retention_period_value": {
+                                                    "type": "string"
+                                                },
+                                                "version_ind": {
+                                                    "type": "string"
+                                                },
+                                                "tdm_target_product_version": {
+                                                    "type": "string"
+                                                },
+                                                "tdm_source_product_version": {
+                                                    "type": "string"
+                                                },
+                                                "source_environment_name": {
+                                                    "type": "string"
+                                                },
+                                                "task_type": {
+                                                    "type": "string"
+                                                },
+                                                "task_executed_by": {
+                                                    "type": "string"
+                                                }
+                                            }
+                                        },
+                                        "mandatory": false
+                                    }
+                                ],
+                                "outputs": [
+                                    {
+                                        "name": "batchId",
+                                        "schema": {
+                                            "type": "string"
+                                        }
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "stages": [
+                {
+                    "name": "Stage 3",
+                    "dependsOnList": [],
+                    "isLast": 0,
+                    "actors": [
+                        {
+                            "name": "DbCommand1",
+                            "actorType": {
+                                "parentType": "DbCommand",
+                                "inputs": [
+                                    {
+                                        "name": "interface",
+                                        "const": "TDM"
+                                    },
+                                    {
+                                        "name": "sql",
+                                        "const": "UPDATE ${@schema}.task_execution_list SET \r\n  execution_status='running',\r\nfabric_execution_id=${batchId},\r\nstart_execution_time = (case when start_execution_time is null then current_timestamp at time zone 'utc' else start_execution_time end)\r\nWHERE task_execution_id=${taskExecutionId} and lu_id = ${luId}"
+                                    },
+                                    {
+                                        "name": "schema",
+                                        "schema": {
+                                            "type": "string"
+                                        },
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "batchId",
+                                        "schema": {
+                                            "type": "string"
+                                        },
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "taskExecutionId",
+                                        "schema": {
+                                            "type": "integer"
+                                        },
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "luId",
+                                        "schema": {
+                                            "type": "integer"
+                                        },
+                                        "mandatory": false
+                                    }
+                                ],
+                                "outputs": []
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "connections": [
+        {
+            "leftPort": {
+                "actor": "JsonParser1",
+                "name": "object"
+            },
+            "rightPort": {
+                "actor": "LuFunction1",
+                "name": "taskProperties"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "Get TDMDB Schema",
+                "name": "result"
+            },
+            "rightPort": {
+                "actor": "DbCommand1",
+                "name": "schema"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "LuFunction1",
+                "name": "batchId"
+            },
+            "rightPort": {
+                "actor": "DbCommand1",
+                "name": "batchId"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "flowArgs",
+                "name": "taskProperties"
+            },
+            "rightPort": {
+                "actor": "JsonParser1",
+                "name": "stream"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "flowArgs",
+                "name": "taskExecutionId"
+            },
+            "rightPort": {
+                "actor": "DbCommand1",
+                "name": "taskExecutionId"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "flowArgs",
+                "name": "luId"
+            },
+            "rightPort": {
+                "actor": "DbCommand1",
+                "name": "luId"
+            }
+        }
+    ]
+}

@@ -1,0 +1,206 @@
+{
+  "name": "BILLING Info",
+  "type": "function",
+  "code": "var source_env = null ;\nvar target_env = null ;\nvar target_entity_id=null;\nvar source_entity_id=null;\nvar target_id=null;",
+  "serializerSettings": [
+    {
+      "set": "nice",
+      "value": "true"
+    }
+  ],
+  "children": [
+    {
+      "name": "SRCInfo",
+      "type": "sql",
+      "code": "select environment_id as target_environment_id,source_env_name from public.task_execution_list where task_execution_id=${TaskExecID} limit 1",
+      "sessionProvider": "TDM",
+      "one": true,
+      "children": [
+        {
+          "type": "function",
+          "code": "target_id=target_environment_id;"
+        },
+        {
+          "type": "sql",
+          "code": "select environment_name as target_env_name from public.environments where environments.environment_id=${target_id} ",
+          "collapsed": true,
+          "children": [
+            {
+              "type": "function",
+              "code": "target_env=target_env_name;"
+            }
+          ]
+        },
+        {
+          "name": "SourceEnvName",
+          "type": "function",
+          "code": "source_env=source_env_name;"
+        },
+        {
+          "type": "sql",
+          "code": "set environemnt ${source_env_name}",
+          "sessionProvider": "fabric"
+        },
+        {
+          "name": "SourceData",
+          "type": "sql",
+          "code": "select lu_type2_eid as sub_id from public.tdm_lu_type_relation_eid where lu_type1_eid = ${SourceID}\nand lu_type_1='CRM' and lu_type_2='Billing'",
+          "sessionProvider": "TDM",
+          "children": [
+            {
+              "type": "function",
+              "code": "source_entity_id=sub_id;"
+            },
+            {
+              "name": "SubscriberData",
+              "type": "sql",
+              "code": "select * from public.subscriber where subscriber_id::varchar(100) = ${source_entity_id};",
+              "sessionProvider": "BILLING_DB",
+              "one": true,
+              "children": [
+                {
+                  "name": "subscriber ID",
+                  "type": "variable",
+                  "code": "subscriber_id"
+                },
+                {
+                  "name": "Subscriber Type",
+                  "type": "variable",
+                  "code": "subscriber_type"
+                },
+                {
+                  "name": "VIP Status",
+                  "type": "variable",
+                  "code": "vip_status"
+                },
+                {
+                  "name": "Open Balance Amount",
+                  "type": "sql",
+                  "code": "Select coalesce(Sum(inv.balance), 0::bigint) - coalesce(Sum(pym.amount::bigint),\n  0::bigint) As total_open_balance\nFrom public.subscriber sub\n  Left Join public.invoice inv On sub.subscriber_id = inv.subscriber_id\n  Left Join public.payment pym On inv.invoice_id = pym.invoice_id\nWhere sub.subscriber_id =${source_entity_id}; ",
+                  "sessionProvider": "BILLING_DB",
+                  "one": true
+                },
+                {
+                  "name": "Total Invoice Amount",
+                  "type": "sql",
+                  "code": "select sum(balance) tot_inv_amt from invoice where subscriber_id =${source_entity_id};",
+                  "one": true,
+                  "sessionProvider": "BILLING_DB"
+                },
+                {
+                  "name": "Total Payment Amount",
+                  "type": "sql",
+                  "code": "select sum(pym.amount::bigint) tot_pym_amt \n    from invoice inv, payment pym   \n    where inv.subscriber_id = ${source_entity_id} \n    and inv.invoice_id = pym.invoice_id;",
+                  "one": true,
+                  "sessionProvider": "BILLING_DB"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "TargetEnvName",
+          "type": "function",
+          "code": "target_env;"
+        },
+        {
+          "name": "TARInfo",
+          "type": "sql",
+          "code": "select lu_type2_eid as sub_id from public.tdm_lu_type_relation_eid where lu_type1_eid = ${SourceID}\nand lu_type_1='CRM' and lu_type_2='Billing'",
+          "sessionProvider": "TDM",
+          "children": [
+            {
+              "type": "function",
+              "code": "source_entity_id=sub_id;"
+            },
+            {
+              "name": "TargetData",
+              "type": "sql",
+              "code": "select distinct target_entity_id as TargetID from public.task_exe_stats_detailed where task_execution_id=${TaskExecID} and lu_name='Billing' and entity_id=${source_entity_id} limit 30",
+              "sessionProvider": "TDM",
+              "one": true,
+              "children": [
+                {
+                  "type": "function",
+                  "code": "target_entity_id=TargetID;"
+                },
+                {
+                  "type": "function",
+                  "code": "target_env"
+                },
+                {
+                  "type": "sql",
+                  "code": "set environemnt ${target_env}",
+                  "sessionProvider": "fabric"
+                },
+                {
+                  "name": "TargetSubscriberData",
+                  "type": "sql",
+                  "code": "select * from public.subscriber where subscriber_id::varchar(100) = ${target_entity_id};",
+                  "sessionProvider": "TAR_BILLING_DB",
+                  "one": true,
+                  "children": [
+                    {
+                      "name": "subscriber ID",
+                      "type": "variable",
+                      "code": "subscriber_id"
+                    },
+                    {
+                      "name": "Subscriber Type",
+                      "type": "variable",
+                      "code": "subscriber_type"
+                    },
+                    {
+                      "name": "VIP Status",
+                      "type": "variable",
+                      "code": "vip_status"
+                    },
+                    {
+                      "name": "Open Balance Amount",
+                      "type": "sql",
+                      "code": "Select Coalesce(Sum(inv.balance), 0::BigInt) - Coalesce(Sum(pym.amount::bigint),\n  0::BigInt) As total_open_balance\nFrom public.subscriber sub\n  Left Join public.invoice inv On sub.subscriber_id = inv.subscriber_id\n  Left Join public.payment pym On inv.invoice_id = pym.invoice_id\nWhere sub.subscriber_id =${target_entity_id};",
+                      "one": true,
+                      "sessionProvider": "TAR_BILLING_DB"
+                    },
+                    {
+                      "name": "Total Invoice Amount",
+                      "type": "sql",
+                      "code": "select sum(balance) tot_inv_amt from invoice where subscriber_id =${target_entity_id};",
+                      "one": true,
+                      "sessionProvider": "TAR_BILLING_DB"
+                    },
+                    {
+                      "name": "Total Payment Amount",
+                      "type": "sql",
+                      "code": "select sum(pym.amount::bigint) tot_pym_amt \n    from invoice inv, payment pym   \n    where inv.subscriber_id = ${target_entity_id} \n    and inv.invoice_id = pym.invoice_id;",
+                      "one": true,
+                      "sessionProvider": "TAR_BILLING_DB"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "params": [
+    {
+      "name": "SourceID",
+      "dataType": "String",
+      "description": "",
+      "mandatory": true
+    },
+    {
+      "name": "TaskExecID",
+      "dataType": "String",
+      "description": "",
+      "mandatory": true
+    }
+  ],
+  "exposeAsEndpoint": true,
+  "path": "",
+  "requireAuth": true,
+  "additionalPermissions": []
+}

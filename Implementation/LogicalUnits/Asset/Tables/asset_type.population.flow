@@ -1,0 +1,416 @@
+{
+	"levels": [
+		{
+			"stages": [
+				{
+					"name": "Input",
+					"dependsOnList": [],
+					"isLast": 0,
+					"actors": [
+						{
+							"name": "PopulationArgs",
+							"actorType": {
+								"parentType": "PopulationArgs",
+								"readOnly": true,
+								"inputs": [
+									{
+										"name": "asset_type_id",
+										"schema": {}
+									},
+									{
+										"name": "type",
+										"schema": {}
+									},
+									{
+										"name": "enginesize",
+										"schema": {}
+									},
+									{
+										"name": "max_speed",
+										"schema": {}
+									},
+									{
+										"name": "brand",
+										"schema": {}
+									},
+									{
+										"name": "model",
+										"schema": {}
+									},
+									{
+										"name": "price",
+										"schema": {}
+									}
+								],
+								"outputs": []
+							}
+						},
+						{
+							"name": "SyncDeleteMode",
+							"actorType": {
+								"parentType": "SyncDeleteMode",
+								"inputs": [
+									{
+										"name": "table",
+										"const": null
+									}
+								],
+								"outputs": []
+							}
+						}
+					]
+				}
+			]
+		},
+		{
+			"stages": [
+				{
+					"name": "Source",
+					"dependsOnList": [],
+					"isLast": 0,
+					"actors": [
+						{
+							"name": "Query",
+							"actorType": {
+								"parentType": "SourceDbQuery",
+								"inputs": [
+									{
+										"name": "interface",
+										"const": "ASSET_DB"
+									},
+									{
+										"name": "sql",
+										"const": "select * from public.asset_type"
+									}
+								],
+								"outputs": [
+									{
+										"name": "result",
+										"schema": {
+											"type": "object",
+											"properties": {
+												"asset_type_id": {
+													"type": {}
+												},
+"type": {
+													"type": {}
+												},
+"enginesize": {
+													"type": {}
+												},
+"max_speed": {
+													"type": {}
+												},
+"brand": {
+													"type": {}
+												},
+"model": {
+													"type": {}
+												},
+"price": {
+													"type": {}
+												}
+											}
+										}
+									}
+								]
+							}
+                       },
+                        {
+                            "name": "Get SEQ_CACHE_INTERFACE",
+                            "actorType": {
+                                "parentType": "FabricSetRead",
+                                "inputs": [
+                                    {
+                                        "name": "key",
+                                        "const": "SEQ_CACHE_INTERFACE",
+                                        "isDefault": false
+                                    }
+                                ],
+                                "outputs": []
+                            }
+                        }						  
+					]
+				}
+			]
+		},
+		{
+			"stages": [
+				{
+					"name": "Mask Data Based On Catalog",
+					"dependsOnList": [],
+					"isLast": 0,
+					"actors": [
+                        {
+                            "name": "Catalog Masking Mapper",
+                            "actorType": {
+                                "parentType": "CatalogMaskingMapper",
+                                "inputs": [
+                                    {
+                                        "name": "dataPlatform",
+                                        "const": "ASSET_DB"
+                                    },
+                                    {
+                                        "name": "interface",
+                                        "const": null
+                                    },
+                                    {
+                                        "name": "dataset",
+                                        "const": "asset_type"
+                                    },
+                                    {
+                                        "name": "schema",
+                                        "const": "public"
+                                    }
+                                ],
+                                "outputs": []
+                            }
+                        }
+                    ]
+                }
+            ]
+		},
+		{
+			"stages": [
+				{
+					"name": "LU Table",
+					"dependsOnList": [],
+					"isLast": 1,
+					"actors": [
+						{
+							"name": "asset_type",
+							"actorType": {
+								"parentType": "DbLoad",
+								"inputs": [
+									{
+										"name": "interface",
+										"const": "fabric"
+									},
+									{
+										"name": "schema",
+										"const": null
+									},
+									{
+										"name": "table",
+										"const": null
+									},
+									{
+										"name": "fields",
+										"const": [
+											"asset_type_id",
+											"type",
+											"enginesize",
+											"max_speed",
+											"brand",
+											"model",
+											"price"
+										]
+									},
+									{
+										"name": "keys",
+										"const": [
+										]
+									},
+									{
+										"name": "dialect",
+										"const": "sqlite"
+									},
+									{
+										"name": "asset_type_id",
+										"schema": {}
+									},
+									{
+										"name": "type",
+										"schema": {}
+									},
+									{
+										"name": "enginesize",
+										"schema": {}
+									},
+									{
+										"name": "max_speed",
+										"schema": {}
+									},
+									{
+										"name": "brand",
+										"schema": {}
+									},
+									{
+										"name": "model",
+										"schema": {}
+									},
+									{
+										"name": "price",
+										"schema": {}
+									}
+								],
+								"outputs": []
+							}
+						}
+					]
+				}
+			]
+		},
+		{
+			"stages": [
+				{
+					"name": "Post Load",
+					"dependsOnList": [],
+					"isLast": 0,
+					"actors": []
+				}
+			]
+		}
+	],
+	"connections": [
+		{
+			"leftPort": {
+				"actor": "PopulationArgs",
+				"name": "parent_rows"
+			},
+			"rightPort": {
+				"actor": "Query",
+				"name": "parent_rows"
+			}
+		},
+		{
+			"leftPort": {
+				"actor": "Catalog Masking Mapper",
+				"name": "values"
+			},
+			"rightPort": {
+				"actor": "asset_type",
+				"name": "params"
+			},
+			"iterate": "Iterate"
+		},
+		{
+			"leftPort": {
+				"actor": "Query",
+				"name": "result"
+			},
+			"rightPort": {
+				"actor": "Catalog Masking Mapper",
+				"name": "values"
+			 
+			}
+		},
+		{
+			"leftPort": {
+              "actor": "Get SEQ_CACHE_INTERFACE",
+                "name": "result"
+            },
+            "rightPort": {
+                "actor": "Catalog Masking Mapper",
+                "name": "interface"
+            }
+        },
+        {
+            "leftPort": {											   
+				"actor": "flowArgs",
+				"name": "schema"
+			},
+			"rightPort": {
+				"actor": "asset_type",
+				"name": "schema"
+			}
+		},
+		{
+			"leftPort": {
+				"actor": "flowArgs",
+				"name": "table"
+			},
+			"rightPort": {
+				"actor": "asset_type",
+				"name": "table"
+			}
+		},
+		{
+			"leftPort": {
+				"actor": "flowArgs",
+				"name": "table"
+			},
+			"rightPort": {
+				"actor": "SyncDeleteMode",
+				"name": "table"
+			}
+		},
+		{
+			"leftPort": {
+				"actor": "flowArgs",
+				"name": "asset_type_id"
+			},
+			"rightPort": {
+				"actor": "PopulationArgs",
+				"name": "asset_type_id"
+			 
+			}
+		},
+		{
+			"leftPort": {
+				"actor": "flowArgs",
+				"name": "type"
+			},
+			"rightPort": {
+				"actor": "PopulationArgs",
+				"name": "type"
+			 
+			}
+		},
+		{
+			"leftPort": {
+				"actor": "flowArgs",
+				"name": "enginesize"
+			},
+			"rightPort": {
+				"actor": "PopulationArgs",
+				"name": "enginesize"
+			 
+			}
+		},
+		{
+			"leftPort": {
+				"actor": "flowArgs",
+				"name": "max_speed"
+			},
+			"rightPort": {
+				"actor": "PopulationArgs",
+				"name": "max_speed"
+			 
+			}
+		},
+		{
+			"leftPort": {
+				"actor": "flowArgs",
+				"name": "brand"
+			},
+			"rightPort": {
+				"actor": "PopulationArgs",
+				"name": "brand"
+			 
+			}
+		},
+		{
+			"leftPort": {
+				"actor": "flowArgs",
+				"name": "model"
+			},
+			"rightPort": {
+				"actor": "PopulationArgs",
+				"name": "model"
+			 
+			}
+		},
+		{
+			"leftPort": {
+				"actor": "flowArgs",
+				"name": "price"
+			},
+			"rightPort": {
+				"actor": "PopulationArgs",
+				"name": "price"
+			 
+			}
+		}
+	]
+}

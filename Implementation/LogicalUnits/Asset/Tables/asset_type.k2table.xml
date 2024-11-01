@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableObject xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Name>asset_type</Name>
+  <ID>tbl_asset_type</ID>
+  <Columns>
+    <Column name="asset_type_id" id="asset_type_id" index="0" datatype="TEXT" />
+    <Column name="type" id="type" index="1" datatype="TEXT" />
+    <Column name="enginesize" id="enginesize" index="2" datatype="TEXT" />
+    <Column name="max_speed" id="max_speed" index="3" datatype="TEXT" />
+    <Column name="brand" id="brand" index="4" datatype="TEXT" />
+    <Column name="model" id="model" index="5" datatype="TEXT" />
+    <Column name="price" id="price" index="6" datatype="TEXT" />
+  </Columns>
+  <IndexesList>
+  </IndexesList>
+  <EnrichmentList>
+  </EnrichmentList>
+  <LazyDataUpdate syncMethod="Inherited" performEvery="1.00:00:00">
+    <DecisionFunction></DecisionFunction>
+  </LazyDataUpdate>
+  <TriggersList>
+  </TriggersList>
+</TableObject>

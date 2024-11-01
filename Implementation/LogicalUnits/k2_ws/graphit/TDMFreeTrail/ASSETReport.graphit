@@ -1,0 +1,256 @@
+{
+  "name": "ASSET Info",
+  "type": "function",
+  "code": "var source_env = null ;\nvar target_env = null ;\nvar target_entity_id=null;\nvar source_entity_id=null;\nvar target_id=null;",
+  "serializerSettings": [
+    {
+      "set": "nice",
+      "value": "true"
+    }
+  ],
+  "children": [
+    {
+      "name": "SRCInfo",
+      "type": "sql",
+      "code": "select environment_id as target_environment_id,source_env_name from public.task_execution_list where task_execution_id=${TaskExecID} limit 1",
+      "sessionProvider": "TDM",
+      "one": true,
+      "children": [
+        {
+          "type": "function",
+          "code": "target_id=target_environment_id;"
+        },
+        {
+          "type": "sql",
+          "code": "select environment_name as target_env_name from public.environments where environments.environment_id=${target_id} ",
+          "collapsed": true,
+          "children": [
+            {
+              "type": "function",
+              "code": "target_env=target_env_name;"
+            }
+          ]
+        },
+        {
+          "name": "SourceEnvName",
+          "type": "function",
+          "code": "source_env=source_env_name;"
+        },
+        {
+          "type": "sql",
+          "code": "set environemnt ${source_env_name}",
+          "sessionProvider": "fabric"
+        },
+        {
+          "name": "SourceData",
+          "type": "sql",
+          "code": "select lu_type2_eid as sub_id from public.tdm_lu_type_relation_eid where lu_type1_eid = ${SourceID}\nand lu_type_1='CRM' and lu_type_2='Asset'",
+          "sessionProvider": "TDM",
+          "collapsed": true,
+          "children": [
+            {
+              "type": "function",
+              "code": "source_entity_id=sub_id;"
+            },
+            {
+              "name": "TransactionData",
+              "type": "sql",
+              "code": "select * from public.asset_transaction where subscriber_id = ${source_entity_id};",
+              "one": true,
+              "sessionProvider": "ASSET_DB",
+              "collapsed": true,
+              "children": [
+                {
+                  "name": "transaction_id",
+                  "type": "variable",
+                  "code": "transaction_id"
+                },
+                {
+                  "name": "transaction_start",
+                  "type": "variable",
+                  "code": "transaction_start"
+                },
+                {
+                  "name": "startlat",
+                  "type": "variable",
+                  "code": "startlat"
+                },
+                {
+                  "name": "startlong",
+                  "type": "variable",
+                  "code": "startlong"
+                },
+                {
+                  "name": "transaction_end",
+                  "type": "variable",
+                  "code": "transaction_end"
+                },
+                {
+                  "name": "endlat",
+                  "type": "variable",
+                  "code": "endlat"
+                },
+                {
+                  "name": "endlong",
+                  "type": "variable",
+                  "code": "endlong"
+                },
+                {
+                  "name": "asset_id",
+                  "type": "variable",
+                  "code": "asset_id"
+                },
+                {
+                  "name": "subscriber_id",
+                  "type": "variable",
+                  "code": "subscriber_id"
+                },
+                {
+                  "name": "duration",
+                  "type": "variable",
+                  "code": "duration"
+                },
+                {
+                  "name": "transactioncity",
+                  "type": "variable",
+                  "code": "transactioncity"
+                },
+                {
+                  "name": "transactionaddress",
+                  "type": "variable",
+                  "code": "transactionaddress"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "TargetEnvName",
+          "type": "function",
+          "code": "target_env;"
+        },
+        {
+          "name": "TARInfo",
+          "type": "sql",
+          "code": "select lu_type2_eid as sub_id from public.tdm_lu_type_relation_eid where lu_type1_eid = ${SourceID}\nand lu_type_1='CRM' and lu_type_2='Asset'",
+          "sessionProvider": "TDM",
+          "children": [
+            {
+              "type": "function",
+              "code": "source_entity_id=sub_id;"
+            },
+            {
+              "name": "TargetData",
+              "type": "sql",
+              "code": "select distinct target_entity_id as TargetID from public.task_exe_stats_detailed where task_execution_id=${TaskExecID} and lu_name='Asset' and entity_id=${source_entity_id} limit 30",
+              "sessionProvider": "TDM",
+              "one": true,
+              "children": [
+                {
+                  "type": "function",
+                  "code": "target_entity_id=TargetID;"
+                },
+                {
+                  "type": "function",
+                  "code": "target_env"
+                },
+                {
+                  "type": "sql",
+                  "code": "set environemnt ${target_env}",
+                  "sessionProvider": "fabric"
+                },
+                {
+                  "name": "TargetTransactionData",
+                  "type": "sql",
+                  "code": "select * from public.asset_transaction where subscriber_id = ${target_entity_id};",
+                  "one": true,
+                  "sessionProvider": "TAR_ASSET_DB",
+                  "children": [
+                    {
+                      "name": "transaction_id",
+                      "type": "variable",
+                      "code": "transaction_id"
+                    },
+                    {
+                      "name": "transaction_start",
+                      "type": "variable",
+                      "code": "transaction_start"
+                    },
+                    {
+                      "name": "startlat",
+                      "type": "variable",
+                      "code": "startlat"
+                    },
+                    {
+                      "name": "startlong",
+                      "type": "variable",
+                      "code": "startlong"
+                    },
+                    {
+                      "name": "transaction_end",
+                      "type": "variable",
+                      "code": "transaction_end"
+                    },
+                    {
+                      "name": "endlat",
+                      "type": "variable",
+                      "code": "endlat"
+                    },
+                    {
+                      "name": "endlong",
+                      "type": "variable",
+                      "code": "endlong"
+                    },
+                    {
+                      "name": "asset_id",
+                      "type": "variable",
+                      "code": "asset_id"
+                    },
+                    {
+                      "name": "subscriber_id",
+                      "type": "variable",
+                      "code": "subscriber_id"
+                    },
+                    {
+                      "name": "duration",
+                      "type": "variable",
+                      "code": "duration"
+                    },
+                    {
+                      "name": "transactioncity",
+                      "type": "variable",
+                      "code": "transactioncity"
+                    },
+                    {
+                      "name": "transactionaddress",
+                      "type": "variable",
+                      "code": "transactionaddress"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "params": [
+    {
+      "name": "SourceID",
+      "dataType": "String",
+      "description": "",
+      "mandatory": true
+    },
+    {
+      "name": "TaskExecID",
+      "dataType": "String",
+      "description": "",
+      "mandatory": true
+    }
+  ],
+  "exposeAsEndpoint": true,
+  "path": "",
+  "requireAuth": true,
+  "additionalPermissions": []
+}

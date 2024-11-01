@@ -1,0 +1,3 @@
+parent_lu,child_lu,child_lu_eid_sql,child_lu_tar_eid_sql
+CRM,Billing,"Select contract_id From contract","Select contract_id From TAR_contract"
+CRM,Asset,"Select subscriber_id From asset_transaction","Select subscriber_id From TAR_asset_transaction"

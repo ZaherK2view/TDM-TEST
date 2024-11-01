@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableObject xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Name>customer</Name>
+  <ID>tbl_customer</ID>
+  <EntityId>customer_id</EntityId>
+  <ColumnsCollation>BINARY</ColumnsCollation>
+  <FullTextSearch>false</FullTextSearch>
+  <Columns>
+    <Column name="customer_id" id="customer_id" index="0" datatype="TEXT" />
+    <Column name="id_number" id="id_number" index="1" datatype="TEXT" />
+    <Column name="first_name" id="first_name" index="2" datatype="TEXT" />
+    <Column name="last_name" id="last_name" index="3" datatype="TEXT" />
+    <Column name="email" id="email" index="4" datatype="TEXT" />
+    <Column name="primary_phone" id="primary_phone" index="5" datatype="TEXT" />
+    <Column name="additional_phone" id="additional_phone" index="6" datatype="TEXT" />
+    <Column name="social_net_fb" id="social_net_fb" index="7" datatype="TEXT" />
+    <Column name="social_net_tw" id="social_net_tw" index="8" datatype="TEXT" />
+    <Column name="social_net_lnk" id="social_net_lnk" index="9" datatype="TEXT" />
+    <Column name="occupation" id="occupation" index="10" datatype="TEXT" />
+    <Column name="birthday" id="birthday" index="11" datatype="date" />
+  </Columns>
+  <IndexesList>
+  </IndexesList>
+  <EnrichmentList>
+  </EnrichmentList>
+  <LazyDataUpdate syncMethod="Inherited" performEvery="1.00:00:00" deleteMode="">
+    <DecisionFunction></DecisionFunction>
+  </LazyDataUpdate>
+  <TriggersList>
+  </TriggersList>
+</TableObject>

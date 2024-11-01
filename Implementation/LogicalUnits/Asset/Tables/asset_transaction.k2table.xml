@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableObject xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Name>asset_transaction</Name>
+  <ID>tbl_asset_transaction</ID>
+  <EntityId>transaction_id</EntityId>
+  <ColumnsCollation>BINARY</ColumnsCollation>
+  <FullTextSearch>false</FullTextSearch>
+  <Columns>
+    <Column name="transaction_id" id="transaction_id" index="0" datatype="TEXT" />
+    <Column name="transaction_start" id="transaction_start" index="1" datatype="TEXT" />
+    <Column name="startlat" id="startlat" index="2" datatype="TEXT" />
+    <Column name="startlong" id="startlong" index="3" datatype="TEXT" />
+    <Column name="transaction_end" id="transaction_end" index="4" datatype="TEXT" />
+    <Column name="endlat" id="endlat" index="5" datatype="TEXT" />
+    <Column name="endlong" id="endlong" index="6" datatype="TEXT" />
+    <Column name="asset_id" id="asset_id" index="7" datatype="TEXT" />
+    <Column name="subscriber_id" id="subscriber_id" index="8" datatype="TEXT" />
+    <Column name="duration" id="duration" index="9" datatype="TEXT" />
+    <Column name="transactioncity" id="transactioncity" index="10" datatype="TEXT" />
+    <Column name="transactionaddress" id="transactionaddress" index="11" datatype="TEXT" />
+  </Columns>
+  <IndexesList>
+  </IndexesList>
+  <EnrichmentList>
+  </EnrichmentList>
+  <LazyDataUpdate syncMethod="Inherited" performEvery="1.00:00:00">
+    <DecisionFunction></DecisionFunction>
+  </LazyDataUpdate>
+  <TriggersList>
+  </TriggersList>
+</TableObject>

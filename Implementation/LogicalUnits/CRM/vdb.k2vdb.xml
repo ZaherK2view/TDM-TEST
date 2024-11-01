@@ -1,0 +1,283 @@
+<?xml version="1.0" encoding="utf-8"?>
+<VirtualDB xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" version="">
+  <Name>vdb</Name>
+  <RootView>FABRIC_TDM_ROOT</RootView>
+  <CacheLocationType>Default</CacheLocationType>
+  <LuLazyDataUpdate syncMethod="None" performEvery="1.00:00:00" syncTimeout="0">
+  	<DecisionFunction></DecisionFunction>
+  </LuLazyDataUpdate>
+  <EventsList>
+  </EventsList>
+  <IidFinderProp>
+    <NumberOfPartitions>100</NumberOfPartitions>
+    <NumberOfJobs>50</NumberOfJobs>
+  </IidFinderProp>
+  <Tables>
+	 <Table>customer</Table>
+	 <Table>address</Table>
+	 <Table>payment_methods</Table>
+	 <Table>activity</Table>
+	 <Table>cases</Table>
+	 <Table>case_note</Table>
+	 <Table>contract</Table>
+	 <Table>recommendations</Table>
+	 <Table>score</Table>
+	 <Table>LU_PARAMS</Table>
+	 <Table>FABRIC_TDM_ROOT</Table>
+	 <Table>TDM_LU_TYPE_REL_TAR_EID</Table>
+	 <Table>TDM_LU_TYPE_RELATION_EID</Table>
+	 <Table>TAR_customer</Table>
+	 <Table>TAR_activity</Table>
+	 <Table>TAR_address</Table>
+	 <Table>TAR_contract</Table>
+	 <Table>TAR_payment_methods</Table>
+	 <Table>TAR_recommendations</Table>
+	 <Table>TAR_score</Table>
+	 <Table>TAR_cases</Table>
+	 <Table>TAR_case_note</Table>
+	 <Table>asset_transaction</Table>
+	 <Table>TAR_asset_transaction</Table>
+  </Tables>
+  <TablesProperties>
+	 <TableProperties name="customer">
+      <Populations>
+        <Population name="population.flow" order="2" disabled="false" populationType="FLOW" />
+      </Populations>
+    </TableProperties>
+	 <TableProperties name="address">
+      <Populations>
+        <Population name="population.flow" order="3" disabled="false" populationType="FLOW" />
+      </Populations>
+    </TableProperties>
+	 <TableProperties name="payment_methods">
+      <Populations>
+        <Population name="population.flow" order="3" disabled="false" populationType="FLOW" />
+      </Populations>
+    </TableProperties>
+	 <TableProperties name="activity">
+      <Populations>
+        <Population name="population.flow" order="3" disabled="false" populationType="FLOW" />
+      </Populations>
+    </TableProperties>
+	 <TableProperties name="cases">
+      <Populations>
+        <Population name="population.flow" order="4" disabled="false" populationType="FLOW" />
+      </Populations>
+    </TableProperties>
+	 <TableProperties name="case_note">
+      <Populations>
+        <Population name="population.flow" order="5" disabled="false" populationType="FLOW" />
+      </Populations>
+    </TableProperties>
+	 <TableProperties name="contract">
+      <Populations>
+        <Population name="population.flow" order="3" disabled="false" populationType="FLOW" />
+      </Populations>
+    </TableProperties>
+	 <TableProperties name="recommendations">
+      <Populations>
+        <Population name="population.flow" order="3" disabled="false" populationType="FLOW" />
+      </Populations>
+    </TableProperties>
+	 <TableProperties name="score">
+      <Populations>
+        <Population name="population.flow" order="3" disabled="false" populationType="FLOW" />
+      </Populations>
+    </TableProperties>
+	 <TableProperties name="LU_PARAMS">
+      <Populations>
+        <Population name="populationLuParams.flow" order="998" disabled="false" populationType="Flow" />
+      </Populations>
+    </TableProperties>
+	 <TableProperties name="FABRIC_TDM_ROOT">
+      <Populations>
+        <Population name="populationFabricTdmRoot.flow" order="1" disabled="false" populationType="Flow" />
+      </Populations>
+    </TableProperties>
+	 <TableProperties name="TDM_LU_TYPE_RELATION_EID">
+      <Populations>
+        <Population name="populationTdmLuTypeRealtionEid.flow" order="999" disabled="false" populationType="Flow" />
+      </Populations>
+    </TableProperties>
+	 <TableProperties name="TAR_customer">
+      <Populations>
+        <Population name="population.flow" order="17" disabled="false" populationType="Flow" />
+      </Populations>
+    </TableProperties>
+	 <TableProperties name="TAR_activity">
+      <Populations>
+        <Population name="population.flow" order="18" disabled="false" populationType="Flow" />
+      </Populations>
+    </TableProperties>
+	 <TableProperties name="TAR_address">
+      <Populations>
+        <Population name="population.flow" order="18" disabled="false" populationType="Flow" />
+      </Populations>
+    </TableProperties>
+	 <TableProperties name="TAR_contract">
+      <Populations>
+        <Population name="population.flow" order="18" disabled="false" populationType="Flow" />
+      </Populations>
+    </TableProperties>
+	 <TableProperties name="TAR_payment_methods">
+      <Populations>
+        <Population name="population.flow" order="18" disabled="false" populationType="Flow" />
+      </Populations>
+    </TableProperties>
+	 <TableProperties name="TAR_recommendations">
+      <Populations>
+        <Population name="population.flow" order="18" disabled="false" populationType="Flow" />
+      </Populations>
+    </TableProperties>
+	 <TableProperties name="TAR_score">
+      <Populations>
+        <Population name="population.flow" order="18" disabled="false" populationType="Flow" />
+      </Populations>
+    </TableProperties>
+	 <TableProperties name="TAR_cases">
+      <Populations>
+        <Population name="population.flow" order="19" disabled="false" populationType="Flow" />
+      </Populations>
+    </TableProperties>
+	 <TableProperties name="TAR_case_note">
+      <Populations>
+        <Population name="population.flow" order="20" disabled="false" populationType="Flow" />
+      </Populations>
+    </TableProperties>
+	 <TableProperties name="asset_transaction">
+      <Populations>
+        <Population name="population.flow" order="4" disabled="false" populationType="FLOW" />
+      </Populations>
+    </TableProperties>
+	 <TableProperties name="TAR_asset_transaction">
+      <Populations>
+        <Population name="population.flow" order="19" disabled="false" populationType="FLOW" />
+      </Populations>
+    </TableProperties>
+  </TablesProperties>
+  <EnrichmentsOrderList>
+  </EnrichmentsOrderList>
+  <ReferencesList>
+  </ReferencesList>
+  <Relations />
+  <DatabaseRelations>
+	  <Relation>
+        <From tableType="TableObject" table="customer" column="customer_id" columnId="customer_id" />
+        <To tableType="TableObject" table="address" populationObjectName="population.flow" column="customer_id" columnId="customer_id" />
+      </Relation>
+	  <Relation>
+        <From tableType="TableObject" table="customer" column="customer_id" columnId="customer_id" />
+        <To tableType="TableObject" table="payment_methods" populationObjectName="population.flow" column="customer_id" columnId="customer_id" />
+      </Relation>
+	  <Relation>
+        <From tableType="TableObject" table="customer" column="customer_id" columnId="customer_id" />
+        <To tableType="TableObject" table="activity" populationObjectName="population.flow" column="customer_id" columnId="customer_id" />
+      </Relation>
+	  <Relation>
+        <From tableType="TableObject" table="customer" column="customer_id" columnId="customer_id" />
+        <To tableType="TableObject" table="contract" populationObjectName="population.flow" column="customer_id" columnId="customer_id" />
+      </Relation>
+	  <Relation>
+        <From tableType="TableObject" table="customer" column="customer_id" columnId="customer_id" />
+        <To tableType="TableObject" table="recommendations" populationObjectName="population.flow" column="customer_id" columnId="customer_id" />
+      </Relation>
+	  <Relation>
+        <From tableType="TableObject" table="customer" column="customer_id" columnId="customer_id" />
+        <To tableType="TableObject" table="score" populationObjectName="population.flow" column="customer_id" columnId="customer_id" />
+      </Relation>
+	  <Relation>
+        <From tableType="TableObject" table="activity" column="activity_id" columnId="activity_id" />
+        <To tableType="TableObject" table="cases" populationObjectName="population.flow" column="activity_id" columnId="activity_id" />
+      </Relation>
+	  <Relation>
+        <From tableType="TableObject" table="cases" column="case_id" columnId="case_id" />
+        <To tableType="TableObject" table="case_note" populationObjectName="population.flow" column="case_id" columnId="case_id" />
+      </Relation>
+	  <Relation>
+        <From tableType="TableObject" table="FABRIC_TDM_ROOT" column="IID" columnId="tblCol_2108d9693f114111ae320111c0d1b1c8" />
+        <To tableType="TableObject" table="customer" populationObjectName="population.flow" column="customer_id" columnId="customer_id" />
+      </Relation>
+	  <Relation>
+        <From tableType="TableObject" table="FABRIC_TDM_ROOT" column="IID" columnId="tblCol_2108d9693f114111ae320111c0d1b1c8" />
+        <To tableType="TableObject" table="TAR_customer" populationObjectName="population.flow" column="customer_id" columnId="customer_id" />
+      </Relation>
+	  <Relation>
+        <From tableType="TableObject" table="FABRIC_TDM_ROOT" column="IID" columnId="IID" />
+        <To tableType="TableObject" table="TAR_customer" populationObjectName="population.flow" column="customer_id" columnId="customer_id" />
+      </Relation>
+	  <Relation>
+        <From tableType="TableObject" table="TAR_customer" column="customer_id" columnId="customer_id" />
+        <To tableType="TableObject" table="TAR_activity" populationObjectName="population.flow" column="customer_id" columnId="customer_id" />
+      </Relation>
+	  <Relation>
+        <From tableType="TableObject" table="TAR_customer" column="customer_id" columnId="customer_id" />
+        <To tableType="TableObject" table="TAR_address" populationObjectName="population.flow" column="customer_id" columnId="customer_id" />
+      </Relation>
+	  <Relation>
+        <From tableType="TableObject" table="TAR_customer" column="customer_id" columnId="customer_id" />
+        <To tableType="TableObject" table="TAR_contract" populationObjectName="population.flow" column="customer_id" columnId="customer_id" />
+      </Relation>
+	  <Relation>
+        <From tableType="TableObject" table="TAR_customer" column="customer_id" columnId="customer_id" />
+        <To tableType="TableObject" table="TAR_payment_methods" populationObjectName="population.flow" column="customer_id" columnId="customer_id" />
+      </Relation>
+	  <Relation>
+        <From tableType="TableObject" table="TAR_customer" column="customer_id" columnId="customer_id" />
+        <To tableType="TableObject" table="TAR_recommendations" populationObjectName="population.flow" column="customer_id" columnId="customer_id" />
+      </Relation>
+	  <Relation>
+        <From tableType="TableObject" table="TAR_customer" column="customer_id" columnId="customer_id" />
+        <To tableType="TableObject" table="TAR_score" populationObjectName="population.flow" column="customer_id" columnId="customer_id" />
+      </Relation>
+	  <Relation>
+        <From tableType="TableObject" table="TAR_activity" column="activity_id" columnId="activity_id" />
+        <To tableType="TableObject" table="TAR_cases" populationObjectName="population.flow" column="activity_id" columnId="activity_id" />
+      </Relation>
+	  <Relation>
+        <From tableType="TableObject" table="TAR_cases" column="case_id" columnId="case_id" />
+        <To tableType="TableObject" table="TAR_case_note" populationObjectName="population.flow" column="case_id" columnId="case_id" />
+      </Relation>
+	  <Relation>
+        <From tableType="TableObject" table="contract" column="contract_id" columnId="contract_id" />
+        <To tableType="TableObject" table="asset_transaction" populationObjectName="population.flow" column="subscriber_id" columnId="subscriber_id" />
+      </Relation>
+	  <Relation>
+        <From tableType="TableObject" table="TAR_contract" column="contract_id" columnId="contract_id" />
+        <To tableType="TableObject" table="TAR_asset_transaction" populationObjectName="population.flow" column="subscriber_id" columnId="subscriber_id" />
+      </Relation>
+  </DatabaseRelations>
+  <DiagramGraph>
+    <Graph name="vdb.k2vdb.xml">
+      <Group name="TDM Tables" pos="6 1620" expanded="true">
+        <Node name="LU_PARAMS" pos="133 1726" viewType="Table" />
+        <Node name="FABRIC_TDM_ROOT" pos="133 1951" viewType="Table" />
+        <Node name="TDM_LU_TYPE_REL_TAR_EID" pos="133 2151" viewType="Table" />
+        <Node name="TDM_LU_TYPE_RELATION_EID" pos="133 2351" viewType="Table" />
+      </Group>
+      <Group name="Source Tables" pos="419 20" expanded="true">
+        <Node name="customer" pos="545 676" viewType="Table" />
+        <Node name="address" pos="830 126" viewType="Table" />
+        <Node name="payment_methods" pos="830 351" viewType="Table" />
+        <Node name="activity" pos="830 576" viewType="Table" />
+        <Node name="cases" pos="1115 551" viewType="Table" />
+        <Node name="case_note" pos="1400 601" viewType="Table" />
+        <Node name="contract" pos="830 801" viewType="Table" />
+        <Node name="recommendations" pos="830 1026" viewType="Table" />
+        <Node name="score" pos="830 1251" viewType="Table" />
+        <Node name="asset_transaction" pos="1180 834" viewType="Table" />
+      </Group>
+      <Group name="Target Tables" pos="419 1445" expanded="true">
+        <Node name="TAR_customer" pos="545 2101" viewType="Table" />
+        <Node name="TAR_activity" pos="830 1551" viewType="Table" />
+        <Node name="TAR_address" pos="830 1776" viewType="Table" />
+        <Node name="TAR_contract" pos="820 2007" viewType="Table" />
+        <Node name="TAR_payment_methods" pos="830 2226" viewType="Table" />
+        <Node name="TAR_recommendations" pos="830 2451" viewType="Table" />
+        <Node name="TAR_score" pos="830 2676" viewType="Table" />
+        <Node name="TAR_cases" pos="1115 1601" viewType="Table" />
+        <Node name="TAR_case_note" pos="1400 1651" viewType="Table" />
+        <Node name="TAR_asset_transaction" pos="1147 2006" viewType="Table" />
+      </Group>
+    </Graph>
+  </DiagramGraph>
+</VirtualDB>
