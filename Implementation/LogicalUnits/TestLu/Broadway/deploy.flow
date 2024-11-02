@@ -115,7 +115,7 @@
                                     },
                                     {
                                         "name": "path",
-                                        "const": "/opt/apps/fabric/workspace/project/project-resources/addresses.csv"
+                                        "const": "project-resources/addresses.csv"
                                     }
                                 ],
                                 "outputs": []
