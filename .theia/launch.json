@@ -8,7 +8,7 @@
             "request": "attach",
             "name": "Attach - localhost:5009",
             "hostName": "localhost",
-            "port": 5009
+            "port": 5009 
         }
     ]
 }
