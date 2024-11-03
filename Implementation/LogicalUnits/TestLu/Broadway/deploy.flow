@@ -115,7 +115,7 @@
                                     },
                                     {
                                         "name": "path",
-                                        "const": "/opt/apps/fabric/workspace/project/Implementation/LogicalUnits/TestLu/Java/src/com/k2view/cdbms/usercode/lu/TestLu/addresses.csv"
+                                        "const": "/Implementation/LogicalUnits/TestLu/Java/src/com/k2view/cdbms/usercode/lu/TestLu/addresses.csv"
                                     }
                                 ],
                                 "outputs": []
