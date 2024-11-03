@@ -115,7 +115,7 @@
                                     },
                                     {
                                         "name": "path",
-                                        "const": "/Implementation/LogicalUnits/TestLu/Java/src/com/k2view/cdbms/usercode/lu/TestLu/addresses.csv"
+                                        "const": "Implementation/LogicalUnits/TestLu/Java/src/com/k2view/cdbms/usercode/lu/TestLu/addresses.csv"
                                     }
                                 ],
                                 "outputs": []
