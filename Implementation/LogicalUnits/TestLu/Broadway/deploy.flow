@@ -111,11 +111,11 @@
                                 "inputs": [
                                     {
                                         "name": "interface",
-                                        "const": "file://"
+                                        "const": "SFTB"
                                     },
                                     {
                                         "name": "path",
-                                        "const": "Implementation/LogicalUnits/TestLu/Java/src/com/k2view/cdbms/usercode/lu/TestLu/addresses.csv"
+                                        "const": "addresses.csv"
                                     }
                                 ],
                                 "outputs": []

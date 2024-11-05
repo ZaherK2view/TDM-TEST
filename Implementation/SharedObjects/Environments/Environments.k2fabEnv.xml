@@ -327,6 +327,10 @@
           <Value>admin</Value>
           <Comment></Comment>
         </Global>
+        <Global name="REF_TABLE_COUNT" luName="TDM_Reference">
+          <Value>NOT_SET</Value>
+          <Comment></Comment>
+        </Global>
       </GlobalsList>
       <GenericInterfacesList>
         <GenericInterface type="LOCAL" enabled="false" version="">
@@ -334,6 +338,20 @@
           <Properties>
             <Property name="WorkingDir">
               <Value>C:\k2view\TDM_APIDOC</Value>
+            </Property>
+            <Property name="FilesFilter">
+              <Value></Value>
+            </Property>
+            <Property name="Affinity">
+              <Value></Value>
+            </Property>
+          </Properties>
+        </GenericInterface>
+        <GenericInterface type="LOCAL" enabled="true" version="">
+          <Name>SFTB</Name>
+          <Properties>
+            <Property name="WorkingDir">
+              <Value>workspace/project-resources</Value>
             </Property>
             <Property name="FilesFilter">
               <Value></Value>
@@ -674,6 +692,10 @@
           <Value>admin</Value>
           <Comment></Comment>
         </Global>
+        <Global name="REF_TABLE_COUNT" luName="TDM_Reference">
+          <Value>NOT_SET</Value>
+          <Comment></Comment>
+        </Global>
       </GlobalsList>
       <GenericInterfacesList>
         <GenericInterface type="LOCAL" enabled="false" version="">
@@ -681,6 +703,20 @@
           <Properties>
             <Property name="WorkingDir">
               <Value>C:\k2view\TDM_APIDOC</Value>
+            </Property>
+            <Property name="FilesFilter">
+              <Value></Value>
+            </Property>
+            <Property name="Affinity">
+              <Value></Value>
+            </Property>
+          </Properties>
+        </GenericInterface>
+        <GenericInterface type="LOCAL" enabled="true" version="">
+          <Name>SFTB</Name>
+          <Properties>
+            <Property name="WorkingDir">
+              <Value>workspace/project/project-resources</Value>
             </Property>
             <Property name="FilesFilter">
               <Value></Value>
@@ -1065,6 +1101,10 @@
           <Value>admin</Value>
           <Comment></Comment>
         </Global>
+        <Global name="REF_TABLE_COUNT" luName="TDM_Reference">
+          <Value>NOT_SET</Value>
+          <Comment></Comment>
+        </Global>
       </GlobalsList>
       <GenericInterfacesList>
         <GenericInterface type="LOCAL" enabled="false" version="">
@@ -1072,6 +1112,20 @@
           <Properties>
             <Property name="WorkingDir">
               <Value>C:\k2view\TDM_APIDOC</Value>
+            </Property>
+            <Property name="FilesFilter">
+              <Value></Value>
+            </Property>
+            <Property name="Affinity">
+              <Value></Value>
+            </Property>
+          </Properties>
+        </GenericInterface>
+        <GenericInterface type="LOCAL" enabled="true" version="">
+          <Name>SFTB</Name>
+          <Properties>
+            <Property name="WorkingDir">
+              <Value>workspace/project/project-resources</Value>
             </Property>
             <Property name="FilesFilter">
               <Value></Value>
@@ -1408,6 +1462,10 @@
           <Value>admin</Value>
           <Comment></Comment>
         </Global>
+        <Global name="REF_TABLE_COUNT" luName="TDM_Reference">
+          <Value>NOT_SET</Value>
+          <Comment></Comment>
+        </Global>
       </GlobalsList>
       <GenericInterfacesList>
         <GenericInterface type="LOCAL" enabled="false" version="">
@@ -1415,6 +1473,20 @@
           <Properties>
             <Property name="WorkingDir">
               <Value>C:\k2view\TDM_APIDOC</Value>
+            </Property>
+            <Property name="FilesFilter">
+              <Value></Value>
+            </Property>
+            <Property name="Affinity">
+              <Value></Value>
+            </Property>
+          </Properties>
+        </GenericInterface>
+        <GenericInterface type="LOCAL" enabled="true" version="">
+          <Name>SFTB</Name>
+          <Properties>
+            <Property name="WorkingDir">
+              <Value>workspace/project/project-resources</Value>
             </Property>
             <Property name="FilesFilter">
               <Value></Value>
