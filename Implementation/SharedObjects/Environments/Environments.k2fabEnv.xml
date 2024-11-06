@@ -1,1502 +1,1106 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<FabEnvironmentsManager xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-  <Name>Environments</Name>
-  <EnvironmentsList>
-    <Environment enabled="true" name="Production">
-      <Comments></Comments>
-      <DbInterfacesList>
-        <DbInterface xsi:type="DBSourceGenericDb" k2StudioObjectName="ASSET_DB" dbType="genericdb" active="true">
-          <dbHost>dev-pg-service</dbHost>
-          <dbPort>5432</dbPort>
-          <dbScheme>ASSET_DB</dbScheme>
-          <dbUser>ASSET_USER</dbUser>
-          <dbPasswordEncrypted>~encs0~jPgTs3wvFzMEudccMhjRWA&#x3D;&#x3D;</dbPasswordEncrypted>
-          <connString>jdbc:postgresql://dev-pg-service:5432/ASSET_DB?stringtype&#x3D;unspecified</connString>
-          <minConnectionsNumber>0</minConnectionsNumber>
-          <maxConnectionsNumber>60</maxConnectionsNumber>
-          <JdbcDriverName>PostgreSQL</JdbcDriverName>
-        </DbInterface>
-        <DbInterface xsi:type="DBSourceGenericDb" k2StudioObjectName="BILLING_DB" dbType="genericdb" active="true">
-          <dbHost>dev-pg-service</dbHost>
-          <dbPort>5432</dbPort>
-          <dbScheme>BILLING_DB</dbScheme>
-          <dbUser>BILLING_USER</dbUser>
-          <dbPasswordEncrypted>~encs0~zan02CBXZPD+RaE2/eOQNw&#x3D;&#x3D;</dbPasswordEncrypted>
-          <connString>jdbc:postgresql://dev-pg-service:5432/BILLING_DB?stringtype&#x3D;unspecified</connString>
-          <minConnectionsNumber>0</minConnectionsNumber>
-          <maxConnectionsNumber>60</maxConnectionsNumber>
-          <JdbcDriverName>PostgreSQL</JdbcDriverName>
-        </DbInterface>
-        <DbInterface xsi:type="DBSourceGenericDb" k2StudioObjectName="CRM_DB" dbType="genericdb" active="true">
-          <dbHost>dev-pg-service</dbHost>
-          <dbPort>5432</dbPort>
-          <dbScheme>CRM_DB</dbScheme>
-          <dbUser>CRM_USER</dbUser>
-          <dbPasswordEncrypted>~encs0~XO/VnBrwdcsZsEuLuF3PKw&#x3D;&#x3D;</dbPasswordEncrypted>
-          <connString>jdbc:postgresql://dev-pg-service:5432/CRM_DB?stringtype&#x3D;unspecified</connString>
-          <minConnectionsNumber>0</minConnectionsNumber>
-          <maxConnectionsNumber>60</maxConnectionsNumber>
-          <JdbcDriverName>PostgreSQL</JdbcDriverName>
-        </DbInterface>
-        <DbInterface xsi:type="DBSourceGenericDb" k2StudioObjectName="POSTGRESQL_ADMIN" dbType="genericdb" active="true">
-          <dbHost>dev-pg-service</dbHost>
-          <dbPort>5432</dbPort>
-          <dbScheme>postgres</dbScheme>
-          <dbUser>postgres</dbUser>
-          <dbPasswordEncrypted>~encs0~2gGOxmfcfJIkLhW+j+X+HA&#x3D;&#x3D;</dbPasswordEncrypted>
-          <connString>jdbc:postgresql://dev-pg-service:5432/postgres?stringtype&#x3D;unspecified</connString>
-          <minConnectionsNumber>0</minConnectionsNumber>
-          <maxConnectionsNumber>60</maxConnectionsNumber>
-          <JdbcDriverName>PostgreSQL</JdbcDriverName>
-        </DbInterface>
-        <DbInterface xsi:type="DBSourceGenericDb" k2StudioObjectName="TAR_ASSET_DB" dbType="genericdb" active="true">
-          <dbHost>dev-pg-service</dbHost>
-          <dbPort>5432</dbPort>
-          <dbScheme>TAR_ASSET_DB</dbScheme>
-          <dbUser>TAR_ASSET_USER</dbUser>
-          <dbPasswordEncrypted>~encs2~655TeHclA1kmxw34IkJ9239MurkNMj650Lkdp8uXPpsn02e4IulbllGQT5aZ/Q&#x3D;&#x3D;</dbPasswordEncrypted>
-          <connString>jdbc:postgresql://dev-pg-service:5432/TAR_ASSET_DB?stringtype&#x3D;unspecified</connString>
-          <minConnectionsNumber>0</minConnectionsNumber>
-          <maxConnectionsNumber>60</maxConnectionsNumber>
-          <JdbcDriverName>PostgreSQL</JdbcDriverName>
-        </DbInterface>
-        <DbInterface xsi:type="DBSourceGenericDb" k2StudioObjectName="TAR_BILLING_DB" dbType="genericdb" active="true">
-          <dbHost>dev-pg-service</dbHost>
-          <dbPort>5432</dbPort>
-          <dbScheme>TAR_BILLING_DB</dbScheme>
-          <dbUser>TAR_BILLING_USER</dbUser>
-          <dbPasswordEncrypted>~encs2~dFmG+7t4c7AHt9M4yuP1/o3LXgeVcwZy51qkXqI80MJm+9EzTlOYyvox9lvar3A0</dbPasswordEncrypted>
-          <connString>jdbc:postgresql://dev-pg-service:5432/TAR_BILLING_DB?stringtype&#x3D;unspecified</connString>
-          <minConnectionsNumber>0</minConnectionsNumber>
-          <maxConnectionsNumber>60</maxConnectionsNumber>
-          <JdbcDriverName>PostgreSQL</JdbcDriverName>
-        </DbInterface>
-        <DbInterface xsi:type="DBSourceGenericDb" k2StudioObjectName="TAR_CRM_DB" dbType="genericdb" active="true">
-          <dbHost>dev-pg-service</dbHost>
-          <dbPort>5432</dbPort>
-          <dbScheme>TAR_CRM_DB</dbScheme>
-          <dbUser>TAR_CRM_USER</dbUser>
-          <dbPasswordEncrypted>~encs2~CaEgqinmQTGCjEfb7S73eEyCXcJZu3mdywDydLV23m2sk4cpyk+orHrYqfs&#x3D;</dbPasswordEncrypted>
-          <connString>jdbc:postgresql://dev-pg-service:5432/TAR_CRM_DB?stringtype&#x3D;unspecified</connString>
-          <minConnectionsNumber>0</minConnectionsNumber>
-          <maxConnectionsNumber>60</maxConnectionsNumber>
-          <JdbcDriverName>PostgreSQL</JdbcDriverName>
-        </DbInterface>
-        <DbInterface xsi:type="DBSourceGenericDb" k2StudioObjectName="TDM" dbType="genericdb" active="true">
-          <dbHost>dev-pg-service</dbHost>
-          <dbPort>5432</dbPort>
-          <dbScheme>TDMDB</dbScheme>
-          <dbUser>tdm</dbUser>
-          <dbPasswordEncrypted>~encs0~Cf6Q3hZ6YFKxBiYMOOB0Tg&#x3D;&#x3D;</dbPasswordEncrypted>
-          <connString>jdbc:postgresql://dev-pg-service:5432/TDMDB?stringtype&#x3D;unspecified</connString>
-          <minConnectionsNumber>0</minConnectionsNumber>
-          <maxConnectionsNumber>60</maxConnectionsNumber>
-          <JdbcDriverName>PostgreSQL</JdbcDriverName>
-        </DbInterface>
-      </DbInterfacesList>
-      <GlobalsList>
-        <Global name="ROOT_TABLE_NAME" luName="Asset">
-          <Value>asset</Value>
-          <Comment></Comment>
-        </Global>
-        <Global name="ROOT_COLUMN_NAME" luName="Asset">
-          <Value>asset_id</Value>
-          <Comment></Comment>
-        </Global>
-        <Global name="ROOT_TABLE_NAME" luName="Billing">
-          <Value>subscriber</Value>
-          <Comment></Comment>
-        </Global>
-        <Global name="ROOT_COLUMN_NAME" luName="Billing">
-          <Value>subscriber_id</Value>
-          <Comment></Comment>
-        </Global>
-        <Global name="ROOT_TABLE_NAME" luName="CRM">
-          <Value>customer</Value>
-          <Comment></Comment>
-        </Global>
-        <Global name="ROOT_COLUMN_NAME" luName="CRM">
-          <Value>customer_id</Value>
-          <Comment></Comment>
-        </Global>
-        <Global name="BUILD_TDMDB" luName="TDM">
-          <Value>true</Value>
-          <Comment></Comment>
-        </Global>
-        <Global name="INSTANCES_RANDOM_MIN" luName="TDM">
-          <Value>1</Value>
-          <Comment></Comment>
-        </Global>
-        <Global name="INSTANCES_RANDOM_MAX" luName="TDM">
-          <Value>10</Value>
-          <Comment></Comment>
-        </Global>
-        <Global name="SYNTHETIC_INDICATOR" luName="TDM">
-          <Value>false</Value>
-          <Comment></Comment>
-        </Global>
-        <Global name="SYNTHETIC_ENVIRONMENT" luName="TDM">
-          <Value>Synthetic</Value>
-          <Comment></Comment>
-        </Global>
-        <Global name="TDM_DEPLOY_ENVIRONMENTS" luName="TDM">
-          <Value>false</Value>
-          <Comment></Comment>
-        </Global>
-        <Global name="ROOT_COLUMN_NAME" luName="TDM_LIBRARY">
-          <Value></Value>
-          <Comment>The column name of the entity id. The name and the order of the root column name must be aligned with root_table_name. For example- if you populate two tables in root_Table_name (separated by a comma), you must populate also two values in this global where the first column referes to the first table name the second column refers to the second table name</Comment>
-        </Global>
-        <Global name="ROOT_TABLE_NAME" luName="TDM_LIBRARY">
-          <Value></Value>
-          <Comment>The name of the main source LU table or tables. You can populate several tables separated by a comma.</Comment>
-        </Global>
-        <Global name="BE_ID" luName="">
-          <Value>0</Value>
-          <Comment></Comment>
-        </Global>
-        <Global name="clone_id" luName="">
-          <Value>0</Value>
-          <Comment></Comment>
-        </Global>
-        <Global name="COMBO_MAX_COUNT" luName="">
-          <Value>49</Value>
-          <Comment>Maximum values of combo box input object</Comment>
-        </Global>
-        <Global name="enable_masking" luName="">
-          <Value>true</Value>
-          <Comment></Comment>
-        </Global>
-        <Global name="enable_sequences" luName="">
-          <Value>false</Value>
-          <Comment></Comment>
-        </Global>
-        <Global name="EXTRACT_MASKING_FLAG" luName="">
-          <Value>true</Value>
-          <Comment></Comment>
-        </Global>
-        <Global name="GET_RESERVED_ENTITIES_LIMIT" luName="">
-          <Value>0</Value>
-          <Comment>The max number of retrieved entities from TDM_RESERVED_ENTITIES, if set to zero then no limit</Comment>
-        </Global>
-        <Global name="LOAD_MASKING_FLAG" luName="">
-          <Value>false</Value>
-          <Comment></Comment>
-        </Global>
-        <Global name="MAX_NUMBER_OF_ENTITIES_IN_LIST" luName="">
-          <Value>100</Value>
-          <Comment>The maximum number of entities to be returned to be displayed in list of entities</Comment>
-        </Global>
-        <Global name="RESERVE_RETENTION_PERIOD_TYPE" luName="">
-          <Value>Days</Value>
-          <Comment></Comment>
-        </Global>
-        <Global name="RESERVE_RETENTION_PERIOD_VALUE" luName="">
-          <Value>10</Value>
-          <Comment></Comment>
-        </Global>
-        <Global name="SEQ_CACHE_INTERFACE" luName="">
-          <Value>TDM</Value>
-          <Comment></Comment>
-        </Global>
-        <Global name="SEQ_DO_TRUNCATE" luName="">
-          <Value>false</Value>
-          <Comment></Comment>
-        </Global>
-        <Global name="SEQ_DROP_KEYSPACE" luName="">
-          <Value>false</Value>
-          <Comment></Comment>
-        </Global>
-        <Global name="TASK_TYPE" luName="">
-          <Value>EXTRACT</Value>
-          <Comment></Comment>
-        </Global>
-        <Global name="TDM_BATCH_LIMIT" luName="">
-          <Value>-1</Value>
-          <Comment></Comment>
-        </Global>
-        <Global name="TDM_CLONING_DATA" luName="">
-          <Value>false</Value>
-          <Comment></Comment>
-        </Global>
-        <Global name="TDM_DATAFLUX_TASK" luName="">
-          <Value>false</Value>
-          <Comment>Indicator to mark the task as dataflux or not</Comment>
-        </Global>
-        <Global name="TDM_DELETE_BEFORE_LOAD" luName="">
-          <Value>false</Value>
-          <Comment>Indicator to delete the instance to target DB</Comment>
-        </Global>
-        <Global name="TDM_DELETE_TABLES_PREFIX" luName="">
-          <Value>TAR_</Value>
-          <Comment></Comment>
-        </Global>
-        <Global name="TDM_EXTERNAL_ENTITY_LIST_TTL" luName="">
-          <Value>2592000</Value>
-          <Comment>The TTL for external entity list for non jdbc source DB</Comment>
-        </Global>
-        <Global name="TDM_INSERT_TO_TARGET" luName="">
-          <Value>false</Value>
-          <Comment>Indicator to insert the instance to target DB</Comment>
-        </Global>
-        <Global name="TDM_LU_RETENTION_PERIOD_TYPE" luName="">
-          <Value>Days</Value>
-          <Comment>Each Instance can have a TTL, this global holds the type of the TTL and it can have one of the following values:Minutes, Hours, Days, Weeks, or Years</Comment>
-        </Global>
-        <Global name="TDM_LU_RETENTION_PERIOD_VALUE" luName="">
-          <Value>10</Value>
-          <Comment>The value of the TTL based on the type defined in TDM_LU_RETENTION_PERIOD_TYPE. Populate this global with zero or empty value to avoid setting a TTL on the TDM LUIs.</Comment>
-        </Global>
-        <Global name="TDM_PARAMETERS_SEPARATOR" luName="">
-          <Value>&lt;#&gt;</Value>
-          <Comment></Comment>
-        </Global>
-        <Global name="TDM_POPULATE_JMX_STATS" luName="">
-          <Value>false</Value>
-          <Comment>Indicates whether to run add TDM statitics</Comment>
-        </Global>
-        <Global name="TDM_REF_UPD_SIZE" luName="">
-          <Value>10000</Value>
-          <Comment></Comment>
-        </Global>
-        <Global name="TDM_REPLACE_SEQUENCES" luName="">
-          <Value>false</Value>
-          <Comment></Comment>
-        </Global>
-        <Global name="TDM_RESERVE_IND" luName="">
-          <Value>false</Value>
-          <Comment></Comment>
-        </Global>
-        <Global name="TDM_SEQ_REPORT" luName="">
-          <Value>true</Value>
-          <Comment></Comment>
-        </Global>
-        <Global name="TDM_SOURCE_ENVIRONMENT_NAME" luName="">
-          <Value>Production</Value>
-          <Comment></Comment>
-        </Global>
-        <Global name="TDM_SOURCE_PRODUCT_VERSION" luName="">
-          <Value>false</Value>
-          <Comment>Source product version to override by task execution process</Comment>
-        </Global>
-        <Global name="TDM_SUMMARY_REPORT_LIMIT" luName="">
-          <Value>10000</Value>
-          <Comment></Comment>
-        </Global>
-        <Global name="TDM_SYNC_SOURCE_DATA" luName="">
-          <Value>true</Value>
-          <Comment></Comment>
-        </Global>
-        <Global name="TDM_TAR_ENV_NAME" luName="">
-          <Value>UAT1</Value>
-          <Comment></Comment>
-        </Global>
-        <Global name="TDM_TARGET_PRODUCT_VERSION" luName="">
-          <Value>false</Value>
-          <Comment>Target product version to override by task execution process</Comment>
-        </Global>
-        <Global name="TDM_TASK_EXE_ID" luName="">
-          <Value>0</Value>
-          <Comment></Comment>
-        </Global>
-        <Global name="TDM_TASK_ID" luName="">
-          <Value>0</Value>
-          <Comment></Comment>
-        </Global>
-        <Global name="TDM_VERSION_DATETIME" luName="">
-          <Value>19700101000000</Value>
-          <Comment></Comment>
-        </Global>
-        <Global name="TDM_VERSION_NAME" luName="">
-          <Value></Value>
-          <Comment></Comment>
-        </Global>
-        <Global name="TDMDB_SCHEMA" luName="">
-          <Value>public</Value>
-          <Comment></Comment>
-        </Global>
-        <Global name="USER_FABRIC_ROLES" luName="">
-          <Value>admin</Value>
-          <Comment></Comment>
-        </Global>
-        <Global name="USER_NAME" luName="">
-          <Value>admin</Value>
-          <Comment></Comment>
-        </Global>
-        <Global name="USER_PERMISSION_GROUP" luName="">
-          <Value>admin</Value>
-          <Comment></Comment>
-        </Global>
-        <Global name="REF_TABLE_COUNT" luName="TDM_Reference">
-          <Value>NOT_SET</Value>
-          <Comment></Comment>
-        </Global>
-      </GlobalsList>
-      <GenericInterfacesList>
-        <GenericInterface type="LOCAL" enabled="false" version="">
-          <Name>TDM_APIDOC_JSON</Name>
-          <Properties>
-            <Property name="WorkingDir">
-              <Value>C:\k2view\TDM_APIDOC</Value>
-            </Property>
-            <Property name="FilesFilter">
-              <Value></Value>
-            </Property>
-            <Property name="Affinity">
-              <Value></Value>
-            </Property>
-          </Properties>
-        </GenericInterface>
-        <GenericInterface type="LOCAL" enabled="true" version="">
-          <Name>SFTB</Name>
-          <Properties>
-            <Property name="WorkingDir">
-              <Value>workspace/project-resources</Value>
-            </Property>
-            <Property name="FilesFilter">
-              <Value></Value>
-            </Property>
-            <Property name="Affinity">
-              <Value></Value>
-            </Property>
-          </Properties>
-        </GenericInterface>
-      </GenericInterfacesList>
-    </Environment>
-    <Environment enabled="true" name="UAT1">
-      <Comments></Comments>
-      <DbInterfacesList>
-        <DbInterface xsi:type="DBSourceGenericDb" k2StudioObjectName="ASSET_DB" dbType="genericdb" active="true">
-          <dbHost>dev-pg-service</dbHost>
-          <dbPort>5432</dbPort>
-          <dbScheme>TAR_ASSET_DB</dbScheme>
-          <dbUser>TAR_ASSET_USER</dbUser>
-          <dbPasswordEncrypted>~encs0~QqVp6q51O2LCV655S2K8GQ&#x3D;&#x3D;</dbPasswordEncrypted>
-          <connString>jdbc:postgresql://dev-pg-service:5432/TAR_ASSET_DB?stringtype&#x3D;unspecified</connString>
-          <minConnectionsNumber>0</minConnectionsNumber>
-          <maxConnectionsNumber>60</maxConnectionsNumber>
-          <JdbcDriverName>PostgreSQL</JdbcDriverName>
-        </DbInterface>
-        <DbInterface xsi:type="DBSourceGenericDb" k2StudioObjectName="BILLING_DB" dbType="genericdb" active="true">
-          <dbHost>dev-pg-service</dbHost>
-          <dbPort>5432</dbPort>
-          <dbScheme>TAR_BILLING_DB</dbScheme>
-          <dbUser>TAR_BILLING_USER</dbUser>
-          <dbPasswordEncrypted>~encs0~oP9jOzE7rOHV/J3NZ8PdMxW2dW0zjXP12dQdzt8WnzQ&#x3D;</dbPasswordEncrypted>
-          <connString>jdbc:postgresql://dev-pg-service:5432/TAR_BILLING_DB?stringtype&#x3D;unspecified</connString>
-          <minConnectionsNumber>0</minConnectionsNumber>
-          <maxConnectionsNumber>60</maxConnectionsNumber>
-          <JdbcDriverName>PostgreSQL</JdbcDriverName>
-        </DbInterface>
-        <DbInterface xsi:type="DBSourceGenericDb" k2StudioObjectName="CRM_DB" dbType="genericdb" active="true">
-          <dbHost>dev-pg-service</dbHost>
-          <dbPort>5432</dbPort>
-          <dbScheme>TAR_CRM_DB</dbScheme>
-          <dbUser>TAR_CRM_USER</dbUser>
-          <dbPasswordEncrypted>~encs0~+tVQPy1Q4mL8dAd64jcwrA&#x3D;&#x3D;</dbPasswordEncrypted>
-          <connString>jdbc:postgresql://dev-pg-service:5432/TAR_CRM_DB?stringtype&#x3D;unspecified</connString>
-          <minConnectionsNumber>0</minConnectionsNumber>
-          <maxConnectionsNumber>60</maxConnectionsNumber>
-          <JdbcDriverName>PostgreSQL</JdbcDriverName>
-        </DbInterface>
-        <DbInterface xsi:type="DBSourceGenericDb" k2StudioObjectName="POSTGRESQL_ADMIN" dbType="genericdb" active="true">
-          <dbHost>dev-pg-service</dbHost>
-          <dbPort>5432</dbPort>
-          <dbScheme>postgres</dbScheme>
-          <dbUser>postgres</dbUser>
-          <dbPasswordEncrypted>~encs0~2gGOxmfcfJIkLhW+j+X+HA&#x3D;&#x3D;</dbPasswordEncrypted>
-          <connString>jdbc:postgresql://dev-pg-service:5432/postgres?stringtype&#x3D;unspecified</connString>
-          <minConnectionsNumber>0</minConnectionsNumber>
-          <maxConnectionsNumber>60</maxConnectionsNumber>
-          <JdbcDriverName>PostgreSQL</JdbcDriverName>
-        </DbInterface>
-        <DbInterface xsi:type="DBSourceGenericDb" k2StudioObjectName="TAR_ASSET_DB" dbType="genericdb" active="true">
-          <dbHost>dev-pg-service</dbHost>
-          <dbPort>5432</dbPort>
-          <dbScheme>TAR_ASSET_DB</dbScheme>
-          <dbUser>TAR_ASSET_USER</dbUser>
-          <dbPasswordEncrypted>~encs0~QqVp6q51O2LCV655S2K8GQ&#x3D;&#x3D;</dbPasswordEncrypted>
-          <connString>jdbc:postgresql://dev-pg-service:5432/TAR_ASSET_DB?stringtype&#x3D;unspecified</connString>
-          <minConnectionsNumber>0</minConnectionsNumber>
-          <maxConnectionsNumber>60</maxConnectionsNumber>
-          <JdbcDriverName>PostgreSQL</JdbcDriverName>
-        </DbInterface>
-        <DbInterface xsi:type="DBSourceGenericDb" k2StudioObjectName="TAR_BILLING_DB" dbType="genericdb" active="true">
-          <dbHost>dev-pg-service</dbHost>
-          <dbPort>5432</dbPort>
-          <dbScheme>TAR_BILLING_DB</dbScheme>
-          <dbUser>TAR_BILLING_USER</dbUser>
-          <dbPasswordEncrypted>~encs0~oP9jOzE7rOHV/J3NZ8PdMxW2dW0zjXP12dQdzt8WnzQ&#x3D;</dbPasswordEncrypted>
-          <connString>jdbc:postgresql://dev-pg-service:5432/TAR_BILLING_DB?stringtype&#x3D;unspecified</connString>
-          <minConnectionsNumber>0</minConnectionsNumber>
-          <maxConnectionsNumber>60</maxConnectionsNumber>
-          <JdbcDriverName>PostgreSQL</JdbcDriverName>
-        </DbInterface>
-        <DbInterface xsi:type="DBSourceGenericDb" k2StudioObjectName="TAR_CRM_DB" dbType="genericdb" active="true">
-          <dbHost>dev-pg-service</dbHost>
-          <dbPort>5432</dbPort>
-          <dbScheme>TAR_CRM_DB</dbScheme>
-          <dbUser>TAR_CRM_USER</dbUser>
-          <dbPasswordEncrypted>~encs2~8MHVT95HXc7lVL2rU54n+D6Jz+Odc7wVNRG0001yQYCwo3hFvk38sJUy1us&#x3D;</dbPasswordEncrypted>
-          <connString>jdbc:postgresql://dev-pg-service:5432/TAR_CRM_DB?stringtype&#x3D;unspecified</connString>
-          <minConnectionsNumber>0</minConnectionsNumber>
-          <maxConnectionsNumber>60</maxConnectionsNumber>
-          <JdbcDriverName>PostgreSQL</JdbcDriverName>
-        </DbInterface>
-        <DbInterface xsi:type="DBSourceGenericDb" k2StudioObjectName="TDM" dbType="genericdb" active="true">
-          <dbHost>dev-pg-service</dbHost>
-          <dbPort>5432</dbPort>
-          <dbScheme>TDMDB</dbScheme>
-          <dbUser>tdm</dbUser>
-          <dbPasswordEncrypted>~encs2~2pMWNx/P8UOtSc49KlgnLd1og/F0i9WgwEyqGq6f/KQN1ZI&#x3D;</dbPasswordEncrypted>
-          <connString>jdbc:postgresql://dev-pg-service:5432/TDMDB?stringtype&#x3D;unspecified</connString>
-          <minConnectionsNumber>0</minConnectionsNumber>
-          <maxConnectionsNumber>60</maxConnectionsNumber>
-          <JdbcDriverName>PostgreSQL</JdbcDriverName>
-        </DbInterface>
-      </DbInterfacesList>
-      <GlobalsList>
-        <Global name="ROOT_TABLE_NAME" luName="Asset">
-          <Value>asset</Value>
-          <Comment></Comment>
-        </Global>
-        <Global name="ROOT_TABLE_NAME" luName="Asset">
-          <Value>asset</Value>
-          <Comment></Comment>
-        </Global>
-        <Global name="ROOT_COLUMN_NAME" luName="Asset">
-          <Value>asset_id</Value>
-          <Comment></Comment>
-        </Global>
-        <Global name="ROOT_TABLE_NAME" luName="Billing">
-          <Value>subscriber</Value>
-          <Comment></Comment>
-        </Global>
-        <Global name="ROOT_COLUMN_NAME" luName="Billing">
-          <Value>subscriber_id</Value>
-          <Comment></Comment>
-        </Global>
-        <Global name="ROOT_TABLE_NAME" luName="CRM">
-          <Value>customer</Value>
-          <Comment></Comment>
-        </Global>
-        <Global name="ROOT_COLUMN_NAME" luName="CRM">
-          <Value>customer_id</Value>
-          <Comment></Comment>
-        </Global>
-        <Global name="BUILD_TDMDB" luName="TDM">
-          <Value>true</Value>
-          <Comment></Comment>
-        </Global>
-        <Global name="INSTANCES_RANDOM_MIN" luName="TDM">
-          <Value>1</Value>
-          <Comment></Comment>
-        </Global>
-        <Global name="INSTANCES_RANDOM_MAX" luName="TDM">
-          <Value>10</Value>
-          <Comment></Comment>
-        </Global>
-        <Global name="SYNTHETIC_INDICATOR" luName="TDM">
-          <Value>false</Value>
-          <Comment></Comment>
-        </Global>
-        <Global name="SYNTHETIC_ENVIRONMENT" luName="TDM">
-          <Value>Synthetic</Value>
-          <Comment></Comment>
-        </Global>
-        <Global name="TDM_DEPLOY_ENVIRONMENTS" luName="TDM">
-          <Value>false</Value>
-          <Comment></Comment>
-        </Global>
-        <Global name="ROOT_COLUMN_NAME" luName="TDM_LIBRARY">
-          <Value></Value>
-          <Comment>The column name of the entity id. The name and the order of the root column name must be aligned with root_table_name. For example- if you populate two tables in root_Table_name (separated by a comma), you must populate also two values in this global where the first column referes to the first table name the second column refers to the second table name</Comment>
-        </Global>
-        <Global name="ROOT_TABLE_NAME" luName="TDM_LIBRARY">
-          <Value></Value>
-          <Comment>The name of the main source LU table or tables. You can populate several tables separated by a comma.</Comment>
-        </Global>
-        <Global name="BE_ID" luName="">
-          <Value>0</Value>
-          <Comment></Comment>
-        </Global>
-        <Global name="clone_id" luName="">
-          <Value>0</Value>
-          <Comment></Comment>
-        </Global>
-        <Global name="COMBO_MAX_COUNT" luName="">
-          <Value>49</Value>
-          <Comment>Maximum values of combo box input object</Comment>
-        </Global>
-        <Global name="enable_masking" luName="">
-          <Value>true</Value>
-          <Comment></Comment>
-        </Global>
-        <Global name="enable_sequences" luName="">
-          <Value>false</Value>
-          <Comment></Comment>
-        </Global>
-        <Global name="EXTRACT_MASKING_FLAG" luName="">
-          <Value>true</Value>
-          <Comment></Comment>
-        </Global>
-        <Global name="GET_RESERVED_ENTITIES_LIMIT" luName="">
-          <Value>0</Value>
-          <Comment>The max number of retrieved entities from TDM_RESERVED_ENTITIES, if set to zero then no limit</Comment>
-        </Global>
-        <Global name="LOAD_MASKING_FLAG" luName="">
-          <Value>false</Value>
-          <Comment></Comment>
-        </Global>
-        <Global name="MAX_NUMBER_OF_ENTITIES_IN_LIST" luName="">
-          <Value>100</Value>
-          <Comment>The maximum number of entities to be returned to be displayed in list of entities</Comment>
-        </Global>
-        <Global name="RESERVE_RETENTION_PERIOD_TYPE" luName="">
-          <Value>Days</Value>
-          <Comment></Comment>
-        </Global>
-        <Global name="RESERVE_RETENTION_PERIOD_VALUE" luName="">
-          <Value>10</Value>
-          <Comment></Comment>
-        </Global>
-        <Global name="SEQ_CACHE_INTERFACE" luName="">
-          <Value>TDM</Value>
-          <Comment></Comment>
-        </Global>
-        <Global name="SEQ_DO_TRUNCATE" luName="">
-          <Value>false</Value>
-          <Comment></Comment>
-        </Global>
-        <Global name="SEQ_DROP_KEYSPACE" luName="">
-          <Value>false</Value>
-          <Comment></Comment>
-        </Global>
-        <Global name="TASK_TYPE" luName="">
-          <Value>EXTRACT</Value>
-          <Comment></Comment>
-        </Global>
-        <Global name="TDM_BATCH_LIMIT" luName="">
-          <Value>-1</Value>
-          <Comment></Comment>
-        </Global>
-        <Global name="TDM_CLONING_DATA" luName="">
-          <Value>false</Value>
-          <Comment></Comment>
-        </Global>
-        <Global name="TDM_DATAFLUX_TASK" luName="">
-          <Value>false</Value>
-          <Comment>Indicator to mark the task as dataflux or not</Comment>
-        </Global>
-        <Global name="TDM_DELETE_BEFORE_LOAD" luName="">
-          <Value>false</Value>
-          <Comment>Indicator to delete the instance to target DB</Comment>
-        </Global>
-        <Global name="TDM_DELETE_TABLES_PREFIX" luName="">
-          <Value>TAR_</Value>
-          <Comment></Comment>
-        </Global>
-        <Global name="TDM_EXTERNAL_ENTITY_LIST_TTL" luName="">
-          <Value>2592000</Value>
-          <Comment>The TTL for external entity list for non jdbc source DB</Comment>
-        </Global>
-        <Global name="TDM_INSERT_TO_TARGET" luName="">
-          <Value>false</Value>
-          <Comment>Indicator to insert the instance to target DB</Comment>
-        </Global>
-        <Global name="TDM_LU_RETENTION_PERIOD_TYPE" luName="">
-          <Value>Days</Value>
-          <Comment>Each Instance can have a TTL, this global holds the type of the TTL and it can have one of the following values:Minutes, Hours, Days, Weeks, or Years</Comment>
-        </Global>
-        <Global name="TDM_LU_RETENTION_PERIOD_VALUE" luName="">
-          <Value>10</Value>
-          <Comment>The value of the TTL based on the type defined in TDM_LU_RETENTION_PERIOD_TYPE. Populate this global with zero or empty value to avoid setting a TTL on the TDM LUIs.</Comment>
-        </Global>
-        <Global name="TDM_PARAMETERS_SEPARATOR" luName="">
-          <Value>&lt;#&gt;</Value>
-          <Comment></Comment>
-        </Global>
-        <Global name="TDM_POPULATE_JMX_STATS" luName="">
-          <Value>false</Value>
-          <Comment>Indicates whether to run add TDM statitics</Comment>
-        </Global>
-        <Global name="TDM_REF_UPD_SIZE" luName="">
-          <Value>10000</Value>
-          <Comment></Comment>
-        </Global>
-        <Global name="TDM_REPLACE_SEQUENCES" luName="">
-          <Value>false</Value>
-          <Comment></Comment>
-        </Global>
-        <Global name="TDM_RESERVE_IND" luName="">
-          <Value>false</Value>
-          <Comment></Comment>
-        </Global>
-        <Global name="TDM_SEQ_REPORT" luName="">
-          <Value>true</Value>
-          <Comment></Comment>
-        </Global>
-        <Global name="TDM_SOURCE_ENVIRONMENT_NAME" luName="">
-          <Value>Production</Value>
-          <Comment></Comment>
-        </Global>
-        <Global name="TDM_SOURCE_PRODUCT_VERSION" luName="">
-          <Value>false</Value>
-          <Comment>Source product version to override by task execution process</Comment>
-        </Global>
-        <Global name="TDM_SUMMARY_REPORT_LIMIT" luName="">
-          <Value>10000</Value>
-          <Comment></Comment>
-        </Global>
-        <Global name="TDM_SYNC_SOURCE_DATA" luName="">
-          <Value>true</Value>
-          <Comment></Comment>
-        </Global>
-        <Global name="TDM_TAR_ENV_NAME" luName="">
-          <Value>UAT1</Value>
-          <Comment></Comment>
-        </Global>
-        <Global name="TDM_TARGET_PRODUCT_VERSION" luName="">
-          <Value>false</Value>
-          <Comment>Target product version to override by task execution process</Comment>
-        </Global>
-        <Global name="TDM_TASK_EXE_ID" luName="">
-          <Value>0</Value>
-          <Comment></Comment>
-        </Global>
-        <Global name="TDM_TASK_ID" luName="">
-          <Value>0</Value>
-          <Comment></Comment>
-        </Global>
-        <Global name="TDM_VERSION_DATETIME" luName="">
-          <Value>19700101000000</Value>
-          <Comment></Comment>
-        </Global>
-        <Global name="TDM_VERSION_NAME" luName="">
-          <Value></Value>
-          <Comment></Comment>
-        </Global>
-        <Global name="TDMDB_SCHEMA" luName="">
-          <Value>public</Value>
-          <Comment></Comment>
-        </Global>
-        <Global name="USER_FABRIC_ROLES" luName="">
-          <Value>admin</Value>
-          <Comment></Comment>
-        </Global>
-        <Global name="USER_NAME" luName="">
-          <Value>admin</Value>
-          <Comment></Comment>
-        </Global>
-        <Global name="USER_PERMISSION_GROUP" luName="">
-          <Value>admin</Value>
-          <Comment></Comment>
-        </Global>
-        <Global name="REF_TABLE_COUNT" luName="TDM_Reference">
-          <Value>NOT_SET</Value>
-          <Comment></Comment>
-        </Global>
-      </GlobalsList>
-      <GenericInterfacesList>
-        <GenericInterface type="LOCAL" enabled="false" version="">
-          <Name>TDM_APIDOC_JSON</Name>
-          <Properties>
-            <Property name="WorkingDir">
-              <Value>C:\k2view\TDM_APIDOC</Value>
-            </Property>
-            <Property name="FilesFilter">
-              <Value></Value>
-            </Property>
-            <Property name="Affinity">
-              <Value></Value>
-            </Property>
-          </Properties>
-        </GenericInterface>
-        <GenericInterface type="LOCAL" enabled="true" version="">
-          <Name>SFTB</Name>
-          <Properties>
-            <Property name="WorkingDir">
-              <Value>workspace/project/project-resources</Value>
-            </Property>
-            <Property name="FilesFilter">
-              <Value></Value>
-            </Property>
-            <Property name="Affinity">
-              <Value></Value>
-            </Property>
-          </Properties>
-        </GenericInterface>
-      </GenericInterfacesList>
-    </Environment>
-    <Environment enabled="true" name="UAT2">
-      <Comments></Comments>
-      <DbInterfacesList>
-        <DbInterface xsi:type="DBSourceGenericDb" k2StudioObjectName="ASSET_DB" dbType="genericdb" active="true">
-          <dbHost>dev-pg-service</dbHost>
-          <dbPort>5432</dbPort>
-          <dbScheme>ASSET_DB</dbScheme>
-          <dbUser>ASSET_USER</dbUser>
-          <dbPasswordEncrypted>~encs2~5ALu7dDJcTgpVQUA3Y5V+8s7BGuW1V8FHuXI9anKGDsP7HSMhCHKnUnv</dbPasswordEncrypted>
-          <connString>jdbc:postgresql://dev-pg-service:5432/ASSET_DB?stringtype&#x3D;unspecified</connString>
-          <minConnectionsNumber>0</minConnectionsNumber>
-          <maxConnectionsNumber>60</maxConnectionsNumber>
-          <JdbcDriverName>PostgreSQL</JdbcDriverName>
-        </DbInterface>
-        <DbInterface xsi:type="DBSourceGenericDb" k2StudioObjectName="BILLING_DB" dbType="genericdb" active="true">
-          <dbHost>dev-pg-service</dbHost>
-          <dbPort>5432</dbPort>
-          <dbScheme>BILLING_DB</dbScheme>
-          <dbUser>BILLING_USER</dbUser>
-          <dbPasswordEncrypted>~encs0~zan02CBXZPD+RaE2/eOQNw&#x3D;&#x3D;</dbPasswordEncrypted>
-          <connString>jdbc:postgresql://dev-pg-service:5432/BILLING_DB?stringtype&#x3D;unspecified</connString>
-          <minConnectionsNumber>0</minConnectionsNumber>
-          <maxConnectionsNumber>60</maxConnectionsNumber>
-          <JdbcDriverName>PostgreSQL</JdbcDriverName>
-        </DbInterface>
-        <DbInterface xsi:type="DBSourceGenericDb" k2StudioObjectName="CRM_DB" dbType="genericdb" active="true">
-          <dbHost>dev-pg-service</dbHost>
-          <dbPort>5432</dbPort>
-          <dbScheme>CRM_DB</dbScheme>
-          <dbUser>CRM_USER</dbUser>
-          <dbPasswordEncrypted>~encs0~XO/VnBrwdcsZsEuLuF3PKw&#x3D;&#x3D;</dbPasswordEncrypted>
-          <connString>jdbc:postgresql://dev-pg-service:5432/CRM_DB?stringtype&#x3D;unspecified</connString>
-          <minConnectionsNumber>0</minConnectionsNumber>
-          <maxConnectionsNumber>60</maxConnectionsNumber>
-          <JdbcDriverName>PostgreSQL</JdbcDriverName>
-        </DbInterface>
-        <DbInterface xsi:type="DBSourceGenericDb" k2StudioObjectName="POSTGRESQL_ADMIN" dbType="genericdb" active="false">
-          <dbHost>dev-pg-service</dbHost>
-          <dbPort>5432</dbPort>
-          <dbScheme>postgres</dbScheme>
-          <dbUser>postgres</dbUser>
-          <dbPasswordEncrypted>~encs0~Rbobr/L04t+UOlB/QHVC5Co7SMyK4++GjgjtzJ/kowP3ff+lpDKNnZgfixTtsF6NVJtUL18dHTYGZ1UfwEZQ/10RXec43srppZLUdqqHVxi4tU694yDQ8EyLsgaOPBqs</dbPasswordEncrypted>
-          <connString>jdbc:postgresql://dev-pg-service:5432/postgres?stringtype&#x3D;unspecified</connString>
-          <minConnectionsNumber>0</minConnectionsNumber>
-          <maxConnectionsNumber>60</maxConnectionsNumber>
-          <JdbcDriverName>PostgreSQL</JdbcDriverName>
-        </DbInterface>
-        <DbInterface xsi:type="DBSourceGenericDb" k2StudioObjectName="TAR_ASSET_DB" dbType="genericdb" active="true">
-          <dbHost>dev-pg-service</dbHost>
-          <dbPort>5432</dbPort>
-          <dbScheme>TAR_ASSET_DB</dbScheme>
-          <dbUser>TAR_ASSET_USER</dbUser>
-          <dbPasswordEncrypted>~encs0~QqVp6q51O2LCV655S2K8GQ&#x3D;&#x3D;</dbPasswordEncrypted>
-          <connString>jdbc:postgresql://dev-pg-service:5432/TAR_ASSET_DB?stringtype&#x3D;unspecified</connString>
-          <minConnectionsNumber>0</minConnectionsNumber>
-          <maxConnectionsNumber>60</maxConnectionsNumber>
-          <JdbcDriverName>PostgreSQL</JdbcDriverName>
-        </DbInterface>
-        <DbInterface xsi:type="DBSourceGenericDb" k2StudioObjectName="TAR_BILLING_DB" dbType="genericdb" active="true">
-          <dbHost>dev-pg-service</dbHost>
-          <dbPort>5432</dbPort>
-          <dbScheme>TAR_BILLING_DB</dbScheme>
-          <dbUser>TAR_BILLING_USER</dbUser>
-          <dbPasswordEncrypted>~encs0~oP9jOzE7rOHV/J3NZ8PdMxW2dW0zjXP12dQdzt8WnzQ&#x3D;</dbPasswordEncrypted>
-          <connString>jdbc:postgresql://dev-pg-service:5432/TAR_BILLING_DB?stringtype&#x3D;unspecified</connString>
-          <minConnectionsNumber>0</minConnectionsNumber>
-          <maxConnectionsNumber>60</maxConnectionsNumber>
-          <JdbcDriverName>PostgreSQL</JdbcDriverName>
-        </DbInterface>
-        <DbInterface xsi:type="DBSourceGenericDb" k2StudioObjectName="TAR_CRM_DB" dbType="genericdb" active="true">
-          <dbHost>dev-pg-service</dbHost>
-          <dbPort>5432</dbPort>
-          <dbScheme>TAR_CRM_DB</dbScheme>
-          <dbUser>TAR_CRM_USER</dbUser>
-          <dbPasswordEncrypted>~encs2~58MVJvB/lYHEPLDGofEwGnX5tUhR1Qh/5n0MP0tyrqij7Wlf+y3FgY+iFLc&#x3D;</dbPasswordEncrypted>
-          <connString>jdbc:postgresql://dev-pg-service:5432/TAR_CRM_DB?stringtype&#x3D;unspecified</connString>
-          <minConnectionsNumber>0</minConnectionsNumber>
-          <maxConnectionsNumber>60</maxConnectionsNumber>
-          <JdbcDriverName>PostgreSQL</JdbcDriverName>
-        </DbInterface>
-        <DbInterface xsi:type="DBSourceGenericDb" k2StudioObjectName="TDM" dbType="genericdb" active="true">
-          <dbHost>dev-pg-service</dbHost>
-          <dbPort>5432</dbPort>
-          <dbScheme>TDMDB</dbScheme>
-          <dbUser>tdm</dbUser>
-          <dbPasswordEncrypted>~encs0~Cf6Q3hZ6YFKxBiYMOOB0Tg&#x3D;&#x3D;</dbPasswordEncrypted>
-          <connString>jdbc:postgresql://dev-pg-service:5432/TDMDB?stringtype&#x3D;unspecified</connString>
-          <minConnectionsNumber>0</minConnectionsNumber>
-          <maxConnectionsNumber>60</maxConnectionsNumber>
-          <JdbcDriverName>PostgreSQL</JdbcDriverName>
-        </DbInterface>
-      </DbInterfacesList>
-      <GlobalsList>
-        <Global name="ROOT_TABLE_NAME" luName="Asset">
-          <Value>asset</Value>
-          <Comment></Comment>
-        </Global>
-        <Global name="ROOT_TABLE_NAME" luName="Asset">
-          <Value>asset</Value>
-          <Comment></Comment>
-        </Global>
-        <Global name="ROOT_COLUMN_NAME" luName="Asset">
-          <Value>asset_id</Value>
-          <Comment></Comment>
-        </Global>
-        <Global name="ROOT_COLUMN_NAME" luName="Asset">
-          <Value>asset_id</Value>
-          <Comment></Comment>
-        </Global>
-        <Global name="ROOT_TABLE_NAME" luName="Billing">
-          <Value>subscriber</Value>
-          <Comment></Comment>
-        </Global>
-        <Global name="ROOT_TABLE_NAME" luName="Billing">
-          <Value>subscriber</Value>
-          <Comment></Comment>
-        </Global>
-        <Global name="ROOT_COLUMN_NAME" luName="Billing">
-          <Value>subscriber_id</Value>
-          <Comment></Comment>
-        </Global>
-        <Global name="ROOT_COLUMN_NAME" luName="Billing">
-          <Value>subscriber_id</Value>
-          <Comment></Comment>
-        </Global>
-        <Global name="ROOT_TABLE_NAME" luName="CRM">
-          <Value>customer</Value>
-          <Comment></Comment>
-        </Global>
-        <Global name="ROOT_TABLE_NAME" luName="CRM">
-          <Value>customer</Value>
-          <Comment></Comment>
-        </Global>
-        <Global name="ROOT_COLUMN_NAME" luName="CRM">
-          <Value>customer_id</Value>
-          <Comment></Comment>
-        </Global>
-        <Global name="ROOT_COLUMN_NAME" luName="CRM">
-          <Value>customer_id</Value>
-          <Comment></Comment>
-        </Global>
-        <Global name="BUILD_TDMDB" luName="TDM">
-          <Value>true</Value>
-          <Comment></Comment>
-        </Global>
-        <Global name="BUILD_TDMDB" luName="TDM">
-          <Value>true</Value>
-          <Comment></Comment>
-        </Global>
-        <Global name="INSTANCES_RANDOM_MIN" luName="TDM">
-          <Value>1</Value>
-          <Comment></Comment>
-        </Global>
-        <Global name="INSTANCES_RANDOM_MIN" luName="TDM">
-          <Value>1</Value>
-          <Comment></Comment>
-        </Global>
-        <Global name="INSTANCES_RANDOM_MAX" luName="TDM">
-          <Value>10</Value>
-          <Comment></Comment>
-        </Global>
-        <Global name="INSTANCES_RANDOM_MAX" luName="TDM">
-          <Value>10</Value>
-          <Comment></Comment>
-        </Global>
-        <Global name="SYNTHETIC_INDICATOR" luName="TDM">
-          <Value>false</Value>
-          <Comment></Comment>
-        </Global>
-        <Global name="SYNTHETIC_INDICATOR" luName="TDM">
-          <Value>false</Value>
-          <Comment></Comment>
-        </Global>
-        <Global name="SYNTHETIC_ENVIRONMENT" luName="TDM">
-          <Value>Synthetic</Value>
-          <Comment></Comment>
-        </Global>
-        <Global name="SYNTHETIC_ENVIRONMENT" luName="TDM">
-          <Value>Synthetic</Value>
-          <Comment></Comment>
-        </Global>
-        <Global name="TDM_DEPLOY_ENVIRONMENTS" luName="TDM">
-          <Value>false</Value>
-          <Comment></Comment>
-        </Global>
-        <Global name="TDM_DEPLOY_ENVIRONMENTS" luName="TDM">
-          <Value>false</Value>
-          <Comment></Comment>
-        </Global>
-        <Global name="ROOT_COLUMN_NAME" luName="TDM_LIBRARY">
-          <Value></Value>
-          <Comment>The column name of the entity id. The name and the order of the root column name must be aligned with root_table_name. For example- if you populate two tables in root_Table_name (separated by a comma), you must populate also two values in this global where the first column referes to the first table name the second column refers to the second table name</Comment>
-        </Global>
-        <Global name="ROOT_TABLE_NAME" luName="TDM_LIBRARY">
-          <Value></Value>
-          <Comment>The name of the main source LU table or tables. You can populate several tables separated by a comma.</Comment>
-        </Global>
-        <Global name="BE_ID" luName="">
-          <Value>0</Value>
-          <Comment></Comment>
-        </Global>
-        <Global name="clone_id" luName="">
-          <Value>0</Value>
-          <Comment></Comment>
-        </Global>
-        <Global name="COMBO_MAX_COUNT" luName="">
-          <Value>49</Value>
-          <Comment>Maximum values of combo box input object</Comment>
-        </Global>
-        <Global name="enable_masking" luName="">
-          <Value>true</Value>
-          <Comment></Comment>
-        </Global>
-        <Global name="enable_sequences" luName="">
-          <Value>false</Value>
-          <Comment></Comment>
-        </Global>
-        <Global name="EXTRACT_MASKING_FLAG" luName="">
-          <Value>true</Value>
-          <Comment></Comment>
-        </Global>
-        <Global name="GET_RESERVED_ENTITIES_LIMIT" luName="">
-          <Value>0</Value>
-          <Comment>The max number of retrieved entities from TDM_RESERVED_ENTITIES, if set to zero then no limit</Comment>
-        </Global>
-        <Global name="LOAD_MASKING_FLAG" luName="">
-          <Value>false</Value>
-          <Comment></Comment>
-        </Global>
-        <Global name="MAX_NUMBER_OF_ENTITIES_IN_LIST" luName="">
-          <Value>100</Value>
-          <Comment>The maximum number of entities to be returned to be displayed in list of entities</Comment>
-        </Global>
-        <Global name="RESERVE_RETENTION_PERIOD_TYPE" luName="">
-          <Value>Days</Value>
-          <Comment></Comment>
-        </Global>
-        <Global name="RESERVE_RETENTION_PERIOD_VALUE" luName="">
-          <Value>10</Value>
-          <Comment></Comment>
-        </Global>
-        <Global name="SEQ_CACHE_INTERFACE" luName="">
-          <Value>TDM</Value>
-          <Comment></Comment>
-        </Global>
-        <Global name="SEQ_DO_TRUNCATE" luName="">
-          <Value>false</Value>
-          <Comment></Comment>
-        </Global>
-        <Global name="SEQ_DROP_KEYSPACE" luName="">
-          <Value>false</Value>
-          <Comment></Comment>
-        </Global>
-        <Global name="TASK_TYPE" luName="">
-          <Value>EXTRACT</Value>
-          <Comment></Comment>
-        </Global>
-        <Global name="TDM_BATCH_LIMIT" luName="">
-          <Value>-1</Value>
-          <Comment></Comment>
-        </Global>
-        <Global name="TDM_CLONING_DATA" luName="">
-          <Value>false</Value>
-          <Comment></Comment>
-        </Global>
-        <Global name="TDM_DATAFLUX_TASK" luName="">
-          <Value>false</Value>
-          <Comment>Indicator to mark the task as dataflux or not</Comment>
-        </Global>
-        <Global name="TDM_DELETE_BEFORE_LOAD" luName="">
-          <Value>false</Value>
-          <Comment>Indicator to delete the instance to target DB</Comment>
-        </Global>
-        <Global name="TDM_DELETE_TABLES_PREFIX" luName="">
-          <Value>TAR_</Value>
-          <Comment></Comment>
-        </Global>
-        <Global name="TDM_EXTERNAL_ENTITY_LIST_TTL" luName="">
-          <Value>2592000</Value>
-          <Comment>The TTL for external entity list for non jdbc source DB</Comment>
-        </Global>
-        <Global name="TDM_INSERT_TO_TARGET" luName="">
-          <Value>false</Value>
-          <Comment>Indicator to insert the instance to target DB</Comment>
-        </Global>
-        <Global name="TDM_LU_RETENTION_PERIOD_TYPE" luName="">
-          <Value>Days</Value>
-          <Comment>Each Instance can have a TTL, this global holds the type of the TTL and it can have one of the following values:Minutes, Hours, Days, Weeks, or Years</Comment>
-        </Global>
-        <Global name="TDM_LU_RETENTION_PERIOD_VALUE" luName="">
-          <Value>10</Value>
-          <Comment>The value of the TTL based on the type defined in TDM_LU_RETENTION_PERIOD_TYPE. Populate this global with zero or empty value to avoid setting a TTL on the TDM LUIs.</Comment>
-        </Global>
-        <Global name="TDM_PARAMETERS_SEPARATOR" luName="">
-          <Value>&lt;#&gt;</Value>
-          <Comment></Comment>
-        </Global>
-        <Global name="TDM_POPULATE_JMX_STATS" luName="">
-          <Value>false</Value>
-          <Comment>Indicates whether to run add TDM statitics</Comment>
-        </Global>
-        <Global name="TDM_REF_UPD_SIZE" luName="">
-          <Value>10000</Value>
-          <Comment></Comment>
-        </Global>
-        <Global name="TDM_REPLACE_SEQUENCES" luName="">
-          <Value>false</Value>
-          <Comment></Comment>
-        </Global>
-        <Global name="TDM_RESERVE_IND" luName="">
-          <Value>false</Value>
-          <Comment></Comment>
-        </Global>
-        <Global name="TDM_SEQ_REPORT" luName="">
-          <Value>true</Value>
-          <Comment></Comment>
-        </Global>
-        <Global name="TDM_SOURCE_ENVIRONMENT_NAME" luName="">
-          <Value>Production</Value>
-          <Comment></Comment>
-        </Global>
-        <Global name="TDM_SOURCE_PRODUCT_VERSION" luName="">
-          <Value>false</Value>
-          <Comment>Source product version to override by task execution process</Comment>
-        </Global>
-        <Global name="TDM_SUMMARY_REPORT_LIMIT" luName="">
-          <Value>10000</Value>
-          <Comment></Comment>
-        </Global>
-        <Global name="TDM_SYNC_SOURCE_DATA" luName="">
-          <Value>true</Value>
-          <Comment></Comment>
-        </Global>
-        <Global name="TDM_TAR_ENV_NAME" luName="">
-          <Value>UAT1</Value>
-          <Comment></Comment>
-        </Global>
-        <Global name="TDM_TARGET_PRODUCT_VERSION" luName="">
-          <Value>false</Value>
-          <Comment>Target product version to override by task execution process</Comment>
-        </Global>
-        <Global name="TDM_TASK_EXE_ID" luName="">
-          <Value>0</Value>
-          <Comment></Comment>
-        </Global>
-        <Global name="TDM_TASK_ID" luName="">
-          <Value>0</Value>
-          <Comment></Comment>
-        </Global>
-        <Global name="TDM_VERSION_DATETIME" luName="">
-          <Value>19700101000000</Value>
-          <Comment></Comment>
-        </Global>
-        <Global name="TDM_VERSION_NAME" luName="">
-          <Value></Value>
-          <Comment></Comment>
-        </Global>
-        <Global name="TDMDB_SCHEMA" luName="">
-          <Value>public</Value>
-          <Comment></Comment>
-        </Global>
-        <Global name="USER_FABRIC_ROLES" luName="">
-          <Value>admin</Value>
-          <Comment></Comment>
-        </Global>
-        <Global name="USER_NAME" luName="">
-          <Value>admin</Value>
-          <Comment></Comment>
-        </Global>
-        <Global name="USER_PERMISSION_GROUP" luName="">
-          <Value>admin</Value>
-          <Comment></Comment>
-        </Global>
-        <Global name="REF_TABLE_COUNT" luName="TDM_Reference">
-          <Value>NOT_SET</Value>
-          <Comment></Comment>
-        </Global>
-      </GlobalsList>
-      <GenericInterfacesList>
-        <GenericInterface type="LOCAL" enabled="false" version="">
-          <Name>TDM_APIDOC_JSON</Name>
-          <Properties>
-            <Property name="WorkingDir">
-              <Value>C:\k2view\TDM_APIDOC</Value>
-            </Property>
-            <Property name="FilesFilter">
-              <Value></Value>
-            </Property>
-            <Property name="Affinity">
-              <Value></Value>
-            </Property>
-          </Properties>
-        </GenericInterface>
-        <GenericInterface type="LOCAL" enabled="true" version="">
-          <Name>SFTB</Name>
-          <Properties>
-            <Property name="WorkingDir">
-              <Value>workspace/project/project-resources</Value>
-            </Property>
-            <Property name="FilesFilter">
-              <Value></Value>
-            </Property>
-            <Property name="Affinity">
-              <Value></Value>
-            </Property>
-          </Properties>
-        </GenericInterface>
-      </GenericInterfacesList>
-    </Environment>
-    <Environment enabled="true" name="Synthetic">
-      <Comments></Comments>
-      <DbInterfacesList>
-        <DbInterface xsi:type="DBSourceGenericDb" k2StudioObjectName="ASSET_DB" dbType="genericdb" active="true">
-          <dbHost>dev-pg-service</dbHost>
-          <dbPort>5432</dbPort>
-          <dbScheme>ASSET_DB</dbScheme>
-          <dbUser>ASSET_USER</dbUser>
-          <dbPasswordEncrypted>~encs2~8Z2mzjkxJykTtAOYUzEkUyRL7rcnW7mwlIfdiBPdQK1yRHIT/nrxH1uj</dbPasswordEncrypted>
-          <connString>jdbc:postgresql://dev-pg-service:5432/ASSET_DB?stringtype&#x3D;unspecified</connString>
-          <minConnectionsNumber>0</minConnectionsNumber>
-          <maxConnectionsNumber>60</maxConnectionsNumber>
-          <JdbcDriverName>PostgreSQL</JdbcDriverName>
-        </DbInterface>
-        <DbInterface xsi:type="DBSourceGenericDb" k2StudioObjectName="BILLING_DB" dbType="genericdb" active="true">
-          <dbHost>dev-pg-service</dbHost>
-          <dbPort>5432</dbPort>
-          <dbScheme>BILLING_DB</dbScheme>
-          <dbUser>BILLING_USER</dbUser>
-          <dbPasswordEncrypted>~encs2~d9E4BYA73vLZLjRE1HObXwiZtWQwzLjEa9gIZ/LpstgKAicPlSzM8M9TflQ&#x3D;</dbPasswordEncrypted>
-          <connString>jdbc:postgresql://dev-pg-service:5432/BILLING_DB?stringtype&#x3D;unspecified</connString>
-          <minConnectionsNumber>0</minConnectionsNumber>
-          <maxConnectionsNumber>60</maxConnectionsNumber>
-          <JdbcDriverName>PostgreSQL</JdbcDriverName>
-        </DbInterface>
-        <DbInterface xsi:type="DBSourceGenericDb" k2StudioObjectName="CRM_DB" dbType="genericdb" active="true">
-          <dbHost>dev-pg-service</dbHost>
-          <dbPort>5432</dbPort>
-          <dbScheme>CRM_DB</dbScheme>
-          <dbUser>CRM_USER</dbUser>
-          <dbPasswordEncrypted>~encs2~BFA61XyO0ETgaC9RAh2I/He+n0BsIgnQYyI0Re9FDBTm58eQ0RFonQ&#x3D;&#x3D;</dbPasswordEncrypted>
-          <connString>jdbc:postgresql://dev-pg-service:5432/CRM_DB?stringtype&#x3D;unspecified</connString>
-          <minConnectionsNumber>0</minConnectionsNumber>
-          <maxConnectionsNumber>60</maxConnectionsNumber>
-          <JdbcDriverName>PostgreSQL</JdbcDriverName>
-        </DbInterface>
-        <DbInterface xsi:type="DBSourceGenericDb" k2StudioObjectName="POSTGRESQL_ADMIN" dbType="genericdb" active="true">
-          <dbHost>dev-pg-service</dbHost>
-          <dbPort>5432</dbPort>
-          <dbScheme>postgres</dbScheme>
-          <dbUser>postgres</dbUser>
-          <dbPasswordEncrypted>~encs2~QWTt2RgVS/5q/HlWQHfmBrDGF7orkiE7dWx1TPmDQtioff9PFLC5Bg&#x3D;&#x3D;</dbPasswordEncrypted>
-          <connString>jdbc:postgresql://dev-pg-service:5432/postgres?stringtype&#x3D;unspecified</connString>
-          <minConnectionsNumber>0</minConnectionsNumber>
-          <maxConnectionsNumber>60</maxConnectionsNumber>
-          <JdbcDriverName>PostgreSQL</JdbcDriverName>
-        </DbInterface>
-        <DbInterface xsi:type="DBSourceGenericDb" k2StudioObjectName="TAR_ASSET_DB" dbType="genericdb" active="false">
-          <dbHost>dev-pg-service</dbHost>
-          <dbPort>5432</dbPort>
-          <dbScheme>TAR_ASSET_DB</dbScheme>
-          <dbUser></dbUser>
-          <dbPasswordEncrypted></dbPasswordEncrypted>
-          <connString>jdbc:postgresql://dev-pg-service:5432/TAR_ASSET_DB?stringtype&#x3D;unspecified</connString>
-          <minConnectionsNumber>0</minConnectionsNumber>
-          <maxConnectionsNumber>60</maxConnectionsNumber>
-          <JdbcDriverName>PostgreSQL</JdbcDriverName>
-        </DbInterface>
-        <DbInterface xsi:type="DBSourceGenericDb" k2StudioObjectName="TAR_BILLING_DB" dbType="genericdb" active="false">
-          <dbHost>dev-pg-service</dbHost>
-          <dbPort>5432</dbPort>
-          <dbScheme>TAR_BILLING_DB</dbScheme>
-          <dbUser></dbUser>
-          <dbPasswordEncrypted></dbPasswordEncrypted>
-          <connString>jdbc:postgresql://dev-pg-service:5432/TAR_BILLING_DB?stringtype&#x3D;unspecified</connString>
-          <minConnectionsNumber>0</minConnectionsNumber>
-          <maxConnectionsNumber>60</maxConnectionsNumber>
-          <JdbcDriverName>PostgreSQL</JdbcDriverName>
-        </DbInterface>
-        <DbInterface xsi:type="DBSourceGenericDb" k2StudioObjectName="TAR_CRM_DB" dbType="genericdb" active="false">
-          <dbHost>dev-pg-service</dbHost>
-          <dbPort>5432</dbPort>
-          <dbScheme>TAR_CRM_DB</dbScheme>
-          <dbUser></dbUser>
-          <dbPasswordEncrypted></dbPasswordEncrypted>
-          <connString>jdbc:postgresql://dev-pg-service:5432/TAR_CRM_DB?stringtype&#x3D;unspecified</connString>
-          <minConnectionsNumber>0</minConnectionsNumber>
-          <maxConnectionsNumber>60</maxConnectionsNumber>
-          <JdbcDriverName>PostgreSQL</JdbcDriverName>
-        </DbInterface>
-        <DbInterface xsi:type="DBSourceGenericDb" k2StudioObjectName="TDM" dbType="genericdb" active="true">
-          <dbHost>dev-pg-service</dbHost>
-          <dbPort>5432</dbPort>
-          <dbScheme>TDMDB</dbScheme>
-          <dbUser>tdm</dbUser>
-          <dbPasswordEncrypted>~encs2~hTwARoGSiN/hT5dO8dKla+xxoepIdC5p+RnBGAD2RUfBOAQ&#x3D;</dbPasswordEncrypted>
-          <connString>jdbc:postgresql://dev-pg-service:5432/TDMDB?stringtype&#x3D;unspecified</connString>
-          <minConnectionsNumber>0</minConnectionsNumber>
-          <maxConnectionsNumber>60</maxConnectionsNumber>
-          <JdbcDriverName>PostgreSQL</JdbcDriverName>
-        </DbInterface>
-      </DbInterfacesList>
-      <GlobalsList>
-        <Global name="ROOT_TABLE_NAME" luName="Asset">
-          <Value>asset</Value>
-          <Comment></Comment>
-        </Global>
-        <Global name="ROOT_COLUMN_NAME" luName="Asset">
-          <Value>asset_id</Value>
-          <Comment></Comment>
-        </Global>
-        <Global name="ROOT_TABLE_NAME" luName="Billing">
-          <Value>subscriber</Value>
-          <Comment></Comment>
-        </Global>
-        <Global name="ROOT_COLUMN_NAME" luName="Billing">
-          <Value>subscriber_id</Value>
-          <Comment></Comment>
-        </Global>
-        <Global name="ROOT_TABLE_NAME" luName="CRM">
-          <Value>customer</Value>
-          <Comment></Comment>
-        </Global>
-        <Global name="ROOT_COLUMN_NAME" luName="CRM">
-          <Value>customer_id</Value>
-          <Comment></Comment>
-        </Global>
-        <Global name="BUILD_TDMDB" luName="TDM">
-          <Value>true</Value>
-          <Comment></Comment>
-        </Global>
-        <Global name="INSTANCES_RANDOM_MIN" luName="TDM">
-          <Value>1</Value>
-          <Comment></Comment>
-        </Global>
-        <Global name="INSTANCES_RANDOM_MAX" luName="TDM">
-          <Value>10</Value>
-          <Comment></Comment>
-        </Global>
-        <Global name="SYNTHETIC_INDICATOR" luName="TDM">
-          <Value>false</Value>
-          <Comment></Comment>
-        </Global>
-        <Global name="SYNTHETIC_ENVIRONMENT" luName="TDM">
-          <Value>Synthetic</Value>
-          <Comment></Comment>
-        </Global>
-        <Global name="TDM_DEPLOY_ENVIRONMENTS" luName="TDM">
-          <Value>true</Value>
-          <Comment></Comment>
-        </Global>
-        <Global name="ROOT_COLUMN_NAME" luName="TDM_LIBRARY">
-          <Value></Value>
-          <Comment>The column name of the entity id. The name and the order of the root column name must be aligned with root_table_name. For example- if you populate two tables in root_Table_name (separated by a comma), you must populate also two values in this global where the first column referes to the first table name the second column refers to the second table name</Comment>
-        </Global>
-        <Global name="ROOT_TABLE_NAME" luName="TDM_LIBRARY">
-          <Value></Value>
-          <Comment>The name of the main source LU table or tables. You can populate several tables separated by a comma.</Comment>
-        </Global>
-        <Global name="BE_ID" luName="">
-          <Value>0</Value>
-          <Comment></Comment>
-        </Global>
-        <Global name="clone_id" luName="">
-          <Value>0</Value>
-          <Comment></Comment>
-        </Global>
-        <Global name="COMBO_MAX_COUNT" luName="">
-          <Value>49</Value>
-          <Comment>Maximum values of combo box input object</Comment>
-        </Global>
-        <Global name="enable_masking" luName="">
-          <Value>true</Value>
-          <Comment></Comment>
-        </Global>
-        <Global name="enable_sequences" luName="">
-          <Value>false</Value>
-          <Comment></Comment>
-        </Global>
-        <Global name="EXTRACT_MASKING_FLAG" luName="">
-          <Value>true</Value>
-          <Comment></Comment>
-        </Global>
-        <Global name="GET_RESERVED_ENTITIES_LIMIT" luName="">
-          <Value>0</Value>
-          <Comment>The max number of retrieved entities from TDM_RESERVED_ENTITIES, if set to zero then no limit</Comment>
-        </Global>
-        <Global name="LOAD_MASKING_FLAG" luName="">
-          <Value>false</Value>
-          <Comment></Comment>
-        </Global>
-        <Global name="MAX_NUMBER_OF_ENTITIES_IN_LIST" luName="">
-          <Value>100</Value>
-          <Comment>The maximum number of entities to be returned to be displayed in list of entities</Comment>
-        </Global>
-        <Global name="RESERVE_RETENTION_PERIOD_TYPE" luName="">
-          <Value>Days</Value>
-          <Comment></Comment>
-        </Global>
-        <Global name="RESERVE_RETENTION_PERIOD_VALUE" luName="">
-          <Value>10</Value>
-          <Comment></Comment>
-        </Global>
-        <Global name="SEQ_CACHE_INTERFACE" luName="">
-          <Value>TDM</Value>
-          <Comment></Comment>
-        </Global>
-        <Global name="SEQ_DO_TRUNCATE" luName="">
-          <Value>false</Value>
-          <Comment></Comment>
-        </Global>
-        <Global name="SEQ_DROP_KEYSPACE" luName="">
-          <Value>false</Value>
-          <Comment></Comment>
-        </Global>
-        <Global name="TASK_TYPE" luName="">
-          <Value>EXTRACT</Value>
-          <Comment></Comment>
-        </Global>
-        <Global name="TDM_BATCH_LIMIT" luName="">
-          <Value>-1</Value>
-          <Comment></Comment>
-        </Global>
-        <Global name="TDM_CLONING_DATA" luName="">
-          <Value>false</Value>
-          <Comment></Comment>
-        </Global>
-        <Global name="TDM_DATAFLUX_TASK" luName="">
-          <Value>false</Value>
-          <Comment>Indicator to mark the task as dataflux or not</Comment>
-        </Global>
-        <Global name="TDM_DELETE_BEFORE_LOAD" luName="">
-          <Value>false</Value>
-          <Comment>Indicator to delete the instance to target DB</Comment>
-        </Global>
-        <Global name="TDM_DELETE_TABLES_PREFIX" luName="">
-          <Value>TAR_</Value>
-          <Comment></Comment>
-        </Global>
-        <Global name="TDM_EXTERNAL_ENTITY_LIST_TTL" luName="">
-          <Value>2592000</Value>
-          <Comment>The TTL for external entity list for non jdbc source DB</Comment>
-        </Global>
-        <Global name="TDM_INSERT_TO_TARGET" luName="">
-          <Value>false</Value>
-          <Comment>Indicator to insert the instance to target DB</Comment>
-        </Global>
-        <Global name="TDM_LU_RETENTION_PERIOD_TYPE" luName="">
-          <Value>Days</Value>
-          <Comment>Each Instance can have a TTL, this global holds the type of the TTL and it can have one of the following values:Minutes, Hours, Days, Weeks, or Years</Comment>
-        </Global>
-        <Global name="TDM_LU_RETENTION_PERIOD_VALUE" luName="">
-          <Value>10</Value>
-          <Comment>The value of the TTL based on the type defined in TDM_LU_RETENTION_PERIOD_TYPE. Populate this global with zero or empty value to avoid setting a TTL on the TDM LUIs.</Comment>
-        </Global>
-        <Global name="TDM_PARAMETERS_SEPARATOR" luName="">
-          <Value>&lt;#&gt;</Value>
-          <Comment></Comment>
-        </Global>
-        <Global name="TDM_POPULATE_JMX_STATS" luName="">
-          <Value>false</Value>
-          <Comment>Indicates whether to run add TDM statitics</Comment>
-        </Global>
-        <Global name="TDM_REF_UPD_SIZE" luName="">
-          <Value>10000</Value>
-          <Comment></Comment>
-        </Global>
-        <Global name="TDM_REPLACE_SEQUENCES" luName="">
-          <Value>false</Value>
-          <Comment></Comment>
-        </Global>
-        <Global name="TDM_RESERVE_IND" luName="">
-          <Value>false</Value>
-          <Comment></Comment>
-        </Global>
-        <Global name="TDM_SEQ_REPORT" luName="">
-          <Value>true</Value>
-          <Comment></Comment>
-        </Global>
-        <Global name="TDM_SOURCE_ENVIRONMENT_NAME" luName="">
-          <Value>Production</Value>
-          <Comment></Comment>
-        </Global>
-        <Global name="TDM_SOURCE_PRODUCT_VERSION" luName="">
-          <Value>false</Value>
-          <Comment>Source product version to override by task execution process</Comment>
-        </Global>
-        <Global name="TDM_SUMMARY_REPORT_LIMIT" luName="">
-          <Value>10000</Value>
-          <Comment></Comment>
-        </Global>
-        <Global name="TDM_SYNC_SOURCE_DATA" luName="">
-          <Value>true</Value>
-          <Comment></Comment>
-        </Global>
-        <Global name="TDM_TAR_ENV_NAME" luName="">
-          <Value>UAT1</Value>
-          <Comment></Comment>
-        </Global>
-        <Global name="TDM_TARGET_PRODUCT_VERSION" luName="">
-          <Value>false</Value>
-          <Comment>Target product version to override by task execution process</Comment>
-        </Global>
-        <Global name="TDM_TASK_EXE_ID" luName="">
-          <Value>0</Value>
-          <Comment></Comment>
-        </Global>
-        <Global name="TDM_TASK_ID" luName="">
-          <Value>0</Value>
-          <Comment></Comment>
-        </Global>
-        <Global name="TDM_VERSION_DATETIME" luName="">
-          <Value>19700101000000</Value>
-          <Comment></Comment>
-        </Global>
-        <Global name="TDM_VERSION_NAME" luName="">
-          <Value></Value>
-          <Comment></Comment>
-        </Global>
-        <Global name="TDMDB_SCHEMA" luName="">
-          <Value>public</Value>
-          <Comment></Comment>
-        </Global>
-        <Global name="USER_FABRIC_ROLES" luName="">
-          <Value>admin</Value>
-          <Comment></Comment>
-        </Global>
-        <Global name="USER_NAME" luName="">
-          <Value>admin</Value>
-          <Comment></Comment>
-        </Global>
-        <Global name="USER_PERMISSION_GROUP" luName="">
-          <Value>admin</Value>
-          <Comment></Comment>
-        </Global>
-        <Global name="REF_TABLE_COUNT" luName="TDM_Reference">
-          <Value>NOT_SET</Value>
-          <Comment></Comment>
-        </Global>
-      </GlobalsList>
-      <GenericInterfacesList>
-        <GenericInterface type="LOCAL" enabled="false" version="">
-          <Name>TDM_APIDOC_JSON</Name>
-          <Properties>
-            <Property name="WorkingDir">
-              <Value>C:\k2view\TDM_APIDOC</Value>
-            </Property>
-            <Property name="FilesFilter">
-              <Value></Value>
-            </Property>
-            <Property name="Affinity">
-              <Value></Value>
-            </Property>
-          </Properties>
-        </GenericInterface>
-        <GenericInterface type="LOCAL" enabled="true" version="">
-          <Name>SFTB</Name>
-          <Properties>
-            <Property name="WorkingDir">
-              <Value>workspace/project/project-resources</Value>
-            </Property>
-            <Property name="FilesFilter">
-              <Value></Value>
-            </Property>
-            <Property name="Affinity">
-              <Value></Value>
-            </Property>
-          </Properties>
-        </GenericInterface>
-      </GenericInterfacesList>
-    </Environment>
-  </EnvironmentsList>
-</FabEnvironmentsManager>
+This XML file does not appear to have any style information associated with it. The document tree is shown below.
+
+<FabEnvironmentsManager
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<Name>Environments</Name>
+	<EnvironmentsList>
+		<Environment enabled="true" name="INTMAN1">
+			<DbInterfacesList>
+				<DbInterface xsi:type="DBSourceGenericDb" k2StudioObjectName="BARRING" dbType="genericdb" active="false">
+					<dbPort>3004</dbPort>
+					<dbScheme>CSPVT4</dbScheme>
+					<connString>jdbc:oracle:thin:@:3004/CSPVT4</connString>
+					<minConnectionsNumber>0</minConnectionsNumber>
+					<maxConnectionsNumber>60</maxConnectionsNumber>
+					<JdbcDriverName>Oracle</JdbcDriverName>
+				</DbInterface>
+				<DbInterface k2StudioObjectName="DB_CASSANDRA" dbType="cassandra" active="true">
+					<dbHost>cassandra.eu-central-1.amazonaws.com</dbHost>
+					<dbPort>9142</dbPort>
+					<dbUser>tdm-keyspaces-at-565985570472</dbUser>
+					<dbPasswordEncrypted>lZMAx1A779pJWAD4HY7PREdyzUxif56kpPCLXcMC/J8=:zeo0jiBHTB05MA3IrF1xYZs9Q67I1zs+/SaCLPkD0xtLVuI3Gn2vtuJX9EdUulO3ZdH598Y1zoh6Blcp0i2qBg==</dbPasswordEncrypted>
+					<IsCustomConnectionStringServerSide>true</IsCustomConnectionStringServerSide>
+					<connString>jdbc:cassandra://cassandra.eu-central-1.amazonaws.com:9142/?consistency=LOCAL_QUORUM&internodesssl=true</connString>
+					<minConnectionsNumber>0</minConnectionsNumber>
+					<maxConnectionsNumber>60</maxConnectionsNumber>
+				</DbInterface>
+				<DbInterface xsi:type="DBSourceGenericDb" k2StudioObjectName="DELPHI_VT4" dbType="genericdb" active="false">
+					<dbPort>1404</dbPort>
+					<dbScheme>test_104_n:INFORMIXSERVER=qlt2172_001tcp;</dbScheme>
+					<connString>jdbc:informix-sqli://:1404/test_104_n:INFORMIXSERVER=qlt2172_001tcp;:DELIMIDENT=Y</connString>
+					<minConnectionsNumber>0</minConnectionsNumber>
+					<maxConnectionsNumber>60</maxConnectionsNumber>
+					<JdbcDriverName>Informix</JdbcDriverName>
+				</DbInterface>
+				<DbInterface xsi:type="DBSourceGenericDb" k2StudioObjectName="INFPORT" dbType="genericdb" active="false">
+					<dbPort>1804</dbPort>
+					<dbScheme>tnbvt4</dbScheme>
+					<connString>jdbc:oracle:thin:@:1804/tnbvt4</connString>
+					<minConnectionsNumber>0</minConnectionsNumber>
+					<maxConnectionsNumber>60</maxConnectionsNumber>
+					<JdbcDriverName>Oracle</JdbcDriverName>
+				</DbInterface>
+				<DbInterface k2StudioObjectName="INVBCM_IntMan01" dbType="oracle" active="false">
+					<dbHost/>
+					<dbPort>1521</dbPort>
+					<dbScheme>VFDABP1</dbScheme>
+					<connString>jdbc:oracle:thin:@:1521/VFDABP1</connString>
+					<minConnectionsNumber>0</minConnectionsNumber>
+					<maxConnectionsNumber>60</maxConnectionsNumber>
+				</DbInterface>
+				<DbInterface k2StudioObjectName="INVBCM_SRC" dbType="oracle" active="false">
+					<dbHost>vfde_ep_rds_art-int02-intman1.dev-tdm.aws.solstice.vodafone.com</dbHost>
+					<dbPort>1521</dbPort>
+					<dbScheme>VFDABP4</dbScheme>
+					<dbUser>ABP4CUSTC</dbUser>
+					<dbPasswordEncrypted>bBoZB+Dt3nqBnStRgtdhO81kwybtPkVRDmVtPQJz3vg=:8UYJ4XpdQL8TvUAeAyR57oloLf5r+LdcIE/4B2c626o=</dbPasswordEncrypted>
+					<connString>jdbc:oracle:thin:@vfde_ep_rds_art-int02-intman1.dev-tdm.aws.solstice.vodafone.com:1521/VFDABP4</connString>
+					<minConnectionsNumber>0</minConnectionsNumber>
+					<maxConnectionsNumber>60</maxConnectionsNumber>
+				</DbInterface>
+				<DbInterface k2StudioObjectName="INVBCM_TRG" dbType="oracle" active="false">
+					<dbHost>vfde_ep_rds_art-int02-intman1.dev-tdm.aws.solstice.vodafone.com</dbHost>
+					<dbPort>1521</dbPort>
+					<dbScheme>VFDABP4</dbScheme>
+					<dbUser>ABP4CUSTC</dbUser>
+					<dbPasswordEncrypted>X3h1KFy0fXOo6mi0b7TkNMYk+zsI635xZR4BpLpz82Q=:Kc0tLb0Q205D5k50ZFLNN61XB1TUrnLIVoZ0GFOmg34=</dbPasswordEncrypted>
+					<connString>jdbc:oracle:thin:@vfde_ep_rds_art-int02-intman1.dev-tdm.aws.solstice.vodafone.com:1521/VFDABP4</connString>
+					<minConnectionsNumber>0</minConnectionsNumber>
+					<maxConnectionsNumber>60</maxConnectionsNumber>
+				</DbInterface>
+				<DbInterface k2StudioObjectName="INVBCM_XTEST1" dbType="oracle" active="false">
+					<dbHost/>
+					<dbPort>1521</dbPort>
+					<dbScheme>ABPXORA1</dbScheme>
+					<connString>jdbc:oracle:thin:@:1521/ABPXORA1</connString>
+					<minConnectionsNumber>0</minConnectionsNumber>
+					<maxConnectionsNumber>60</maxConnectionsNumber>
+				</DbInterface>
+				<DbInterface xsi:type="DBSourceGenericDb" k2StudioObjectName="MAMAS_TDM" dbType="genericdb" active="false">
+					<dbHost>vpce-0f7f364ad6d4d2404-nz42ft2i.vpce-svc-064dd7dd32c2f0980.eu-central-1.vpce.amazonaws.com</dbHost>
+					<dbPort>1525</dbPort>
+					<dbScheme>mamas3t</dbScheme>
+					<dbUser>MAMAS_TDM</dbUser>
+					<dbPasswordEncrypted>8g+Gbw+zenUxRGGMNfoePMfnvZWGobUGSFnAVrwx7+o=:fwbp8ieZI6ZQGJm4K4Nhycw/FT9H7EzEhynCkZkCBNA=</dbPasswordEncrypted>
+					<connString>jdbc:oracle:thin:@vpce-0f7f364ad6d4d2404-nz42ft2i.vpce-svc-064dd7dd32c2f0980.eu-central-1.vpce.amazonaws.com:1525/mamas3t</connString>
+					<minConnectionsNumber>0</minConnectionsNumber>
+					<maxConnectionsNumber>60</maxConnectionsNumber>
+					<JdbcDriverName>Oracle</JdbcDriverName>
+				</DbInterface>
+				<DbInterface xsi:type="DBSourceGenericDb" k2StudioObjectName="POSTGRESQL_ADMIN" dbType="genericdb" active="false">
+					<dbPort>5432</dbPort>
+					<dbScheme>postgres</dbScheme>
+					<connString>jdbc:postgresql://:5432/postgres?stringtype=unspecified</connString>
+					<minConnectionsNumber>0</minConnectionsNumber>
+					<maxConnectionsNumber>60</maxConnectionsNumber>
+					<JdbcDriverName>PostgreSQL</JdbcDriverName>
+				</DbInterface>
+				<DbInterface k2StudioObjectName="RBM" dbType="oracle" active="false">
+					<dbHost>vfde_ep_vfde-k2view-vt4.dev-tdm.aws.solstice.vodafone.com</dbHost>
+					<dbPort>1104</dbPort>
+					<dbScheme>irbvt4</dbScheme>
+					<dbUser>GENEVA_TDM</dbUser>
+					<dbPasswordEncrypted>cYgN1bTfoDILgpj+b6LBh3qICz/kZ7v6doYBEC9lHS4=:DXMHLR9IL+y6mhV/Q7Tp8FJDO06F4pdWRNyFDZwC3HY=</dbPasswordEncrypted>
+					<connString>jdbc:oracle:thin:@vfde_ep_vfde-k2view-vt4.dev-tdm.aws.solstice.vodafone.com:1104/irbvt4</connString>
+					<minConnectionsNumber>0</minConnectionsNumber>
+					<maxConnectionsNumber>60</maxConnectionsNumber>
+				</DbInterface>
+				<DbInterface k2StudioObjectName="RBM_TRG" dbType="oracle" active="false">
+					<dbHost>vfde_ep_vfde-k2view-vt4.dev-tdm.aws.solstice.vodafone.com</dbHost>
+					<dbPort>1104</dbPort>
+					<dbScheme>irbvt4</dbScheme>
+					<dbUser>GENEVA_TDM</dbUser>
+					<dbPasswordEncrypted>2Fat8o2zKIlROOQhu4qNTkI2bDHGVWbIhB15H/BQwwI=:kBzBQDKg6WXLS85L9c5QWbLXLF9rOn62yX4YNuJIkRk=</dbPasswordEncrypted>
+					<connString>jdbc:oracle:thin:@vfde_ep_vfde-k2view-vt4.dev-tdm.aws.solstice.vodafone.com:1104/irbvt4</connString>
+					<minConnectionsNumber>0</minConnectionsNumber>
+					<maxConnectionsNumber>60</maxConnectionsNumber>
+				</DbInterface>
+				<DbInterface k2StudioObjectName="TDM" dbType="postgresql" active="true">
+					<dbHost>tdm-fabric7-aurora-postgresqlv2.cluster-cs0oddn3mma0.eu-central-1.rds.amazonaws.com</dbHost>
+					<dbPort>5432</dbPort>
+					<dbScheme>TDMDB</dbScheme>
+					<dbUser>tdm</dbUser>
+					<dbPasswordEncrypted>/neudN2EvOHT2GigDHjEr8brYv+xxgoEeFON8pNRwy8=:Xjagtz8f+FTTTpAvDi5HJMUCn8IEvohCpgVXxaq0o20=</dbPasswordEncrypted>
+					<connString>jdbc:postgresql://tdm-fabric7-aurora-postgresqlv2.cluster-cs0oddn3mma0.eu-central-1.rds.amazonaws.com:5432/TDMDB?stringtype=unspecified</connString>
+					<minConnectionsNumber>0</minConnectionsNumber>
+					<maxConnectionsNumber>60</maxConnectionsNumber>
+				</DbInterface>
+				<DbInterface k2StudioObjectName="WIZARD_REF" dbType="oracle" active="false">
+					<dbPort>5001</dbPort>
+					<dbScheme>wiz1gitappsrv</dbScheme>
+					<connString>jdbc:oracle:thin:@:5001/wiz1gitappsrv</connString>
+					<minConnectionsNumber>0</minConnectionsNumber>
+					<maxConnectionsNumber>60</maxConnectionsNumber>
+				</DbInterface>
+				<DbInterface k2StudioObjectName="WIZARD_REF_R1" dbType="oracle" active="false">
+					<dbPort>5001</dbPort>
+					<dbScheme>wiz1gitappsrv</dbScheme>
+					<connString>jdbc:oracle:thin:@:5001/wiz1gitappsrv</connString>
+					<minConnectionsNumber>0</minConnectionsNumber>
+					<maxConnectionsNumber>60</maxConnectionsNumber>
+				</DbInterface>
+				<DbInterface k2StudioObjectName="WIZARD_TRG" dbType="oracle" active="false">
+					<dbPort>1521</dbPort>
+					<dbScheme>wizprod1</dbScheme>
+					<connString>jdbc:oracle:thin:@:1521/wizprod1</connString>
+					<minConnectionsNumber>0</minConnectionsNumber>
+					<maxConnectionsNumber>60</maxConnectionsNumber>
+				</DbInterface>
+				<DbInterface k2StudioObjectName="WizardDB" dbType="oracle" active="false">
+					<dbHost>vpce-04ec377944d95e7d1-9jbs8q64.vpce-svc-0b3bd0fe386870d06.eu-central-1.vpce.amazonaws.com</dbHost>
+					<dbPort>1521</dbPort>
+					<dbScheme>wizprod1</dbScheme>
+					<dbUser>PROD04_TDM</dbUser>
+					<dbPasswordEncrypted>S0TG95PbkufrVXgKkGCwkQCF2+QCsN05XvCitdiQmug=:W3K5XL7g0LLShTTmx4ZIGz6hweR6fXP7/WfIxSyDfNo=</dbPasswordEncrypted>
+					<connString>jdbc:oracle:thin:@vpce-04ec377944d95e7d1-9jbs8q64.vpce-svc-0b3bd0fe386870d06.eu-central-1.vpce.amazonaws.com:1521/wizprod1</connString>
+					<minConnectionsNumber>0</minConnectionsNumber>
+					<maxConnectionsNumber>60</maxConnectionsNumber>
+				</DbInterface>
+			</DbInterfacesList>
+			<GlobalsList>
+				<Global name="COMBO_MAX_COUNT" luName="">
+					<Value>49</Value>
+					<Comment>Maximum values of combo box input object</Comment>
+				</Global>
+				<Global name="TDM_DELETE_BEFORE_LOAD" luName="">
+					<Value>false</Value>
+					<Comment>Indicator to delete the instance to target DB</Comment>
+				</Global>
+				<Global name="TDM_INSERT_TO_TARGET" luName="">
+					<Value>false</Value>
+					<Comment>Indicator to insert the instance to target DB</Comment>
+				</Global>
+				<Global name="TDM_SYNC_SOURCE_DATA" luName="">
+					<Value>true</Value>
+				</Global>
+				<Global name="TDM_TARGET_PRODUCT_VERSION" luName="">
+					<Value>false</Value>
+					<Comment>Target product version to override by task execution process</Comment>
+				</Global>
+				<Global name="TDM_SOURCE_PRODUCT_VERSION" luName="">
+					<Value>false</Value>
+					<Comment>Source product version to override by task execution process</Comment>
+				</Global>
+				<Global name="TDM_REPLACE_SEQUENCES" luName="">
+					<Value>false</Value>
+				</Global>
+				<Global name="TDM_TASK_EXE_ID" luName="">
+					<Value>0</Value>
+				</Global>
+				<Global name="TDM_SOURCE_ENVIRONMENT_NAME" luName="">
+					<Value>ENV1</Value>
+				</Global>
+				<Global name="TDM_TAR_ENV_NAME" luName="">
+					<Value>ENV2</Value>
+				</Global>
+				<Global name="TDM_SYNTHETIC_DATA" luName="">
+					<Value>false</Value>
+				</Global>
+				<Global name="TDM_TASK_ID" luName="">
+					<Value>0</Value>
+				</Global>
+				<Global name="TDM_VERSION_DATETIME" luName="">
+					<Value>19700101000000</Value>
+				</Global>
+				<Global name="TDM_VERSION_NAME" luName="">
+					<Value/>
+				</Global>
+				<Global name="TDM_DATAFLUX_TASK" luName="">
+					<Value>false</Value>
+					<Comment>Indicator to mark the task as dataflux or not</Comment>
+				</Global>
+				<Global name="TDM_EXTERNAL_ENTITY_LIST_TTL" luName="">
+					<Value>2592000</Value>
+					<Comment>The TTL for external entity list for non jdbc source DB</Comment>
+				</Global>
+				<Global name="MAX_NUMBER_OF_ENTITIES_IN_LIST" luName="">
+					<Value>100</Value>
+					<Comment>The maximum number of entities to be returned to be displayed in list of entities</Comment>
+				</Global>
+				<Global name="TDM_LU_RETENTION_PERIOD_TYPE" luName="">
+					<Value>Days</Value>
+					<Comment>Each Instance can have a TTL, this global holds the type of the TTL and it can have one of the following values:Minutes, Hours, Days, Weeks, or Years</Comment>
+				</Global>
+				<Global name="TDM_LU_RETENTION_PERIOD_VALUE" luName="">
+					<Value>10</Value>
+					<Comment>The value of the TTL based on the type defined in TDM_LU_RETENTION_PERIOD_TYPE. Populate this global with zero or empty value to avoid setting a TTL on the TDM LUIs.</Comment>
+				</Global>
+				<Global name="GET_RESERVED_ENTITIES_LIMIT" luName="">
+					<Value>0</Value>
+					<Comment>The max number of retrieved entities from TDM_RESERVED_ENTITIES, if set to zero then no limit</Comment>
+				</Global>
+				<Global name="USER_NAME" luName="">
+					<Value>admin</Value>
+				</Global>
+				<Global name="USER_FABRIC_ROLES" luName="">
+					<Value>admin</Value>
+				</Global>
+				<Global name="USER_PERMISSION_GROUP" luName="">
+					<Value>admin</Value>
+				</Global>
+				<Global name="TDM_RESERVE_IND" luName="">
+					<Value>false</Value>
+				</Global>
+				<Global name="RESERVE_RETENTION_PERIOD_TYPE" luName="">
+					<Value>Days</Value>
+				</Global>
+				<Global name="RESERVE_RETENTION_PERIOD_VALUE" luName="">
+					<Value>10</Value>
+				</Global>
+				<Global name="BE_ID" luName="">
+					<Value>0</Value>
+				</Global>
+				<Global name="TASK_TYPE" luName="">
+					<Value>EXTRACT</Value>
+				</Global>
+				<Global name="enable_masking" luName="">
+					<Value>true</Value>
+				</Global>
+				<Global name="enable_sequences" luName="">
+					<Value>false</Value>
+				</Global>
+				<Global name="TDM_REF_UPD_SIZE" luName="">
+					<Value>10000</Value>
+				</Global>
+				<Global name="clone_id" luName="">
+					<Value>0</Value>
+				</Global>
+				<Global name="EXTRACT_MASKING_FLAG" luName="">
+					<Value>true</Value>
+				</Global>
+				<Global name="LOAD_MASKING_FLAG" luName="">
+					<Value>false</Value>
+				</Global>
+				<Global name="ORACLE8_DB_TYPE" luName="">
+					<Value>Oracle8</Value>
+					<Comment>The global is used by the test connection of Oracle 8- the dbType parameter must be set to the database type name, defined for the Oracle8 DB</Comment>
+				</Global>
+				<Global name="MASK_FLAG" luName="">
+					<Value>1</Value>
+				</Global>
+				<Global name="CLONE_CLEANUP_RETENTION_PERIOD_TYPE" luName="">
+					<Value>Days</Value>
+					<Comment>In case of cloning, each clone can have a TTL, this global holds the type of the TTL and it can have one of the following values:Minutes, Days, Weeks, Months</Comment>
+				</Global>
+				<Global name="CLONE_CLEANUP_RETENTION_PERIOD_VALUE" luName="">
+					<Value>1</Value>
+					<Comment>The value of the TTL based on the type defined in CLONE_CLEANUP_RETENTION_PERIOD_TYPE</Comment>
+				</Global>
+				<Global name="MAILING_LIST" luName="">
+					<Value>dotan.tsur@k2view.com alexandre.broetto@k2view.com tony.simaan@k2view.com george.coman@k2view.com</Value>
+					<Comment>Mailing list for user jobs / reports</Comment>
+				</Global>
+				<Global name="GETTOKEN_AUTH_CID" luName="">
+					<Value>NASZagt9dF733w8AivH7ZHmWQ5uMXbjC</Value>
+					<Comment>old(ZHspB3IOmEVLJkuNEmfpNKQ9fo7DEhqF)</Comment>
+				</Global>
+				<Global name="GETTOKEN_AUTH_SECRET" luName="">
+					<Value>8js4A7QGr6A1YsbC</Value>
+					<Comment>old(67gdOuBiBf0mPTtk)</Comment>
+				</Global>
+				<Global name="GETTOKEN_BASE_URL" luName="">
+					<Value>https://dev.asgw.aws.de.vodafone.com</Value>
+				</Global>
+				<Global name="GETTOKEN_PATH" luName="">
+					<Value>/oauth2/v1/accesstoken?grant_type=client_credentials</Value>
+				</Global>
+				<Global name="AUTOMATION_TASK_ID" luName=""/>
+				<Global name="TDM_FLAG" luName="">
+					<Value>TDM_FLAG</Value>
+				</Global>
+				<Global name="ATS_API" luName="">
+					<Value>false</Value>
+				</Global>
+				<Global name="DEVELOPMENT_PRODUCT_VERSION" luName="">
+					<Value>DEV</Value>
+					<Comment>Prefix of delete tables</Comment>
+				</Global>
+				<Global name="PRODUCTION_PRODUCT_VERSION" luName="">
+					<Value>PROD</Value>
+				</Global>
+				<Global name="MAIL_ADDRESS" luName="">
+					<Value/>
+				</Global>
+				<Global name="AUTOMATION_BE_ID" luName="">
+					<Value>1</Value>
+				</Global>
+				<Global name="AUTOMATION_TOKEN" luName="">
+					<Value>jwt=CVFSuNlix-P0rioOlk7IQ-YeXMc869Y8jB0NX2l?WJ?/d42dx/Vj8leg6NIunV!k72iBFFUmjB8mDDtoWXNwPeAhc9VP7gPMUE-1CInjP?Nioj5EziFb?b!RdUKbBGAM2XjrfgqtxlFi0uEtCKFwCZ9VpuUOlK1DYC?7wZJFFDM378raQntqaYF8mn5/b-TqRge!tWEeRKKtrixthMRG06IKaWMDZYUidre6Acn/82iYGEqhX8Z3jYQvERZ8</Value>
+				</Global>
+				<Global name="BILL_CYCLE" luName="">
+					<Value/>
+				</Global>
+				<Global name="DISABLE_SRC_IID" luName="">
+					<Value>false</Value>
+				</Global>
+				<Global name="SHOW_SRC_IID" luName="">
+					<Value>true</Value>
+				</Global>
+				<Global name="SAP_URL" luName="">
+					<Value>https://webdispqwd.art-int01.aws.solstice.vodafone.com:4431</Value>
+				</Global>
+				<Global name="SAP_TOKEN" luName="">
+					<Value>Q1BJQ19URE1fQVRTOlQmZG01OWF0ISU=</Value>
+				</Global>
+				<Global name="SAP_SYSTEM" luName="">
+					<Value>DRM-100</Value>
+				</Global>
+				<Global name="WIZARD_DB_SCHEMA" luName="">
+					<Value>PROD04_DBA</Value>
+				</Global>
+				<Global name="API_BASE_URL" luName="ACRM">
+					<Value>https://dev.asgw.aws.de.vodafone.com</Value>
+					<Comment>Old URL: https://api-test-env.art-int03.aws.solstice.vodafone.com</Comment>
+				</Global>
+				<Global name="CUSTOMER_URL" luName="ACRM">
+					<Value>/customerManagement/v1/customer/</Value>
+				</Global>
+				<Global name="BILLING_ACCOUNT_URL" luName="ACRM">
+					<Value>/accountManagement/v1/billingAccount/</Value>
+				</Global>
+				<Global name="FINANCIAL_ACCOUNT_URL" luName="ACRM">
+					<Value>/accountManagement/v1/financialAccount/</Value>
+				</Global>
+				<Global name="PAYMENT_METHOD_URL" luName="ACRM">
+					<Value>/paymentMethods/v1/paymentMethod/</Value>
+				</Global>
+				<Global name="INDIVIDUAL_URL" luName="ACRM">
+					<Value>/party/v4/individual/</Value>
+				</Global>
+				<Global name="API_TOKEN" luName="ACRM">
+					<Value>eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJMSlZ0YkZHRmEtMm1RdVFlWGpuNWhrU1BPY3lGcEcyOFNHT2VmdTNmM0hnIn0.eyJqdGkiOiI2ZDE1MmQyYy02Y2IwLTQ2NmEtYTAzZS0xOTc0YjI1YTk5ZDkiLCJleHAiOjE2NDY4MTQzMjIsIm5iZiI6MCwiaWF0IjoxNjQ1NjA0NzIyLCJpc3MiOiJodHRwczovL2tleWNsb2FrLXJ1bnRpbWUteHRlc3QtMS5la3MxLngtdGVzdDAyLmF3cy5zb2xzdGljZS52b2RhZm9uZS5jb20vYXV0aC9yZWFsbXMvYXBpZ3ciLCJhdWQiOiJhcGlndyIsInN1YiI6IjYyZDllMjI3LWFlOTktNGJmMS1hY2UxLWU1MGVkZGRlMjZlOCIsInR5cCI6IkJlYXJlciIsImF6cCI6ImFwaWd3IiwiYXV0aF90aW1lIjowLCJzZXNzaW9uX3N0YXRlIjoiYTUzZmMwMmMtYTBlYS00MjUyLTlmZDgtNmRlNzZiYWZlNTIyIiwiYWNyIjoiMSIsInJlYWxtX2FjY2VzcyI6eyJyb2xlcyI6WyJ1cGRhdGVPcmdhbml6YXRpb25SZWxhdGVkUGFydHlUb0luZGl2aWR1YWwiLCJEMV90aWNrZXRyZXNvbHV0aW9uRGF0ZV9VcGRhdGUiLCJBY2Nlc3NDUk1Sb2xlIiwiRDFfVHJvdWJsZVRpY2tldF9kZWxldGVfb3duX2RyYWZ0IiwiRDFfQ29tbXVuaWNhdGlvbk1lc3NhZ2VfcmV0cmlldmUiLCJEMV9Ucm91YmxlVGlja2V0X292ZXJyaWRlUHJpb3JpdHkiLCJ1bWFfYXV0aG9yaXphdGlvbiIsIks4S19DYXRhbG9nX0Jyb3dzZXIiLCJBZ2VudCIsImtjLXJvbGUzIiwiY2NTdXBlcnZpc29yIiwia2Mtcm9sZTNDdXN0IiwiRDFfVHJvdWJsZVRpY2tldF9kZWxldGVfYW55Iiwia2Mtcm9sZTJDdXN0Iiwia2Mtcm9sZTIiLCJrYy1yb2xlMSIsIkJpbGxpbmdBZ2VudCIsIks4S19DYXRhbG9nX01hbmFnZW1lbnRfRWRpdG9yIiwiSzhLX0NhdGFsb2dfTWFuYWdlbWVudF9SZWFkZXIiLCJrYy1wcm9maWxlMyIsImtjLXByb2ZpbGUyIiwia2Mtcm9sZTFDdXN0UlRCQUNCUiIsImtjLXByb2ZpbGUxIiwia2Mtcm9sZTFDdXN0Iiwia2Mtcm9sZUEiLCJLOEtfQ2F0YWxvZ19NYW5hZ2VtZW50X0J1c2luZXNzRGF0YVJlYWRlciIsImtjLXByb2ZpbGU4IiwiQUQyRDFfQVBJQWNjZXNzIiwia2MtcHJvZmlsZTciLCJrYy1wcm9maWxlNiIsImtjLXByb2ZpbGU1Iiwia2MtcHJvZmlsZTQiLCJyZXRyaWV2ZUNsb3NlZEJpbGxpbmdBY2NvdW50IiwicmV0cmlldmVDbG9zZWRDdXN0b21lciIsIks4S19DYXRhbG9nX01hbmFnZW1lbnRfQWRtaW4iLCJhZGRPcmdhbml6YXRpb25SZWxhdGVkUGFydHlUb0luZGl2aWR1YWwiLCJvZmZsaW5lX2FjY2VzcyIsImtjLXJvbGUxQ3VzdFJUQkZhbGxvdXQiLCJEMV9QYXJ0eU1hbmFnZW1lbnRfQWRkT3JnYW5pemF0aW9uUmVsYXRpb25zaGlwIiwiSzhLX0NhdGFsb2dfTWFuYWdlbWVudF9Dcml0ZXJpYSIsIkQxX0F0dGFobWVudE1hbmFnZW1lbnRfUmVtb3ZlQXR0YWNobWVudCIsIkQxX1Ryb3VibGVUaWNrZXRfcGF0Y2hUcm91YmxlVGlja2V0IiwiRDFfQ29tbXVuaWNhdGlvbk1lc3NhZ2VfbW9kaWZ5IiwiRDFfVHJvdWJsZVRpY2tldF9kZWxldGVfYW55X2RyYWZ0IiwiRDFfQXR0YWNobWVudE1hbmFnZW1lbnRfUmVtb3ZlQXR0YWNobWVudCIsImJhdGNoLW1pZ3JhdGlvbi1zdXBlcnYiLCJLOEtfQ2F0YWxvZ19NYW5hZ2VtZW50X0xpZmVjeWNsZSIsIks4S19DYXRhbG9nX01hbmFnZW1lbnRfQXV0aG9yIiwiRDFfUGFydHlNYW5hZ2VtZW50X3VwZGF0ZVRheEV4ZW1wdGlvbiIsIkQxX1Rhc2tGbG93X3NlYXJjaFRhc2tGbG93IiwiUmV0YWlsU3RvcmVBZ2VudCIsImtjLXByb2ZpbGUiLCJBY2Nlc3NNYXNzUm9sZSIsInJlbW92ZU9yZ2FuaXphdGlvblJlbGF0ZWRQYXJ0eVRvSW5kaXZpZHVhbCJdfSwic2NvcGUiOiJlbWFpbCBhdWQgcHJvZmlsZSIsImVtYWlsX3ZlcmlmaWVkIjpmYWxzZSwibmFtZSI6InRkbVVzZXIgdGRtVXNlciIsInByZWZlcnJlZF91c2VybmFtZSI6InRkbXVzZXIiLCJnaXZlbl9uYW1lIjoidGRtVXNlciIsInNhbGVzQ2hhbm5lbCI6IkNhbGxDZW50ZXIiLCJmYW1pbHlfbmFtZSI6InRkbVVzZXIiLCJlbWFpbCI6InRkbXVzZXJAYXV0b21hdGlvbi5jb20ifQ.JSzxv1HSfMTD-2QRz_uAUbGZyteGBaoT1kEDpv4kuAIyV_bsJcqsLc7Mi_q9x0prIqGGn6u0XHPq8k5oD069glBR912YVDf0zmh1vDAo89y1sjpTqgDokN8LQCPyq9A-PWl7n6rvaXn3S75VnjjiEOKyVgDVyuSbhIYwYpGPDpTwxefAGAqkRVETZDjDTGhRGPpPIvDDhcmvpmfiGpDKLs35PDNsFxO19_wa2stEun4cFDm_6v268mfyzlX_nTztZyefYUpJLgJt3CxZwh39PupHSif6U6TcUTnuIQiYZ0H2kiIQNWm9et07KO_QUMUUIgYC3_kURIe7312J5iWG8Q</Value>
+				</Global>
+				<Global name="TABLE_CUSTOMER_POST" luName="ACRM">
+					<Value>contactMedium,paymentMethod,account,engagedParty</Value>
+				</Global>
+				<Global name="TABLE_BILLING_ACCOUNT_POST" luName="ACRM">
+					<Value>contact,contact<>contactMedium,relatedParty,financialAccount,defaultPaymentMethod,contact<>relatedParty
+					</Value>
+				</Global>
+				<Global name="TABLE_FINANCIAL_ACCOUNT_POST" luName="ACRM">
+					<Value>contact,contact<>relatedParty,relatedParty
+					</Value>
+				</Global>
+				<Global name="TABLE_INDIVIDUAL_POST" luName="ACRM">
+					<Value>contactMedium,relatedParty,identification</Value>
+				</Global>
+				<Global name="TABLE_PAYMENT_METHOD_POST" luName="ACRM">
+					<Value>relatedParty,account</Value>
+				</Global>
+				<Global name="TOKEN_EXPIRE" luName="ACRM">
+					<Value/>
+				</Global>
+				<Global name="API_TOKEN_LEGACY" luName="ACRM">
+					<Value>eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJfYmpqUFpHZFI1MVhXbE84V0hxdWdWUEJfbHR1RUdEOGV0UVMwQ2czLVVJIn0.eyJqdGkiOiIxZDY2OWEzMS1lNTA0LTQwZGItOWVhZi03MWY5ZTFjNWI1ZTIiLCJleHAiOjE2NTYzNTg1MDIsIm5iZiI6MCwiaWF0IjoxNjQ4NTgyNTAyLCJpc3MiOiJodHRwczovL2tleWNsb2FrLXJ1bnRpbWUudG9vbC50ZXN0LmRvbmUuc29sLXZmLmRlL2F1dGgvcmVhbG1zL2FwaWd3IiwiYXVkIjoiYXBpZ3ciLCJzdWIiOiIyMDExNDQ5ZC02NGFhLTQzNzctOGJmMC1lODU4OTc5ZjI4NDMiLCJ0eXAiOiJCZWFyZXIiLCJhenAiOiJhcGlndyIsImF1dGhfdGltZSI6MCwic2Vzc2lvbl9zdGF0ZSI6IjQxYTI5M2UxLTAxYmEtNDBiNC04MDMzLTM1NmI4NmExMTFkYyIsImFjciI6IjEiLCJyZWFsbV9hY2Nlc3MiOnsicm9sZXMiOlsiQUQyRDFfQVBJQWNjZXNzIl19LCJzY29wZSI6InByb2ZpbGUgYXVkIGVtYWlsIiwiZW1haWxfdmVyaWZpZWQiOmZhbHNlLCJuYW1lIjoidGRtdXNlciB0ZG11c2VyIiwicHJlZmVycmVkX3VzZXJuYW1lIjoidGRtdXNlciIsImdpdmVuX25hbWUiOiJ0ZG11c2VyIiwic2FsZXNDaGFubmVsIjoiQ2FsbENlbnRlciIsImZhbWlseV9uYW1lIjoidGRtdXNlciIsImVtYWlsIjoidGRtdXNlckBhdXRvbWF0aW9uLmNvbSJ9.IaRd6FBwDyD0YF_UTGsa3gpC9CKTOBX8LzXcTR5yMuYQ6e0egtnLjKg1mouGvrET_13helHjWyEpR1ciGValeeOPfnxQ0pO1QVYYrfp95aC73qB0E084OeuDCdwiRcOF3J3Clw5MthJ2X85dDgS_rydRCyO8fxN87yu9hr8P3ieLDPP7SxtOqL4ssTl5dagA-5rU9Vcj8J2PXAYzg5oJmRnDVk1LEseRFq1xcYsVjQ1ze9YiFYB7-mOk9h6NuAXKLWHORZ7AuYbjd1_hTSLgn0YeisCI5d0cQbWann-92QsLWcf9d6Sf_Xy68M66qrAvdV5ugVAUEw147fNVuIsH_A</Value>
+				</Global>
+				<Global name="VALIDATE_BCM" luName="ACRM">
+					<Value>true</Value>
+				</Global>
+				<Global name="SAP_PROC_IMMEDIATE" luName="ACRM">
+					<Value>YES</Value>
+				</Global>
+				<Global name="GEOGRAPHICAL_ADDRESS_URL" luName="ACRM">
+					<Value>/geographicAddressManagement/v4/geographicAddress/</Value>
+				</Global>
+				<Global name="AOC_API_TOKEN" luName="AOC">
+					<Value>eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJMSlZ0YkZHRmEtMm1RdVFlWGpuNWhrU1BPY3lGcEcyOFNHT2VmdTNmM0hnIn0.eyJqdGkiOiIzYjBhNTExNi1lMzIwLTQxODQtODE5Yi01Y2E1ZGRjNWI1NGIiLCJleHAiOjE2NDU1MjAxMDcsIm5iZiI6MCwiaWF0IjoxNjM3NzQ0MTA3LCJpc3MiOiJodHRwOi8va2V5Y2xvYWstcnVudGltZS14dGVzdC0xLmVrczEueC10ZXN0MDIuYXdzLnNvbHN0aWNlLnZvZGFmb25lLmNvbS9hdXRoL3JlYWxtcy9hcGlndyIsImF1ZCI6ImFwaWd3Iiwic3ViIjoiNjJkOWUyMjctYWU5OS00YmYxLWFjZTEtZTUwZWRkZGUyNmU4IiwidHlwIjoiQmVhcmVyIiwiYXpwIjoiYXBpZ3ciLCJhdXRoX3RpbWUiOjAsInNlc3Npb25fc3RhdGUiOiI4NzBkYjdiMi05YTQzLTQzZmItODc1Mi1lYjdjZmYwNDUxYTEiLCJhY3IiOiIxIiwicmVhbG1fYWNjZXNzIjp7InJvbGVzIjpbInVwZGF0ZU9yZ2FuaXphdGlvblJlbGF0ZWRQYXJ0eVRvSW5kaXZpZHVhbCIsIkQxX3RpY2tldHJlc29sdXRpb25EYXRlX1VwZGF0ZSIsIkFjY2Vzc0NSTVJvbGUiLCJEMV9Ucm91YmxlVGlja2V0X2RlbGV0ZV9vd25fZHJhZnQiLCJEMV9Db21tdW5pY2F0aW9uTWVzc2FnZV9yZXRyaWV2ZSIsIkQxX1Ryb3VibGVUaWNrZXRfb3ZlcnJpZGVQcmlvcml0eSIsInVtYV9hdXRob3JpemF0aW9uIiwiSzhLX0NhdGFsb2dfQnJvd3NlciIsIkFnZW50Iiwia2Mtcm9sZTMiLCJjY1N1cGVydmlzb3IiLCJrYy1yb2xlM0N1c3QiLCJEMV9Ucm91YmxlVGlja2V0X2RlbGV0ZV9hbnkiLCJrYy1yb2xlMkN1c3QiLCJrYy1yb2xlMiIsImtjLXJvbGUxIiwiQmlsbGluZ0FnZW50IiwiSzhLX0NhdGFsb2dfTWFuYWdlbWVudF9FZGl0b3IiLCJLOEtfQ2F0YWxvZ19NYW5hZ2VtZW50X1JlYWRlciIsImtjLXByb2ZpbGUzIiwia2MtcHJvZmlsZTIiLCJrYy1yb2xlMUN1c3RSVEJBQ0JSIiwia2MtcHJvZmlsZTEiLCJrYy1yb2xlMUN1c3QiLCJrYy1yb2xlQSIsIks4S19DYXRhbG9nX01hbmFnZW1lbnRfQnVzaW5lc3NEYXRhUmVhZGVyIiwia2MtcHJvZmlsZTgiLCJBRDJEMV9BUElBY2Nlc3MiLCJrYy1wcm9maWxlNyIsImtjLXByb2ZpbGU2Iiwia2MtcHJvZmlsZTUiLCJrYy1wcm9maWxlNCIsInJldHJpZXZlQ2xvc2VkQmlsbGluZ0FjY291bnQiLCJyZXRyaWV2ZUNsb3NlZEN1c3RvbWVyIiwiSzhLX0NhdGFsb2dfTWFuYWdlbWVudF9BZG1pbiIsImFkZE9yZ2FuaXphdGlvblJlbGF0ZWRQYXJ0eVRvSW5kaXZpZHVhbCIsIm9mZmxpbmVfYWNjZXNzIiwia2Mtcm9sZTFDdXN0UlRCRmFsbG91dCIsIkQxX1BhcnR5TWFuYWdlbWVudF9BZGRPcmdhbml6YXRpb25SZWxhdGlvbnNoaXAiLCJLOEtfQ2F0YWxvZ19NYW5hZ2VtZW50X0NyaXRlcmlhIiwiRDFfQXR0YWhtZW50TWFuYWdlbWVudF9SZW1vdmVBdHRhY2htZW50IiwiRDFfVHJvdWJsZVRpY2tldF9wYXRjaFRyb3VibGVUaWNrZXQiLCJEMV9Db21tdW5pY2F0aW9uTWVzc2FnZV9tb2RpZnkiLCJEMV9Ucm91YmxlVGlja2V0X2RlbGV0ZV9hbnlfZHJhZnQiLCJEMV9BdHRhY2htZW50TWFuYWdlbWVudF9SZW1vdmVBdHRhY2htZW50IiwiYmF0Y2gtbWlncmF0aW9uLXN1cGVydiIsIks4S19DYXRhbG9nX01hbmFnZW1lbnRfTGlmZWN5Y2xlIiwiSzhLX0NhdGFsb2dfTWFuYWdlbWVudF9BdXRob3IiLCJEMV9QYXJ0eU1hbmFnZW1lbnRfdXBkYXRlVGF4RXhlbXB0aW9uIiwiRDFfVGFza0Zsb3dfc2VhcmNoVGFza0Zsb3ciLCJSZXRhaWxTdG9yZUFnZW50Iiwia2MtcHJvZmlsZSIsIkFjY2Vzc01hc3NSb2xlIiwicmVtb3ZlT3JnYW5pemF0aW9uUmVsYXRlZFBhcnR5VG9JbmRpdmlkdWFsIl19LCJzY29wZSI6ImVtYWlsIGF1ZCBwcm9maWxlIiwiZW1haWxfdmVyaWZpZWQiOmZhbHNlLCJuYW1lIjoidGRtVXNlciB0ZG1Vc2VyIiwicHJlZmVycmVkX3VzZXJuYW1lIjoidGRtdXNlciIsImdpdmVuX25hbWUiOiJ0ZG1Vc2VyIiwic2FsZXNDaGFubmVsIjoiQ2FsbENlbnRlciIsImZhbWlseV9uYW1lIjoidGRtVXNlciIsImVtYWlsIjoidGRtdXNlckBhdXRvbWF0aW9uLmNvbSJ9.coSyviPNyqn6ZhOBlrTsFLp9qAWVlDRZxUEfFz-a2JkqvYxhEFcq0r1ZW5RoEJ7GYqmW4waH1ubNExE3c8YH400V40llcovfS7YuU5AQpE1x6hzpj7IPEo5Z_ncxLFMJS9Gokvey1LYHyuA0_VQ6QMAk1jnXv0s6tjjt62GRRbQmDZ2_zImo9iru8XeLX8mDe-f14tha0nkqFtzfJCk3ggnEt8KRM07BavFgVyefwThyJw0bjhTdiYWWduBZG1C5-ZAbTxVojlDR_uYbOsiotblCEJ4D1hHmpq5BoStAFUAiwJqrcloEU8bnmH1zLSZCRhS-P8Jjkdxv-V9EWTpxDA</Value>
+				</Global>
+				<Global name="AOC_API_BASE_URL" luName="AOC">
+					<Value>https://dev.asgw.aws.de.vodafone.com</Value>
+					<Comment>https://apigw-runtime.tool.int.done.sol-vf.de</Comment>
+				</Global>
+				<Global name="AOC_PRODUCT_ORDER_URL_GET" luName="AOC">
+					<Value>/productOrderingManagement/v4/productOrder?filter=relatedParty.id==</Value>
+					<Comment>/productOrdering/v2.1/productOrder/?filters=relatedParty.id==</Comment>
+				</Global>
+				<Global name="AOC_PRODUCT_INVENTORY_URL_GET" luName="AOC">
+					<Value>/productInventoryManagement/v4/product?filter=relatedParty.Id==</Value>
+				</Global>
+				<Global name="AOC_PRODUCT_ORDER_URL_POST" luName="AOC">
+					<Value>/productOrderingManagement/v4/productOrder</Value>
+					<Comment>/productOrdering/v2.1/productOrder/</Comment>
+				</Global>
+				<Global name="AOC_PRODUCT_INVENTORY_URL_POST" luName="AOC">
+					<Value>/productInventoryManagement/v4/product</Value>
+					<Comment>/productOrdering/v2.1/product</Comment>
+				</Global>
+				<Global name="TOKEN_EXPIRE" luName="AOC">
+					<Value/>
+				</Global>
+				<Global name="AOC_PRODUCT_VERSION_URL_GET" luName="AOC">
+					<Value>/productInventoryManagement/v4/product/
+						<product_id>/version
+						</Value>
+					</Global>
+					<Global name="SAP_PATH" luName="AOC">
+						<Value>/sap/bc/srt/rfc/sap/zats_vkdg_k2view/{TO_REPLACE}/zats_vkdg_k2view/zats_vkdg_k2view</Value>
+						<Comment>100/200/900</Comment>
+					</Global>
+					<Global name="SAP_TARGET" luName="AOC">
+						<Value/>
+						<Comment>100/200/900</Comment>
+					</Global>
+					<Global name="AOH_API_TOKEN" luName="AOH">
+						<Value>eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJrRGxzaW5IWVhvWW0tb09BQzhjcDhOUldwZzNLQ0ZXb1VpbEtfa2JueXlnIn0.eyJqdGkiOiJiMDAzN2I4ZC00ZGJiLTQyZWItOGNkMy0wYTE4ZmNjMzAxMTUiLCJleHAiOjE2MjM0OTM5NjksIm5iZiI6MCwiaWF0IjoxNjIwOTAxOTY5LCJpc3MiOiJodHRwOi8va2V5Y2xvYWstcnVudGltZS14dGVzdC0xLmVrczEueC10ZXN0MDIuYXdzLnNvbHN0aWNlLnZvZGFmb25lLmNvbS9hdXRoL3JlYWxtcy9hcGlndyIsInN1YiI6IjU3NDU1Y2E4LWIyMjgtNGYzNC04ZWJjLTdjZjE3NDBjMzFiZiIsInR5cCI6IkJlYXJlciIsImF6cCI6ImFwaWd3IiwiYXV0aF90aW1lIjowLCJzZXNzaW9uX3N0YXRlIjoiMzcwZDdkMTctYzhjMS00YzkxLTkyMTktY2QwZGEyOTI2YTlmIiwiYWNyIjoiMSIsInJlYWxtX2FjY2VzcyI6eyJyb2xlcyI6WyJvZmZsaW5lX2FjY2VzcyIsImtjLXJvbGUxQ3VzdCIsInVtYV9hdXRob3JpemF0aW9uIiwia2Mtcm9sZTIiLCJrYy1yb2xlMSIsImtjLXJvbGVBIl19LCJzY29wZSI6ImVtYWlsIHByb2ZpbGUiLCJlbWFpbF92ZXJpZmllZCI6ZmFsc2UsIm5hbWUiOiJ0ZG11c2VyIHRkbXVzZXIiLCJwcmVmZXJyZWRfdXNlcm5hbWUiOiJ0ZG11c2VyIiwic2FsZXNDaGFubmVsIjoiUmV0YWlsIiwiZ2l2ZW5fbmFtZSI6InRkbXVzZXIiLCJmYW1pbHlfbmFtZSI6InRkbXVzZXIifQ.IQxwUdHPSNqvsAen8rQjABTqGxRnL5QHnDXypRwzz4DxaaemIW_UtmFzmSwHe_24akAjZgvBQEMLjFjHinWYMbchqZzyGCZrCl-Flx-5GJyxnKSnlkpnBmNMGnDSDYLmJcCUcHOQipZZf7yBRxCty7WwbPcXNwcE1v9qc9jZHnz27wlvLLNQoY9bIKQ_73ur-YUKMvf39oWohNwSFEjelO3UQ3bVjRF7Nuk4z226IPJlP_5gHKNFM5BJXDOm2Xand8ItbpraOOVzv2RxAJbGxl48QdOcmBKv2U1ib9dzKpJo94ENgsdR_v3tgjfGBrhX9yO_zJepTlAtAmAI671wLQ</Value>
+					</Global>
+					<Global name="AOH_API_BASE_URL" luName="AOH">
+						<Value>https://vpce-013fe8d6c675a21ee-t8av9kwb.vpce-svc-021bac00717d930c7.eu-central-1.vpce.amazonaws.com</Value>
+					</Global>
+					<Global name="AOH_FLOW_CONTEXT_URL" luName="AOH">
+						<Value>/orderExecutionManagement/v1/flowContext/?filters=productOrder.id==</Value>
+					</Global>
+					<Global name="RULESET" luName="APRM">
+						<Value>1</Value>
+						<Comment>1 or 2</Comment>
+					</Global>
+					<Global name="S3_IN_FILE_PATH" luName="APRM">
+						<Value>s3://334720115608-aprmbucket/anonymization/anon_input/</Value>
+						<Comment>APRM S3 TDM Input folder</Comment>
+					</Global>
+					<Global name="S3_OUT_FILE_PATH" luName="APRM">
+						<Value>s3://334720115608-aprmbucket/anonymization/anon_output/</Value>
+						<Comment>APRM S3 TDM Output folder</Comment>
+					</Global>
+					<Global name="APRM_LOCAL_PATH" luName="APRM">
+						<Value>C:\\Users\\dotan.tsur\\Documents\\TEMP\\</Value>
+						<Comment>Local work-path</Comment>
+					</Global>
+					<Global name="SAMPLE_FILE_NAMES_PATH" luName="ATC">
+						<Value>C:/K2View/ATCFILES/samle_file_names.txt</Value>
+					</Global>
+					<Global name="SAMPLE_FILE_NAMES" luName="ATC">
+						<Value>CDR_20210709_TITAN_titan1_102354_000010_V1,CDR_20211221_DATA_PGWM1_001000_000001_V1,CDR_20211221_DATA_PGWM1_001001_000100_V1,CDR_20211221_HIQ_HIQ1_001000_000001_V1,CDR_20211221_HIQ_HIQ1_001001_000100_V1,CDR_20211221_NAMA_NAMA1_001000_000001_V1,CDR_20211221_NAMA_NAMA1_001001_000100_V1,CDR_20211221_NSN_NSN1_001000_000001_V1,CDR_20211221_NSN_NSN1_001001_000001_V1,CDR_20211221_NSN_NSN1_001002_000001_V1,CDR_20211221_NSN_NSN1_001003_000001_V1,CDR_20211221_NSN_NSN1_001004_000001_V1,CDR_20211221_NSN_NSN1_001005_000001_V1,CDR_20211221_NSN_NSN1_001006_000100_V1,CDR_20211221_TAP_TAP1_001000_000001_V1,CDR_20211221_TAP_TAP1_001001_000100_V1,CDR_20211221_TAS_TAS1_001000_000001_V1,CDR_20211221_TAS_TAS1_001001_000001_V1,CDR_20211221_TAS_TAS1_001002_000001_V1,CDR_20211221_TAS_TAS1_001003_000001_V1,CDR_20211221_TAS_TAS1_001004_000001_V1,CDR_20211221_TAS_TAS1_001005_000001_V1,CDR_20211221_TAS_TAS1_001006_000100_V1,CDR_20211221_TITAN_TITAN1_001000_000001_V1,CDR_20211221_TITAN_TITAN1_001001_000001_V1,CDR_20211221_TITAN_TITAN1_001002_000001_V1,CDR_20211221_TITAN_TITAN1_001003_000001_V1,CDR_20211221_TITAN_TITAN1_001004_000001_V1,CDR_20211221_TITAN_TITAN1_001005_000001_V1,CDR_20211221_TITAN_TITAN1_001006_000100_V1</Value>
+					</Global>
+					<Global name="NUMBER_OF_RECORDS" luName="ATC">
+						<Value/>
+					</Global>
+					<Global name="A_CALL_SOURCE" luName="ATC">
+						<Value/>
+					</Global>
+					<Global name="FILE_TYPE" luName="ATC">
+						<Value/>
+					</Global>
+					<Global name="SCHEMA_NAME" luName="BCM">
+						<Value/>
+					</Global>
+					<Global name="START_VALUE_DELPH" luName="DELPHI_REF_UPD">
+						<Value/>
+					</Global>
+					<Global name="AMOUNT_DELPH" luName="DELPHI_REF_UPD">
+						<Value/>
+					</Global>
+					<Global name="DELPHI_DB_SCHEMA" luName="DELPHI_REF_UPD">
+						<Value>INFORMIX</Value>
+					</Global>
+					<Global name="ROOT_TABLE_NAME" luName="DELPHI_REF_UPD">
+						<Value>WIZ_CUSTOMER_DESCRIP</Value>
+					</Global>
+					<Global name="START_VALUE_INF" luName="INFPORT_REF_UPD">
+						<Value/>
+					</Global>
+					<Global name="AMOUNT_INF" luName="INFPORT_REF_UPD">
+						<Value/>
+					</Global>
+					<Global name="INFPORT_DB_SCHEMA" luName="INFPORT_REF_UPD">
+						<Value>INFPORT</Value>
+					</Global>
+					<Global name="ROOT_TABLE_NAME" luName="INFPORT_REF_UPD">
+						<Value>WIZ_CUSTOMER_DESCRIP</Value>
+					</Global>
+					<Global name="AINV_SCHEMA" luName="INV">
+						<Value>ABP1CUSTO</Value>
+					</Global>
+					<Global name="COUNT_FILES" luName="KIAS3">
+						<Value>0</Value>
+						<Comment>number of files anonymized - as a flag</Comment>
+					</Global>
+					<Global name="LIMIT_UNIQUE_OUTPUT_FILE" luName="KIAS3">
+						<Value>10</Value>
+						<Comment>number of time we want to try to get unique output file name</Comment>
+					</Global>
+					<Global name="FILE_PATH" luName="KIAS3">
+						<Value>/var/tmp/subset-bc15-07</Value>
+					</Global>
+					<Global name="THREAD_COUNT_MIN" luName="KIAS3">
+						<Value>5</Value>
+						<Comment>small zip files</Comment>
+					</Global>
+					<Global name="THREAD_COUNT_MAX" luName="KIAS3">
+						<Value>55</Value>
+						<Comment>large zip files (we have only 6)</Comment>
+					</Global>
+					<Global name="SPLIT_NUM_OF_ROWS" luName="KIAS3">
+						<Value>500</Value>
+					</Global>
+					<Global name="THREAD_COUNT_SPLITTED" luName="KIAS3">
+						<Value>5</Value>
+					</Global>
+					<Global name="THREAD_COUNT_ZIP" luName="KIAS3">
+						<Value>10</Value>
+						<Comment>Main zip file in parallel</Comment>
+					</Global>
+					<Global name="THREAD_COUNT_CSV" luName="KIAS3">
+						<Value>40</Value>
+						<Comment>csv in parallel</Comment>
+					</Global>
+					<Global name="KIAS_S3_FILE_PATH" luName="KIAS3">
+						<Value>s3://221752815626-tdmbucket/temp/</Value>
+					</Global>
+					<Global name="KIAS_LOCAL_PATH" luName="KIAS3">
+						<Value>/home/k2view/BriteBill/</Value>
+					</Global>
+					<Global name="KIAS3_DELETE_ZIP_FILES" luName="KIAS3">
+						<Value>Y</Value>
+						<Comment>Delete Input and output ZIP files indicator. Any value other than 'N', 'No' and '0' will delete the files.</Comment>
+					</Global>
+					<Global name="SRC_DB_MAMAS" luName="MAMAS">
+						<Value>NE4</Value>
+					</Global>
+					<Global name="TAR_DB_MAMAS" luName="MAMAS">
+						<Value>NE4</Value>
+					</Global>
+					<Global name="SRC_DB_WIZARD" luName="MAMAS">
+						<Value>PROD04_DBA</Value>
+					</Global>
+					<Global name="TRG_DB_WIZARD" luName="MAMAS">
+						<Value>PROD04_DBA</Value>
+					</Global>
+					<Global name="ACCOUNT_NUMBER_MAMAS" luName="MAMAS">
+						<Value/>
+					</Global>
+					<Global name="BUILDING_ID_METHOD_MAMAS" luName="MAMAS">
+						<Value>1</Value>
+					</Global>
+					<Global name="ROOT_TABLE_NAME" luName="MAMAS_REF_UPD">
+						<Value>WIZ_CUSTOMER_DESCRIP</Value>
+					</Global>
+					<Global name="MAMAS_SRC_DB_SCHEMA" luName="MAMAS_REF_UPD">
+						<Value>ne4</Value>
+					</Global>
+					<Global name="START_VALUE" luName="MAMAS_REF_UPD">
+						<Value/>
+					</Global>
+					<Global name="AMOUNT" luName="MAMAS_REF_UPD">
+						<Value/>
+					</Global>
+					<Global name="TAR_DB_SCHEMA" luName="RBM">
+						<Value>PROD04_DBA</Value>
+					</Global>
+					<Global name="ACCOUNT_NUMBER" luName="RBM">
+						<Value/>
+					</Global>
+					<Global name="USM_ENDPOINT" luName="USM">
+						<Value>https://solstice-oss.tool.dev.fulfill.sol-vf.de</Value>
+						<Comment>INT-MAN-1 endpoint value</Comment>
+					</Global>
+					<Global name="USM_API_TOKEN" luName="USM">
+						<Value>PFVFTT5LPTxrZXk+LnN5c3RlbS5lbnYuZW5jcnlwdGlvbi4wO0M9MTcxOTkwNzY1MzM2NDtNPXF6bXFDVjIxaE9FZ21ZYzluRkV3U2dYdWR6MEt4MmVFQWJxOWN1cTJPU2Ywc1FNTnhTNVdlN0c5Y1c4U3tHOGw2eHdXVURTVmpmektMWUFoQ1JCREIyMjs8L1VFTT4=</Value>
+					</Global>
+					<Global name="USM_LOGIN_USER" luName="USM">
+						<Value>AFFSuper</Value>
+						<Comment>INT-MAN-1 value</Comment>
+					</Global>
+					<Global name="USM_LOGIN_PASSWORD" luName="USM">
+						<Value>AFFSuper123</Value>
+						<Comment>INT-MAN-1 value</Comment>
+					</Global>
+					<Global name="USM_SERVICE_URL" luName="USM">
+						<Value>/tmf-api/serviceInventoryManagement/v1/service?serviceCharacteristic.name=customerId&serviceCharacteristic.value</Value>
+					</Global>
+					<Global name="USM_API_TOKEN_X" luName="USM">
+						<Value>invalidtoken</Value>
+					</Global>
+					<Global name="USM_LOGIN_URL" luName="USM">
+						<Value>/dop/security/rest/loginservice/login</Value>
+					</Global>
+					<Global name="USM_POST_SERVICE_URL" luName="USM">
+						<Value>/tmf-api/serviceInventoryManagement/v1/service</Value>
+					</Global>
+					<Global name="USM_POST_HEADERS" luName="USM">
+						<Value>{}</Value>
+					</Global>
+					<Global name="TAR_DB_SCHEMA" luName="WIZ_REF_UPD">
+						<Value>PROD04_DBA</Value>
+					</Global>
+					<Global name="SRC_DB_SCHEMA" luName="WIZ_REF_UPD">
+						<Value>PROD04_DBA</Value>
+					</Global>
+					<Global name="ROOT_TABLE_NAME" luName="WIZ_REF_UPD">
+						<Value>WIZ_CUSTOMER_DESCRIP</Value>
+					</Global>
+					<Global name="START_VALUE_WIZ" luName="WIZ_REF_UPD">
+						<Value/>
+					</Global>
+					<Global name="END_VALUE_WIZ" luName="WIZ_REF_UPD">
+						<Value>1</Value>
+					</Global>
+					<Global name="TAR_DB_SCHEMA" luName="WIZARD">
+						<Value>PROD04_DBA</Value>
+					</Global>
+					<Global name="SRC_DB_SCHEMA" luName="WIZARD">
+						<Value>PROD04_DBA</Value>
+					</Global>
+					<Global name="EXECUTE_ATS_SAP" luName="WIZARD">
+						<Value>true</Value>
+						<Comment>flag to execute the SAP API call -> true = execute ; false = ignore execution</Comment>
+					</Global>
+					<Global name="PROC_IMMEDIATE" luName="WIZARD">
+						<Value>no</Value>
+						<Comment>global for ATS-SAP</Comment>
+					</Global>
+					<Global name="SOURCE_SYSTEM" luName="WIZARD">
+						<Value/>
+						<Comment>global for ATS-SAP</Comment>
+					</Global>
+					<Global name="SNAPSHOT" luName="WIZARD">
+						<Value>no</Value>
+						<Comment>global for ATS-SAP</Comment>
+					</Global>
+					<Global name="ACCOUNT_NUMBER" luName="WIZARD">
+						<Value/>
+						<Comment>account_number global for ATS-SAP</Comment>
+					</Global>
+					<Global name="SERVICE_ADDRESS_ID" luName="WIZARD">
+						<Value/>
+						<Comment>service_address_id for few tables that will use this global to get building_id value</Comment>
+					</Global>
+					<Global name="TARGET_ENTITY_ID" luName="WIZARD">
+						<Value/>
+					</Global>
+					<Global name="WIZ_HP_WIRING_CHECK" luName="WIZARD">
+						<Value>true</Value>
+						<Comment>check to insert/not</Comment>
+					</Global>
+					<Global name="PROC_INFPORT" luName="WIZARD">
+						<Value>true</Value>
+						<Comment>execute new infport implementation (true) or old (false)</Comment>
+					</Global>
+					<Global name="EXECUTE_INFPORT_NEW" luName="WIZARD">
+						<Value>false</Value>
+						<Comment>hook VT4 infport connection to INFPORT (true) or VT4 (false)</Comment>
+					</Global>
+					<Global name="BUILDING_REPLACE_PRIVATE" luName="WIZARD">
+						<Value>true</Value>
+						<Comment>true (anon service_address_id) -> false (no anon)</Comment>
+					</Global>
+					<Global name="SAP_CHECK_FAILED" luName="WIZARD">
+						<Value>no</Value>
+					</Global>
+					<Global name="ENV_CHECK_FAILED" luName="WIZARD">
+						<Value>no</Value>
+						<Comment>check to stop task if ENV region doesn't match</Comment>
+					</Global>
+					<Global name="BUILDING_REPLACE_COMMERCIAL" luName="WIZARD">
+						<Value>false</Value>
+					</Global>
+					<Global name="START_NUMBER_STRING" luName="WIZARD">
+						<Value/>
+					</Global>
+					<Global name="EXECUTE_SAP_STATUS_UPDATE" luName="WIZARD">
+						<Value>false</Value>
+						<Comment>if true, will call endpoint to check and update internal SAP status codes</Comment>
+					</Global>
+					<Global name="STATUS_CHECK_DAYS" luName="WIZARD">
+						<Value>1</Value>
+						<Comment>how many days back to check account for status update</Comment>
+					</Global>
+					<Global name="INFPORT_PREFIX" luName="WIZARD">
+						<Value/>
+					</Global>
+					<Global name="BUILDING_ID_METHOD" luName="WIZARD">
+						<Value>1</Value>
+						<Comment>1 (execute default method for building id) - 2 (execute new method)</Comment>
+					</Global>
+					<Global name="BUILDING_ID_LIMIT" luName="WIZARD">
+						<Value>200</Value>
+						<Comment>range limiter for new building id method (values between 10-1000)</Comment>
+					</Global>
+					<Global name="BUILDING_ID_MAMAS_FILTERING" luName="WIZARD">
+						<Value>true</Value>
+						<Comment>add this condition if the MAMAS validations for BUILDING_ID should be included</Comment>
+					</Global>
+					<Global name="COMMENT" luName="WIZARD">
+						<Value/>
+						<Comment>comment field for end user and operator</Comment>
+					</Global>
+					<Global name="TESTDATA_CATEGORY" luName="WIZARD">
+						<Value/>
+						<Comment>const to add to first_name field</Comment>
+					</Global>
+					<Global name="CLEAN_UP_TASKS" luName="WIZARD">
+						<Value>0</Value>
+						<Comment>variable to set for job to clean up older tasks from GUI</Comment>
+					</Global>
+				</GlobalsList>
+				<GenericInterfacesList>
+					<GenericInterface type="HTTP" displayName="HTTP" enabled="false" version="1.8">
+						<Name>ATS_SAP</Name>
+						<Properties>
+							<Property name="ProtocolType">
+								<Value>HTTPS</Value>
+							</Property>
+							<Property name="HOST">
+								<Value>dexrmascs.x-test01.aws.solstice.vodafone.com</Value>
+							</Property>
+							<Property name="PORT">
+								<Value>44303</Value>
+							</Property>
+							<Property name="Path">
+								<Value>/sap/bc/srt/rfc/sap/zats_vkdg_k2view/200/zats_vkdg_k2view/zats_vkdg_k2view</Value>
+							</Property>
+							<Property name="AuthenticationType">
+								<Value>Basic</Value>
+							</Property>
+							<Property name="User">
+								<Value>CPIC_TDM_ATS</Value>
+							</Property>
+							<Property name="Password">
+								<Value>ThhoCYBK3TqMBRMkgPYwPbOVlVdvTHvgBOtyACpG/qw=:ssJHKLxG86QNHVRTg0+BYzIz+WKCZa1iCUl7qYJs9VU=</Value>
+							</Property>
+							<Property name="TestConnectionValidStatus">
+								<Value/>
+							</Property>
+						</Properties>
+					</GenericInterface>
+					<GenericInterface type="SFTP" displayName="SFTP" enabled="false" version="1.6">
+						<Name>APRM_dexpyaar06</Name>
+						<Properties>
+							<Property name="IP">
+								<Value/>
+							</Property>
+							<Property name="Port">
+								<Value>22</Value>
+							</Property>
+							<Property name="User">
+								<Value/>
+							</Property>
+							<Property name="Password">
+								<Value/>
+							</Property>
+							<Property name="RemoteDir">
+								<Value/>
+							</Property>
+							<Property name="FilesFilter">
+								<Value/>
+							</Property>
+							<Property name="Affinity">
+								<Value/>
+							</Property>
+						</Properties>
+					</GenericInterface>
+					<GenericInterface type="LOCAL" displayName="Local File System" enabled="false" version="1.4">
+						<Name>ATC_SubFiles</Name>
+						<Properties>
+							<Property name="WorkingDir">
+								<Value/>
+							</Property>
+							<Property name="FilesFilter">
+								<Value/>
+							</Property>
+							<Property name="Affinity">
+								<Value/>
+							</Property>
+						</Properties>
+					</GenericInterface>
+					<GenericInterface type="HTTP" displayName="HTTP" enabled="true" version="1.8">
+						<Name>ARTB</Name>
+						<Properties>
+							<Property name="ProtocolType">
+								<Value>HTTPS</Value>
+							</Property>
+							<Property name="HOST">
+								<Value>couchbase-done-query.tool.int.done.sol-vf.de</Value>
+							</Property>
+							<Property name="PORT">
+								<Value>443</Value>
+							</Property>
+							<Property name="Path">
+								<Value>/query/service</Value>
+							</Property>
+							<Property name="AuthenticationType">
+								<Value>Basic</Value>
+							</Property>
+							<Property name="User">
+								<Value>TDM_couchbase</Value>
+							</Property>
+							<Property name="Password">
+								<Value>vL/qnMVbTtAGIJe9jACquZiAMWWwRQ9wnAVMw4XB7h8=:6rUQG1a38ybNT6pMz/q4gb6bV99dsJxhcQKTVaMNt3E=</Value>
+							</Property>
+							<Property name="TestConnectionValidStatus">
+								<Value/>
+							</Property>
+						</Properties>
+					</GenericInterface>
+					<GenericInterface type="HTTP" displayName="HTTP" enabled="false" version="1.8">
+						<Name>ADS_LEGACY</Name>
+						<Properties>
+							<Property name="ProtocolType">
+								<Value>HTTPS</Value>
+							</Property>
+							<Property name="HOST">
+								<Value/>
+							</Property>
+							<Property name="PORT">
+								<Value>443</Value>
+							</Property>
+							<Property name="Path">
+								<Value>/ads/vkd-ads/AdsAddressV2/searchAdsAddress/</Value>
+							</Property>
+							<Property name="AuthenticationType">
+								<Value>Basic</Value>
+							</Property>
+							<Property name="User">
+								<Value/>
+							</Property>
+							<Property name="Password">
+								<Value/>
+							</Property>
+							<Property name="TestConnectionValidStatus">
+								<Value/>
+							</Property>
+						</Properties>
+					</GenericInterface>
+					<GenericInterface type="SFTP" displayName="SFTP" enabled="false" version="1.6">
+						<Name>APRM_detpyrar01</Name>
+						<Properties>
+							<Property name="IP">
+								<Value/>
+							</Property>
+							<Property name="Port">
+								<Value>22</Value>
+							</Property>
+							<Property name="User">
+								<Value/>
+							</Property>
+							<Property name="Password">
+								<Value/>
+							</Property>
+							<Property name="RemoteDir">
+								<Value/>
+							</Property>
+							<Property name="FilesFilter">
+								<Value/>
+							</Property>
+							<Property name="Affinity">
+								<Value/>
+							</Property>
+						</Properties>
+					</GenericInterface>
+					<GenericInterface type="REDIS" displayName="Redis" enabled="false" version="1.8">
+						<Name>FabricRedis</Name>
+						<Properties>
+							<Property name="Servers">
+								<Value>localhost:6379</Value>
+							</Property>
+							<Property name="Password">
+								<Value/>
+							</Property>
+							<Property name="ConnectionTimeout">
+								<Value>10000</Value>
+							</Property>
+							<Property name="SoTimeout">
+								<Value>10000</Value>
+							</Property>
+							<Property name="MaxAttempts">
+								<Value>10</Value>
+							</Property>
+							<Property name="MaxTotal">
+								<Value>128</Value>
+							</Property>
+							<Property name="MaxIdle">
+								<Value>128</Value>
+							</Property>
+							<Property name="MinIdle">
+								<Value>16</Value>
+							</Property>
+							<Property name="TestOnBorrow">
+								<Value>True</Value>
+							</Property>
+							<Property name="TestOnReturn">
+								<Value>True</Value>
+							</Property>
+							<Property name="TestWhileIdle">
+								<Value>True</Value>
+							</Property>
+							<Property name="MinEvictableIdle">
+								<Value>60000</Value>
+							</Property>
+							<Property name="EvictionRunIntervals">
+								<Value>30000</Value>
+							</Property>
+							<Property name="TestPerEviction">
+								<Value>3</Value>
+							</Property>
+							<Property name="BlockWhenExhausted">
+								<Value>False</Value>
+							</Property>
+						</Properties>
+					</GenericInterface>
+					<GenericInterface type="LOCAL" displayName="Local File System" enabled="false" version="1.4">
+						<Name>ATC_SampleFiles</Name>
+						<Properties>
+							<Property name="WorkingDir">
+								<Value/>
+							</Property>
+							<Property name="FilesFilter">
+								<Value/>
+							</Property>
+							<Property name="Affinity">
+								<Value/>
+							</Property>
+						</Properties>
+					</GenericInterface>
+					<GenericInterface type="LOCAL" displayName="Local File System" enabled="false" version="1.4">
+						<Name>KIAS_CSV_INPUT</Name>
+						<Properties>
+							<Property name="WorkingDir">
+								<Value>/home/k2view/BriteBill</Value>
+							</Property>
+							<Property name="FilesFilter">
+								<Value/>
+							</Property>
+							<Property name="Affinity">
+								<Value/>
+							</Property>
+						</Properties>
+					</GenericInterface>
+					<GenericInterface type="HTTP" displayName="HTTP" enabled="false" version="1.8">
+						<Name>ATS_SAP_LEGACY</Name>
+						<Properties>
+							<Property name="ProtocolType">
+								<Value>HTTPS</Value>
+							</Property>
+							<Property name="HOST">
+								<Value/>
+							</Property>
+							<Property name="PORT">
+								<Value>1204</Value>
+							</Property>
+							<Property name="Path">
+								<Value>/sap/bc/srt/pm/sap/zats_vkdg_k2view/100/local/kdg_https/1/binding_t_https_a_http_zats_vkdg_k2view_kdg_https_l</Value>
+							</Property>
+							<Property name="AuthenticationType">
+								<Value>Basic</Value>
+							</Property>
+							<Property name="User">
+								<Value/>
+							</Property>
+							<Property name="Password">
+								<Value/>
+							</Property>
+							<Property name="TestConnectionValidStatus">
+								<Value/>
+							</Property>
+						</Properties>
+					</GenericInterface>
+					<GenericInterface type="CassandraLoader" displayName="Cassandra Loader" enabled="true" version="1.0">
+						<Name>CASSANDRA_LD</Name>
+						<Properties>
+							<Property name="section">
+								<Value>default</Value>
+							</Property>
+						</Properties>
+					</GenericInterface>
+					<GenericInterface type="HTTP" displayName="HTTP" enabled="false" version="1.8">
+						<Name>INFPORT_LEGACY</Name>
+						<Properties>
+							<Property name="ProtocolType">
+								<Value>HTTPS</Value>
+							</Property>
+							<Property name="HOST">
+								<Value/>
+							</Property>
+							<Property name="PORT">
+								<Value>9443</Value>
+							</Property>
+							<Property name="Path">
+								<Value>/infportWebservice/service?wsdl</Value>
+							</Property>
+							<Property name="AuthenticationType">
+								<Value>Basic</Value>
+							</Property>
+							<Property name="User">
+								<Value/>
+							</Property>
+							<Property name="Password">
+								<Value/>
+							</Property>
+							<Property name="TestConnectionValidStatus">
+								<Value/>
+							</Property>
+						</Properties>
+					</GenericInterface>
+					<GenericInterface type="HTTP" displayName="HTTP" enabled="false" version="1.8">
+						<Name>INFPORT_TRAIN_LEGACY</Name>
+						<Properties>
+							<Property name="ProtocolType">
+								<Value>HTTPS</Value>
+							</Property>
+							<Property name="HOST">
+								<Value/>
+							</Property>
+							<Property name="PORT">
+								<Value>443</Value>
+							</Property>
+							<Property name="Path">
+								<Value>/infportWebservice/service</Value>
+							</Property>
+							<Property name="AuthenticationType">
+								<Value>Basic</Value>
+							</Property>
+							<Property name="User">
+								<Value/>
+							</Property>
+							<Property name="Password">
+								<Value/>
+							</Property>
+							<Property name="TestConnectionValidStatus">
+								<Value/>
+							</Property>
+						</Properties>
+					</GenericInterface>
+					<GenericInterface type="LOCAL" displayName="Local File System" enabled="false" version="1.4">
+						<Name>ATC_ResultFiles</Name>
+						<Properties>
+							<Property name="WorkingDir">
+								<Value/>
+							</Property>
+							<Property name="FilesFilter">
+								<Value/>
+							</Property>
+							<Property name="Affinity">
+								<Value/>
+							</Property>
+						</Properties>
+					</GenericInterface>
+					<GenericInterface type="HTTP" displayName="HTTP" enabled="false" version="1.8">
+						<Name>ACRM_API</Name>
+						<Properties>
+							<Property name="ProtocolType">
+								<Value>HTTPS</Value>
+							</Property>
+							<Property name="HOST">
+								<Value>n-a</Value>
+							</Property>
+							<Property name="PORT">
+								<Value>443</Value>
+							</Property>
+							<Property name="Path">
+								<Value/>
+							</Property>
+							<Property name="AuthenticationType">
+								<Value>Bearer</Value>
+							</Property>
+							<Property name="Token">
+								<Value>n-a</Value>
+							</Property>
+							<Property name="TestConnectionValidStatus">
+								<Value/>
+							</Property>
+						</Properties>
+					</GenericInterface>
+				</GenericInterfacesList>
+			</Environment>
+		</EnvironmentsList>
+	</FabEnvironmentsManager>
