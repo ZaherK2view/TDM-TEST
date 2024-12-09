@@ -17,6 +17,8 @@ public class Globals extends SharedGlobals {
 	@category("TDM")
 	public static String ROOT_COLUMN_NAME = "transaction_id";
 
+	something wrong ;
+
 	
 
 
